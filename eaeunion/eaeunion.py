@@ -46,11 +46,11 @@ for index, row in enumerate(rows):
         char_of_med_product.append(item.text.replace('\n', ' '))
 
     # dummy print
-    print(f'name: {header}')
-    print(f'mnn: {mnn}')
-    print(f'release_form: {release_form_list}')
-    print(f'manufacturer: {manufacturer}')
-    print(f'char_of_med_product: {char_of_med_product}')
+    # print(f'name: {header}')
+    # print(f'mnn: {mnn}')
+    # print(f'release_form: {release_form_list}')
+    # print(f'manufacturer: {manufacturer}')
+    # print(f'char_of_med_product: {char_of_med_product}')
 
     actionChains = ActionChains(driver)
     actionChains.double_click(row).perform()
@@ -74,23 +74,63 @@ for index, row in enumerate(rows):
                 'email']
 
         panel1 = { panel1_keys[i]: panel1_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(panel1_keys)) }
-        print(panel1)
+        # print(panel1)
 
         # registration full data
         reg_data_list = driver.find_elements_by_xpath("//div[@id='registrations-list']//div[@class='zebra-list']//ul//li")
         reg_data_keys = ['reg_num', 'reg_status', 'reg_date']
 
-        toggle_button = driver.find_element_by_class_name('product-list__trigger-icon')
-        toggle_button.click()
-
-        time.sleep(5)
+        toggle_button = driver.find_element_by_class_name('product-list__trigger-icon').click()
+        time.sleep(2)
         
         reg_data = { reg_data_keys[i]: reg_data_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(reg_data_keys)) }
-        print(reg_data)
+        # print(reg_data)
+
+        # list of left tabs
+        tabs = driver.find_elements_by_xpath("//div[@class='left-menu__list']//ul//li")
 
         # get data from panel 2
+        tabs[1].click()
+        time.sleep(2)
+        # md is medicinal product
+        panel2_list = driver.find_elements_by_xpath("//div[@id='panel2']//ul//li")
+        panel2_keys = [
+            'ainternational_name', 
+            'atx', 
+            'pharmacy_type', 
+            'additional_sign_of_md', 
+            'pharm_form', 
+            'conditions_for_dispending_md', 
+            'classification_of_orphan_drugs']
 
-    
+        panel2 = { panel2_keys[i]: panel2_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(panel2_keys)) }
+        # print(panel2)
+
+        # get data from panel 4
+        panel4_table_row = driver.find_elements_by_xpath("//div[@id='panel4']//tbody//tr")
+        panel4 = []
+        panel4_keys = [
+            'dosage_form_and_dosage',
+            'composition',
+            'shelf_life',
+            'primary_packaging',
+            'accessories'
+        ]
+        for index, row in enumerate(panel4_table_row[1:], 1):
+            table_row = row.find_elements_by_xpath(f"//tr/following-sibling::tr[{index}]//td")[2:]
+            row = { panel4_keys[i]: table_row[i + 1].text for i in range(len(panel4_keys)) }
+            panel4.append(row)
+
+        # panel4 is array of dicts
+        print(panel4)
+            
+
+        # manufacturings-list toggle button
+        tabs[2].click()
+        time.sleep(2)
+        toggle_button = driver.find_element_by_xpath("//div[@id='manufacturings-list']//span").click()
+        time.sleep(5)
+
     except: 
         # handle shit
         print('next page is closed')
@@ -101,7 +141,7 @@ for index, row in enumerate(rows):
 
     # panel_1 = driver.find_element_by_id('panel1')
 
-    print('-----------------')
+    # print('-----------------')
     
 
 driver.quit()
