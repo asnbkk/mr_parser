@@ -183,8 +183,27 @@ for index, row in enumerate(rows):
             regulations.append(regulations_row)
         # print(regulations)
 
-        # pharmaceutical substances
-        
+        # pharmaceutical substances toggle button
+        tabs[4].click()
+        time.sleep(2)
+
+        substances = []
+        substances_keys = [
+            'trade_name',
+            'international_nonproprietary_name',
+            'manufacturers_name',
+            'country',
+            'manufacturers_address'
+        ]
+
+        substances_table_rows = driver.find_elements_by_xpath("//div[@id='panel6']//tbody//tr")[1:]
+        for substances_table_row in substances_table_rows:
+            table_cell = substances_table_row.find_elements_by_class_name('table__cell')
+
+            substances_row_text = { substances_keys[i]: table_cell[i].text for i in range(len(substances_keys)) }
+            # merging tow intermediate dicts and appending to list
+            substances.append(substances_row_text)
+        # print(substances)
 
     except Exception as e: 
         # handle shit
