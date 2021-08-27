@@ -139,16 +139,31 @@ for index, row in enumerate(rows):
                         'email',
                         'fax'
                     ]
+        production_sites_keys = [
+                'production_stage',
+                'production_site_name',
+                'production_site_address',
+                'contact_details'
+            ]
+
         product_list = driver.find_elements_by_xpath("//div[@id='manufacturings-list']//ul//li[@class='product-list__item']")
 
         for index, product_item in enumerate(product_list):
+            # open new tab
             product_list[index].find_element_by_class_name('product-list__trigger-icon').click()
             time.sleep(1)
             product_manufacturings_list = product_list[index].find_elements_by_class_name('zebra-list__item')
-            row = { product_manufacturings_keys[i]: product_manufacturings_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(product_manufacturings_keys)) }
-            manufacturings_list.append(row)
+            manufacturings_row = { product_manufacturings_keys[i]: product_manufacturings_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(product_manufacturings_keys)) }
+            # production sites
+            production_sites_list = product_list[index].find_elements_by_class_name('table__cell')[4:]
+            production_sites_row = { production_sites_keys[i]: production_sites_list[i].text for i in range(len(production_sites_keys)) }
+            
+            # merging tow intermediate dicts and appending to list
+            manufacturings_list.append({**manufacturings_row, **production_sites_row})
 
-        # print(manufacturings_list)
+        print(manufacturings_list)
+
+        
 
     except Exception as e: 
         # handle shit
