@@ -8,8 +8,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
 from selenium.webdriver.common.action_chains import ActionChains
+import time
 
 # install selenium
 # need to get the path of chromedriver
@@ -62,7 +62,8 @@ for index, row in enumerate(rows):
 
         # data from panel1 list
         panel1_list = driver.find_elements_by_xpath("//div[@id='panel1']//ul//li")
-        panel1_keys = ['be_name', 
+        panel1_keys = [
+                'be_name', 
                 'be_brief_name', 
                 'be_type', 
                 'country', 
@@ -70,7 +71,8 @@ for index, row in enumerate(rows):
                 'e_location', 
                 'postal_address', 
                 'phone', 
-                'email']
+                'email'
+            ]
 
         panel1 = { panel1_keys[i]: panel1_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(panel1_keys)) }
         # print(panel1)
@@ -90,23 +92,25 @@ for index, row in enumerate(rows):
 
         # get data from panel 2
         tabs[1].click()
+        print('1st tab is ok')
         time.sleep(2)
         # md is medicinal product
         panel2_list = driver.find_elements_by_xpath("//div[@id='panel2']//ul//li")
+        # panel2 keys are not fixed
         panel2_keys = [
-            'ainternational_name', 
-            'atx', 
-            'pharmacy_type', 
-            'additional_sign_of_md', 
-            'pharm_form', 
-            'conditions_for_dispending_md', 
-            'classification_of_orphan_drugs']
+                'ainternational_name', 
+                'atx', 
+                'pharmacy_type', 
+                'additional_sign_of_md', 
+                'pharm_form', 
+                'conditions_for_dispending_md', 
+                'classification_of_orphan_drugs'
+            ]
 
         panel2 = { panel2_keys[i]: panel2_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(panel2_keys)) }
-        # print(panel2)
+        print(panel2)
 
         # get data from panel 4
-        panel4_table_row = driver.find_elements_by_xpath("//div[@id='panel4']//tbody//tr")
         panel4 = []
         panel4_keys = [
             'dosage_form_and_dosage',
@@ -115,15 +119,22 @@ for index, row in enumerate(rows):
             'primary_packaging',
             'accessories'
         ]
-        for index, row in enumerate(panel4_table_row[1:], 1):
-            table_row = row.find_elements_by_xpath(f"//tr/following-sibling::tr[{index}]//td")[2:]
-            row = { panel4_keys[i]: table_row[i + 1].text for i in range(len(panel4_keys)) }
-            panel4.append(row)
-        # panel4 is array of dicts
+        panel4_table_rows = driver.find_elements_by_xpath("//div[@id='panel4']//tbody//tr")[1:]
+
+        # for index, row in enumerate(panel4_table_row[1:], 1):
+        #     table_row = row.find_elements_by_xpath(f"//tr/following-sibling::tr[{index}]//td")[2:]
+        #     row = { panel4_keys[i]: table_row[i + 1].text for i in range(len(panel4_keys)) }
+        #     panel4.append(row)
+
+        for panel4_table_row in panel4_table_rows:
+            table_cell = panel4_table_row.find_elements_by_class_name('table__cell')[1:]
+            panel4_row = { panel4_keys[i]: table_cell[i].text for i in range(len(panel4_keys)) }
+            panel4.append(panel4_row)
         # print(panel4)
 
         # manufacturings-list toggle button
         tabs[2].click()
+        print('2nd tab is ok')
         time.sleep(2)
 
         manufacturings_list = []
@@ -163,6 +174,7 @@ for index, row in enumerate(rows):
 
         # regulations toggle button
         tabs[3].click()
+        print('3rd tab is ok')
         time.sleep(2)
 
         regulations = []
