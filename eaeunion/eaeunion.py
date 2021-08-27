@@ -120,16 +120,39 @@ for index, row in enumerate(rows):
             table_row = row.find_elements_by_xpath(f"//tr/following-sibling::tr[{index}]//td")[2:]
             row = { panel4_keys[i]: table_row[i + 1].text for i in range(len(panel4_keys)) }
             panel4.append(row)
-
         # panel4 is array of dicts
-        print(panel4)
-            
+        # print(panel4)
 
         # manufacturings-list toggle button
+        # look for ul
         tabs[2].click()
         time.sleep(2)
-        toggle_button = driver.find_element_by_xpath("//div[@id='manufacturings-list']//span").click()
-        time.sleep(5)
+
+        manufacturings_list = []
+        product_manufacturings_keys = [
+                        'organizational_and_legal_form',
+                        'country_of_registration_of_the_manufacturer',
+                        'registration_address',
+                        'place_of_business',
+                        'mailing_address',
+                        'telephone',
+                        'email',
+                        'fax'
+                    ]
+        product_list = driver.find_elements_by_xpath("//div[@id='manufacturings-list']//ul//li[@class='product-list__item']")
+        for index, product_item in enumerate(product_list):
+            product_list[index].find_element_by_class_name('product-list__trigger-icon').click()
+            time.sleep(1)
+            # shit here
+            product_manufacturings_list = product_list[index].find_elements_by_xpath("//div[@class='zebra-list']//ul//li")
+            # product_manufacturings_list = filter(len, product_manufacturings_list)
+            
+            # row = { product_manufacturings_keys[i]: product_manufacturings_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(product_manufacturings_keys)) }
+            # print(row)
+
+            # print(len(product_manufacturings_list))
+            # for i in product_manufacturings_list:
+                # print(len(i.text))
 
     except: 
         # handle shit
