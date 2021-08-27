@@ -14,7 +14,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 # install selenium
 # need to get the path of chromedriver
 PATH = '/Users/assanbekkaliyev/Downloads/chromedriver'
-
 driver = webdriver.Chrome(PATH)
 
 driver.get('https://portal.eaeunion.org/sites/commonprocesses/ru-ru/Pages/DrugRegistrationDetails.aspx')
@@ -124,7 +123,6 @@ for index, row in enumerate(rows):
         # print(panel4)
 
         # manufacturings-list toggle button
-        # look for ul
         tabs[2].click()
         time.sleep(2)
 
@@ -157,12 +155,35 @@ for index, row in enumerate(rows):
             # production sites
             production_sites_list = product_list[index].find_elements_by_class_name('table__cell')[4:]
             production_sites_row = { production_sites_keys[i]: production_sites_list[i].text for i in range(len(production_sites_keys)) }
-            
+
             # merging tow intermediate dicts and appending to list
             manufacturings_list.append({**manufacturings_row, **production_sites_row})
 
-        print(manufacturings_list)
+        # print(manufacturings_list)
 
+        # regulations toggle button
+        tabs[3].click()
+        time.sleep(2)
+
+        regulations = []
+        regulations_keys = [
+            'document_name',
+            'document_validity_period',
+            'country'
+        ]
+
+        regulations_table_rows = driver.find_elements_by_xpath("//div[@id='panel5']//tbody//tr")[1:]
+        for regulations_table_row in regulations_table_rows:
+            table_cell = regulations_table_row.find_elements_by_class_name('table__cell')
+
+            regulations_row_text = { regulations_keys[i]: table_cell[i].text for i in range(len(regulations_keys)) }
+            document_link = { 'document_link': regulations_table_row.find_element_by_class_name('link').get_attribute('href') }
+            # merging tow intermediate dicts and appending to list
+            regulations_row = {**regulations_row_text, **document_link}
+            regulations.append(regulations_row)
+        # print(regulations)
+
+        # pharmaceutical substances
         
 
     except Exception as e: 
