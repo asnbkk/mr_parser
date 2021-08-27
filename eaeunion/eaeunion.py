@@ -140,22 +140,19 @@ for index, row in enumerate(rows):
                         'fax'
                     ]
         product_list = driver.find_elements_by_xpath("//div[@id='manufacturings-list']//ul//li[@class='product-list__item']")
+
         for index, product_item in enumerate(product_list):
             product_list[index].find_element_by_class_name('product-list__trigger-icon').click()
             time.sleep(1)
-            # shit here
-            product_manufacturings_list = product_list[index].find_elements_by_xpath("//div[@class='zebra-list']//ul//li")
-            # product_manufacturings_list = filter(len, product_manufacturings_list)
-            
-            # row = { product_manufacturings_keys[i]: product_manufacturings_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(product_manufacturings_keys)) }
-            # print(row)
+            product_manufacturings_list = product_list[index].find_elements_by_class_name('zebra-list__item')
+            row = { product_manufacturings_keys[i]: product_manufacturings_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(product_manufacturings_keys)) }
+            manufacturings_list.append(row)
 
-            # print(len(product_manufacturings_list))
-            # for i in product_manufacturings_list:
-                # print(len(i.text))
+        # print(manufacturings_list)
 
-    except: 
+    except Exception as e: 
         # handle shit
+        print(e)
         print('next page is closed')
         # driver.switch_to.window(driver.window_handles[0])
     finally: 
