@@ -1,8 +1,6 @@
 # TODO:
 # - modify dummy data
-# - merge all existing dicts
-# - set pagination
-# - 77 row fix for wait
+# - merge all existing dicts`
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -15,7 +13,6 @@ import time
 # need to get the path of chromedriver
 PATH = '/Users/assanbekkaliyev/Downloads/chromedriver'
 driver = webdriver.Chrome(PATH)
-
 driver.get('https://portal.eaeunion.org/sites/commonprocesses/ru-ru/Pages/DrugRegistrationDetails.aspx')
 
 # additional funcs------------
@@ -25,7 +22,6 @@ def new_driver():
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, 'row_0.0')))
     except: 
-        # handle shit
         driver.quit()
 
 def get_general_information_by_id():
@@ -44,9 +40,7 @@ def double_click(row, driver):
 new_driver()
 pages_amount = driver.find_element_by_class_name('eec-page-count').text
 
-# for i in range(1, int(pages_amount)):
 while True:
-    print('new lap')
     table = driver.find_element_by_tag_name('tbody')
     rows = table.find_elements_by_tag_name('tr')
 
@@ -80,8 +74,8 @@ while True:
         # details
         driver.switch_to.window(driver.window_handles[1])
         try: 
-            WebDriverWait(driver, 5).until(
-                EC.visibility_of_element_located((By.CLASS_NAME, 'flag-icon')))
+            WebDriverWait(driver, 15).until(
+                EC.visibility_of_element_located((By.CLASS_NAME, 'bordered-list__item-content')))
 
             # data from panel1 list
             panel1_list = driver.find_elements_by_xpath("//div[@id='panel1']//ul//li")
@@ -245,5 +239,5 @@ while True:
     except: 
         print('this is the end!')
         break
-    
+
 driver.quit()
