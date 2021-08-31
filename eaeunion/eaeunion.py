@@ -1,7 +1,3 @@
-# TODO:
-# - modify dummy data
-# - merge all existing dicts`
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -15,7 +11,7 @@ PATH = '/Users/assanbekkaliyev/Downloads/chromedriver'
 driver = webdriver.Chrome(PATH)
 driver.get('https://portal.eaeunion.org/sites/commonprocesses/ru-ru/Pages/DrugRegistrationDetails.aspx')
 
-# additional funcs------------
+# additional funcs----------------------------------------
 
 def new_driver():
     try: 
@@ -36,7 +32,10 @@ def double_click(row, driver):
     actionChains = ActionChains(driver)
     actionChains.double_click(row).perform()
 
-# ----------------------------
+# --------------------------------------------------------
+
+data = []
+
 new_driver()
 pages_amount = driver.find_element_by_class_name('eec-page-count').text
 
@@ -46,26 +45,27 @@ while True:
 
     for index, row in enumerate(rows):
         cells = row.find_elements_by_tag_name('td')
-
         header = cells[0].text
         mnn = cells[1].text
+        manufacturer = cells[3].text
 
         release_form_list = []
         for item in cells[2].find_elements_by_tag_name('li'):
             release_form_list.append(item.text.replace('\n', ' '))
 
-        manufacturer = cells[3].text
-
         char_of_med_product = []
         for item in cells[4].find_elements_by_tag_name('li'):
             char_of_med_product.append(item.text.replace('\n', ' '))
 
-        # dummy print
-        print(f'name: {header}')
-        # print(f'mnn: {mnn}')
-        # print(f'release_form: {release_form_list}')
-        # print(f'manufacturer: {manufacturer}')
-        # print(f'char_of_med_product: {char_of_med_product}')
+        general_info = {
+            'header': header,
+            'mnn': mnn,
+            'release_form_list': release_form_list,
+            'manufacturer': manufacturer,
+            'char_of_med_product': char_of_med_product
+        }
+
+        # print(general_info)
 
         # double click does not work 
         while len(driver.window_handles) < 2:
@@ -74,7 +74,7 @@ while True:
         # details
         driver.switch_to.window(driver.window_handles[1])
         try: 
-            WebDriverWait(driver, 15).until(
+            WebDriverWait(driver, 30).until(
                 EC.visibility_of_element_located((By.CLASS_NAME, 'bordered-list__item-content')))
 
             # data from panel1 list
@@ -226,6 +226,19 @@ while True:
             print(f'some problems with {header}')
             # driver.switch_to.window(driver.window_handles[0])
         finally: 
+            # merge all data inside one position and append to data list
+            position = {
+                'general_info': general_info, 
+                'panel1': panel1,
+                'reg_data': reg_data,
+                'panel2': panel2,
+                'panel4': panel4,
+                'manufacturings_list': manufacturings_list,
+                'regulations': regulations,
+                'substances': substances}
+
+            data.append(position)
+            
             driver.close()
             driver.switch_to.window(driver.window_handles[0])
 
@@ -233,9 +246,9 @@ while True:
         next_page_button = driver.find_element_by_class_name('arrow-right').click()
         time.sleep(5)
         new_driver()
-
-        page = driver.find_element_by_class_name('input--number').get_attribute('placeholder')
-        print(page)
+        
+        print(data)
+        print(len(data))
     except: 
         print('this is the end!')
         break
