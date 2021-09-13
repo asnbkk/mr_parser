@@ -10,16 +10,17 @@ driver = webdriver.Chrome(PATH)
 # ебать мой хуй, это оказывается iframe. У него другая ссылка
 driver.get('http://register.ndda.kz/register.php/mainpage/reestr/lang/ru')
 
-# def new_driver():
-#     try: 
-#         WebDriverWait(driver, 5).until(
-#             EC.presence_of_element_located((By.CLASS_NAME, 'reestr-form-reestrForm-form')))
+def search_handler():
+    try: 
+        search_input = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.ID, 'ReestrTableForNdda_name')))
+        search_input.click()
+        search_input.send_keys(' ')
+        search_input.submit()
+    except Exception as e: 
+        print(e)   
 
-#         print(element)
-#     except Exception as e: 
-#         print(e)   
 
-
-# new_driver()
+search_handler()
 
 
