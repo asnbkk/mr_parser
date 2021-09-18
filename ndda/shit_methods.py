@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
+from selenium.webdriver.common.action_chains import ActionChains
 
 from shit_dict import tab_list
 
@@ -10,8 +10,8 @@ def get_child(element):
 
 def next_tab(driver, index):
     tab = driver.find_element_by_xpath(f'//a[@href="#{tab_list[index]}"]')
-    tab.click()
     table_check(driver, 'active')
+    ActionChains(driver).move_to_element(tab).click(tab).perform()
 
 def search_handler(driver):
     try: 
@@ -23,7 +23,7 @@ def search_handler(driver):
 
 def table_check(driver, class_name):
     try: 
-        WebDriverWait(driver, 5).until(
+        WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, class_name)))
     except Exception as e: 
         print(e)
