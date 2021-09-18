@@ -22,8 +22,7 @@ tab_list = [
     'yw4_tab_3',
     'yw4_tab_4',
     'yw4_tab_6',
-    'yw4_tab_2',
-    'yw4_tab_8'
+    'yw4_tab_9'
 ]
 
 order_keys = [
@@ -31,4 +30,35 @@ order_keys = [
     'order_date',
     'order_type',
     'comments'
+]
+
+manufacturer_keys = [
+    'form',
+    'rus_name',
+    'eng_name',
+    'country',
+    'manufacturer_type'
+]
+
+package_keys = [
+    'name',
+    'is_primary',
+    'fill_volume',
+    'unit_of_measure',
+    'amount',
+    'description'
+]
+
+instructions_keys = [
+    'type',
+    'comments',
+    'link_rus',
+    'link_kaz'
+]
+
+certificate_keys = [
+    'name',
+    'additional_data',
+    'date',
+    'agency'
 ]
