@@ -16,8 +16,6 @@ def search_handler():
     try: 
         search_input = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located((By.ID, 'ReestrTableForNdda_name')))
-        search_input.click()
-        search_input.send_keys(' ')
         search_input.submit()
     except Exception as e: 
         print(e)   
@@ -35,6 +33,24 @@ rows = driver.find_elements_by_class_name('ui-row-ltr')
 for index, row in enumerate(rows):
     cells = rows[index].find_elements_by_tag_name('td')
     del cells[15:21]
-    general_info_row = { general_info_keys[i]: cells[i].text for i in range(len(general_info_keys)) }
-    print(general_info_row)
-    print('---')
+    general_info = { general_info_keys[i]: cells[i].text for i in range(len(general_info_keys)) }
+
+    # открыть новую вкладку
+    info_link = row.find_element_by_class_name('openReestr')
+    info_link.click()
+    time.sleep(3)
+
+    tab = driver.find_element_by_xpath(f'//a[@href="#{tab_list[0]}"]')
+    tab.click()
+    time.sleep(3)
+
+    rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[0]}"]//tbody//tr')[1:]
+    order_info = []
+
+    for index, row in enumerate(rows):
+        cells = rows[index].find_elements_by_tag_name('td')
+        order_info_row = { order_keys[i]: cells[i].text for i in range(len(order_keys)) }
+        order_info.append(order_info_row)
+    
+    # print(general_info_row)
+    # print('---')
