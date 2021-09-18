@@ -6,37 +6,16 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 from shit_dict import *
+from shit_methods import *
 
 PATH = '/Users/assanbekkaliyev/Downloads/chromedriver'
 driver = webdriver.Chrome(PATH)
-# ебать мой хуй, это оказывается iframe. У него другая ссылка
 driver.get('http://register.ndda.kz/register.php/mainpage/reestr/lang/ru')
 
-# shit methods=============================
-
-def search_handler():
-    try: 
-        search_input = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.ID, 'ReestrTableForNdda_name')))
-        search_input.submit()
-    except Exception as e: 
-        print(e)   
-
-def next_tab(index):
-    tab = driver.find_element_by_xpath(f'//a[@href="#{tab_list[index]}"]')
-    tab.click()
-    time.sleep(3)
-
-def get_child(element):
-    return element.find_elements_by_xpath(".//*")
-
-# shit methods=============================
-
 try: 
-    search_handler()
+    search_handler(driver)
     WebDriverWait(driver, 5).until(
         EC.presence_of_element_located((By.CLASS_NAME, 'ui-row-ltr')))
-    # сука нахуй такие конченные сайты делать блять
 except Exception as e: 
     print(e)
 
@@ -49,13 +28,13 @@ for index, row in enumerate(parent_rows):
     del cells[15:21]
     general_info = { general_info_keys[i]: cells[i].text for i in range(len(general_info_keys)) }
 
-    # открыть новую вкладку
+    # new item open
     info_link = row.find_element_by_class_name('openReestr')
     info_link.click()
     time.sleep(3)
 
     # go through tabs
-    next_tab(0)
+    next_tab(driver, 0)
 
     rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[0]}"]//tbody//tr')[1:]
     order_info = []
@@ -66,7 +45,7 @@ for index, row in enumerate(parent_rows):
         order_info.append(order_info_row)
     
     # go through tabs
-    next_tab(1)
+    next_tab(driver, 1)
 
     rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[1]}"]//tbody//tr')[1:]
     manufacturer_info = []
@@ -76,10 +55,8 @@ for index, row in enumerate(parent_rows):
         manufacturer_info_row = { manufacturer_keys[i]: cells[i].text for i in range(len(manufacturer_keys)) }
         manufacturer_info.append(manufacturer_info_row)
 
-    # print(manufacturer_info)
-
     # go through tabs
-    next_tab(2)
+    next_tab(driver, 2)
 
     rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[2]}"]//div[@id="yw1"]//tbody//tr')
     package_info = []
@@ -88,10 +65,8 @@ for index, row in enumerate(parent_rows):
         cells = rows[index].find_elements_by_tag_name('td')
         package_info_row = { package_keys[i]: cells[i].text for i in range(len(package_keys)) }
         package_info.append(package_info_row)
-        
-    # print(package_info)
 
-    next_tab(3)
+    next_tab(driver, 3)
 
     rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[3]}"]//tbody//tr')
     instructions_info = []
@@ -101,10 +76,8 @@ for index, row in enumerate(parent_rows):
         instructions_info_row = { instructions_keys[i]: cells[i].text if len(get_child(cells[i])) == 0 else get_child(cells[i])[0].get_attribute('href') for i in range(len(instructions_keys)) }
         instructions_info.append(instructions_info_row)
 
-    # print(instructions_info)
-
     # go through tabs
-    next_tab(4)
+    next_tab(driver, 4)
 
     rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[4]}"]//tbody//tr')[1:]
     certificate_info = []
@@ -114,6 +87,7 @@ for index, row in enumerate(parent_rows):
         certificate_info_row = { certificate_keys[i]: cells[i].text for i in range(len(certificate_keys)) }
         certificate_info.append(certificate_info_row)
 
+    # merge all subdata
     item = { 
         'general_info': general_info, 
         'order_info': order_info, 
@@ -122,13 +96,9 @@ for index, row in enumerate(parent_rows):
         'instructions_info': instructions_info, 
         'certificate_info': certificate_info 
         }
-        
-    print(item)
-    print('-------------')
 
-    # close current window
-    close_button = driver.find_element_by_class_name('close')
-    close_button.click()
-    
+    # find close button and close current window
+    driver.find_element_by_class_name('close').click()
+
 # insert product item data into global data list
 data.append(item)
