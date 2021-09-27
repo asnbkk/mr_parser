@@ -1,3 +1,4 @@
+import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -9,8 +10,10 @@ def get_child(element):
     return element.find_elements_by_xpath(".//*")
 
 def next_tab(driver, index):
-    tab = driver.find_element_by_xpath(f'//a[@href="#{tab_list[index]}"]')
-    table_check(driver, 'active')
+    # if index == 0:
+        # table_check(driver, 'modal-backdrop')
+    tab = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, f'//a[@href="#{tab_list[index]}"]')))
+    # tab = driver.find_element_by_xpath(f'//a[@href="#{tab_list[index]}"]')
     ActionChains(driver).move_to_element(tab).click(tab).perform()
 
 def search_handler(driver):
@@ -27,3 +30,9 @@ def table_check(driver, class_name):
             EC.presence_of_element_located((By.CLASS_NAME, class_name)))
     except Exception as e: 
         print(e)
+
+def wait_table(driver, index, delete_first, is_nested=False):
+    add_element = '//div[@id="yw1"]' if is_nested else ''
+    element = WebDriverWait(driver, 10).until(
+        EC.visibility_of_all_elements_located((By.XPATH, f'//div[@id="{tab_list[index]}"]{add_element}//tbody//tr')))
+    return element[1:] if delete_first else element

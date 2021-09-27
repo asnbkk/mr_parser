@@ -1,6 +1,8 @@
 from selenium import webdriver
 from shit_dict import *
 from shit_methods import *
+import time
+import json
 
 PATH = '/Users/assanbekkaliyev/Downloads/chromedriver'
 driver = webdriver.Chrome(PATH)
@@ -16,13 +18,11 @@ page_amount = int(driver.find_element_by_id('sp_1_register_pager').text)
 for page in range(page_amount):
     table_check(driver, 'ui-row-ltr')
     # не обновляется дом элемент, после переключения на новую страницу
-    parent_rows = driver.find_elements_by_class_name('ui-row-ltr')[:2]
-
-    print('im here now')
+    parent_rows = driver.find_elements_by_class_name('ui-row-ltr')[:1]
 
     for index, row in enumerate(parent_rows):
         cells = parent_rows[index].find_elements_by_tag_name('td')
-        print(cells[0].text)
+        # print(cells[0].text)
         del cells[15:21]
         general_info = { general_info_keys[i]: cells[i].text for i in range(len(general_info_keys)) }
 
@@ -31,16 +31,18 @@ for page in range(page_amount):
         info_link.click()
         table_check(driver, 'modal-open')
 
-        rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[0]}"]//tbody//tr')[1:]
+        next_tab(driver, 0)
+        rows = wait_table(driver, 0, True)
         order_info = []
 
+        print(len(rows))
         for index, row in enumerate(rows):
             cells = rows[index].find_elements_by_tag_name('td')
             order_info_row = { order_keys[i]: cells[i].text for i in range(len(order_keys)) }
             order_info.append(order_info_row)
         
         next_tab(driver, 1)
-        rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[1]}"]//tbody//tr')[1:]
+        rows = wait_table(driver, 1, True)
         manufacturer_info = []
 
         for index, row in enumerate(rows):
@@ -49,7 +51,7 @@ for page in range(page_amount):
             manufacturer_info.append(manufacturer_info_row)
 
         next_tab(driver, 2)
-        rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[2]}"]//div[@id="yw1"]//tbody//tr')
+        rows = wait_table(driver, 2, False, True)
         package_info = []
 
         for index, row in enumerate(rows):
@@ -58,7 +60,7 @@ for page in range(page_amount):
             package_info.append(package_info_row)
 
         next_tab(driver, 3)
-        rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[3]}"]//tbody//tr')
+        rows = wait_table(driver, 3, False)
         instructions_info = []
 
         for index, row in enumerate(rows):
@@ -67,7 +69,7 @@ for page in range(page_amount):
             instructions_info.append(instructions_info_row)
 
         next_tab(driver, 4)
-        rows = driver.find_elements_by_xpath(f'//div[@id="{tab_list[4]}"]//tbody//tr')[1:]
+        rows = wait_table(driver, 4, True)
         certificate_info = []
 
         for index, row in enumerate(rows):
@@ -85,14 +87,15 @@ for page in range(page_amount):
                 'certificate_info': certificate_info 
             }
 
-        # print(item)
+        print(json.dumps(item, indent=2, ensure_ascii=False))
+        print('-')
         
         # find close button and close current window
         driver.find_element_by_class_name('close').click()
 
         # insert product item data into global data list
         data.append(item)
-        print(len(data))
+        # print(len(data))
     
     # go to the next page
     driver.find_element_by_id('next_register_pager').click()

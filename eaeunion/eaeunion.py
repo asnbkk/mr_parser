@@ -237,6 +237,8 @@ while True:
                 'regulations': regulations,
                 'substances': substances}
 
+            print(position)
+            print('-')
             data.append(position)
             
             driver.close()
