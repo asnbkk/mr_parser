@@ -6,9 +6,12 @@ import json
 
 PATH = '/Users/assanbekkaliyev/Downloads/chromedriver'
 driver = webdriver.Chrome(PATH)
-driver.get('http://register.ndda.kz/register.php/mainpage/reestr/lang/ru')
+# driver.get('http://register.ndda.kz/register.php/mainpage/reestr/lang/ru')
+driver.get('http://register.ndda.kz/category/search_prep')
 
-# проверить, прогрузилась ли основная таблица для парсинга после поиска
+frame = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "iframe1")))
+driver.switch_to.frame(frame)
+
 search_handler(driver)
 table_check(driver, 'ui-row-ltr')
 
@@ -16,26 +19,24 @@ data = []
 
 page_amount = int(driver.find_element_by_id('sp_1_register_pager').text)
 for page in range(page_amount):
-    table_check(driver, 'ui-row-ltr')
-    # не обновляется дом элемент, после переключения на новую страницу
-    parent_rows = driver.find_elements_by_class_name('ui-row-ltr')[:1]
 
+    parent_rows = driver.find_elements_by_class_name('ui-row-ltr')
+    prev_rows = parent_rows
+    
     for index, row in enumerate(parent_rows):
         cells = parent_rows[index].find_elements_by_tag_name('td')
-        # print(cells[0].text)
+
         del cells[15:21]
         general_info = { general_info_keys[i]: cells[i].text for i in range(len(general_info_keys)) }
 
         # new item open
-        info_link = row.find_element_by_class_name('openReestr')
-        info_link.click()
+        WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr'))).click()
         table_check(driver, 'modal-open')
 
         next_tab(driver, 0)
         rows = wait_table(driver, 0, True)
         order_info = []
 
-        print(len(rows))
         for index, row in enumerate(rows):
             cells = rows[index].find_elements_by_tag_name('td')
             order_info_row = { order_keys[i]: cells[i].text for i in range(len(order_keys)) }
@@ -87,7 +88,8 @@ for page in range(page_amount):
                 'certificate_info': certificate_info 
             }
 
-        print(json.dumps(item, indent=2, ensure_ascii=False))
+        # print(json.dumps(item, indent=2, ensure_ascii=False))
+        print(item['general_info']['reg_number'])
         print('-')
         
         # find close button and close current window
@@ -95,7 +97,19 @@ for page in range(page_amount):
 
         # insert product item data into global data list
         data.append(item)
-        # print(len(data))
+        print(len(data))
     
     # go to the next page
-    driver.find_element_by_id('next_register_pager').click()
+    WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.ID, 'next_register_pager'))).click()
+    # shit time speep
+    try: 
+        WebDriverWait(driver, 30).until(EC.invisibility_of_element((By.ID, 'load_register_grid')))
+        parent_rows = driver.find_elements_by_class_name('ui-row-ltr')
+    except:
+        print('ah shit')
+        time.sleep(10)
+
+    # if parent_rows == prev_rows:
+        # print('parent rows are gonna be the same')
+    # else:
+        # print('parent rows are not gonna be the same')
