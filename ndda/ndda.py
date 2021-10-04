@@ -4,9 +4,8 @@ from shit_methods import *
 import time
 import json
 
-PATH = '/Users/assanbekkaliyev/Downloads/chromedriver'
+PATH = './chromedriver/chromedriver'
 driver = webdriver.Chrome(PATH)
-# driver.get('http://register.ndda.kz/register.php/mainpage/reestr/lang/ru')
 driver.get('http://register.ndda.kz/category/search_prep')
 
 frame = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "iframe1")))
@@ -88,7 +87,6 @@ for page in range(page_amount):
                 'certificate_info': certificate_info 
             }
 
-        # print(json.dumps(item, indent=2, ensure_ascii=False))
         print(item['general_info']['reg_number'])
         print('-')
         
@@ -108,8 +106,3 @@ for page in range(page_amount):
     except:
         print('ah shit')
         time.sleep(10)
-
-    # if parent_rows == prev_rows:
-        # print('parent rows are gonna be the same')
-    # else:
-        # print('parent rows are not gonna be the same')

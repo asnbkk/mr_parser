@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-PATH = '/Users/assanbekkaliyev/Downloads/chromedriver'
+PATH = './chromedriver/chromedriver'
 driver = webdriver.Chrome(PATH)
 driver.get('https://portal.eaeunion.org/sites/commonprocesses/ru-ru/Pages/DrugRegistrationDetails.aspx')
 
