@@ -1,0 +1,19 @@
+keys = [
+    'unique_registry_entry_number',
+    'reg_number',
+    'reg_date',
+    'validity',
+    'name',
+    'name_of_applicant',
+    'location_of_applicant',
+    'legal_address_of_applicant',
+    'legal_name_of_applicant',
+    'location_of_manufacturer',
+    'legal_address_of_manufacturer',
+    'okp',
+    'risk_class',
+    'appointment_of_drugs',
+    'type',
+    'manufacturer_address',
+    'interchangeable_drugs'
+]
