@@ -49,3 +49,5 @@ substances_keys = [
                 'country',
                 'manufacturers_address'
             ]
+
+reg_data_keys = ['reg_num', 'reg_status', 'reg_date']

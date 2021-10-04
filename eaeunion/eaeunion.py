@@ -5,19 +5,14 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-# install selenium
-# need to get the path of chromedriver
 PATH = '/Users/assanbekkaliyev/Downloads/chromedriver'
 driver = webdriver.Chrome(PATH)
 driver.get('https://portal.eaeunion.org/sites/commonprocesses/ru-ru/Pages/DrugRegistrationDetails.aspx')
 
 data = []
-
 new_driver(driver)
-pages_amount = driver.find_element_by_class_name('eec-page-count').text
 
 while True:
     table = driver.find_element_by_tag_name('tbody')
@@ -37,15 +32,7 @@ while True:
         for item in cells[4].find_elements_by_tag_name('li'):
             char_of_med_product.append(item.text.replace('\n', ' '))
 
-        general_info = {
-            'header': header,
-            'mnn': mnn,
-            'release_form_list': release_form_list,
-            'manufacturer': manufacturer,
-            'char_of_med_product': char_of_med_product
-        }
-
-        # print(general_info)
+        general_info = merge_general_info(header, mnn, release_form_list, manufacturer, char_of_med_product)
 
         # double click does not work 
         while len(driver.window_handles) < 2:
@@ -59,52 +46,38 @@ while True:
 
             # data from panel1 list
             panel1_list = driver.find_elements_by_xpath("//div[@id='panel1']//ul//li")
-
             panel1 = { panel1_keys[i]: panel1_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(panel1_keys)) }
-            # print(panel1)
 
             # registration full data
             reg_data_list = driver.find_elements_by_xpath("//div[@id='registrations-list']//div[@class='zebra-list']//ul//li")
-            reg_data_keys = ['reg_num', 'reg_status', 'reg_date']
 
             toggle_button = driver.find_element_by_class_name('product-list__trigger-icon').click()
             time.sleep(2)
             
             reg_data = { reg_data_keys[i]: reg_data_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(reg_data_keys)) }
-            # print(reg_data)
 
             # list of left tabs
             tabs = driver.find_elements_by_xpath("//div[@class='left-menu__list']//ul//li")
 
             # get data from panel 2
-            tabs[1].click()
+            tab_click(tabs, 1)
 
-            time.sleep(2)
             # md is medicinal product
             panel2 = get_general_information_by_id(driver)
-            # print(panel2)
 
             # get data from panel 4
             panel4 = []
             panel4_table_rows = driver.find_elements_by_xpath("//div[@id='panel4']//tbody//tr")[1:]
 
-            # for index, row in enumerate(panel4_table_row[1:], 1):
-            #     table_row = row.find_elements_by_xpath(f"//tr/following-sibling::tr[{index}]//td")[2:]
-            #     row = { panel4_keys[i]: table_row[i + 1].text for i in range(len(panel4_keys)) }
-            #     panel4.append(row)
-
             for panel4_table_row in panel4_table_rows:
                 table_cell = panel4_table_row.find_elements_by_class_name('table__cell')[1:]
                 panel4_row = { panel4_keys[i]: table_cell[i].text for i in range(len(panel4_keys)) }
                 panel4.append(panel4_row)
-            # print(panel4)
 
             # manufacturings-list toggle button
-            tabs[2].click()
-            time.sleep(2)
+            tab_click(tabs, 2)
 
             manufacturings_list = []
-
             product_list = driver.find_elements_by_xpath("//div[@id='manufacturings-list']//ul//li[@class='product-list__item']")
 
             for index, product_item in enumerate(product_list):
@@ -116,19 +89,15 @@ while True:
                 # production sites
                 production_sites_list = product_list[index].find_elements_by_class_name('table__cell')[4:]
                 production_sites_row = { production_sites_keys[i]: production_sites_list[i].text for i in range(len(production_sites_keys)) }
-
                 # merging tow intermediate dicts and appending to list
                 manufacturings_list.append({**manufacturings_row, **production_sites_row})
 
-            # print(manufacturings_list)
-
             # regulations toggle button
-            tabs[3].click()
-            time.sleep(2)
+            tab_click(tabs, 3)
 
             regulations = []
-
             regulations_table_rows = driver.find_elements_by_xpath("//div[@id='panel5']//tbody//tr")[1:]
+
             for regulations_table_row in regulations_table_rows:
                 table_cell = regulations_table_row.find_elements_by_class_name('table__cell')
 
@@ -137,46 +106,31 @@ while True:
                 # merging tow intermediate dicts and appending to list
                 regulations_row = {**regulations_row_text, **document_link}
                 regulations.append(regulations_row)
-            # print(regulations)
 
             # pharmaceutical substances toggle button
-            tabs[4].click()
-            time.sleep(2)
+            tab_click(tabs, 4)
 
             substances = []
-
             substances_table_rows = driver.find_elements_by_xpath("//div[@id='panel6']//tbody//tr")[1:]
+
             for substances_table_row in substances_table_rows:
                 table_cell = substances_table_row.find_elements_by_class_name('table__cell')
 
                 substances_row_text = { substances_keys[i]: table_cell[i].text for i in range(len(substances_keys)) }
                 # merging tow intermediate dicts and appending to list
                 substances.append(substances_row_text)
-            # print(substances)
 
         except Exception as e: 
             # handle shit
             print(e)
             print(f'some problems with {header}')
-            # driver.switch_to.window(driver.window_handles[0])
         finally: 
             # merge all data inside one position and append to data list
-            position = {
-                'general_info': general_info, 
-                'panel1': panel1,
-                'reg_data': reg_data,
-                'panel2': panel2,
-                'panel4': panel4,
-                'manufacturings_list': manufacturings_list,
-                'regulations': regulations,
-                'substances': substances}
+            position = merge_position(general_info, panel1, reg_data, panel2, panel4, manufacturings_list, regulations, substances)
 
-            # print(position)
             data.append(position)
-            print('-')
             print(len(data))
-
-            
+            print(position)
             driver.close()
             driver.switch_to.window(driver.window_handles[0])
 
@@ -185,8 +139,6 @@ while True:
         time.sleep(5)
         new_driver(driver)
         
-        print(data)
-        print(len(data))
     except: 
         print('this is the end!')
         break
