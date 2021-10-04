@@ -1,3 +1,6 @@
+from shit_dict import *
+from shit_functions import *
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,32 +14,9 @@ PATH = '/Users/assanbekkaliyev/Downloads/chromedriver'
 driver = webdriver.Chrome(PATH)
 driver.get('https://portal.eaeunion.org/sites/commonprocesses/ru-ru/Pages/DrugRegistrationDetails.aspx')
 
-# additional funcs----------------------------------------
-
-def new_driver():
-    try: 
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.ID, 'row_0.0')))
-    except: 
-        driver.quit()
-
-def get_general_information_by_id():
-    panel2_list = driver.find_elements_by_xpath("//div[@id='panel2']//ul//li")
-    panel2_keys = []
-    for row in panel2_list:
-        panel2_keys.append(row.get_attribute('id'))
-    panel2 = { panel2_keys[i]: panel2_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(panel2_keys)) }
-    return panel2
-
-def double_click(row, driver):
-    actionChains = ActionChains(driver)
-    actionChains.double_click(row).perform()
-
-# --------------------------------------------------------
-
 data = []
 
-new_driver()
+new_driver(driver)
 pages_amount = driver.find_element_by_class_name('eec-page-count').text
 
 while True:
@@ -79,17 +59,6 @@ while True:
 
             # data from panel1 list
             panel1_list = driver.find_elements_by_xpath("//div[@id='panel1']//ul//li")
-            panel1_keys = [
-                    'be_name', 
-                    'be_brief_name', 
-                    'be_type', 
-                    'country', 
-                    'reg_address', 
-                    'e_location', 
-                    'postal_address', 
-                    'phone', 
-                    'email'
-                ]
 
             panel1 = { panel1_keys[i]: panel1_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(panel1_keys)) }
             # print(panel1)
@@ -112,18 +81,11 @@ while True:
 
             time.sleep(2)
             # md is medicinal product
-            panel2 = get_general_information_by_id()
+            panel2 = get_general_information_by_id(driver)
             # print(panel2)
 
             # get data from panel 4
             panel4 = []
-            panel4_keys = [
-                'dosage_form_and_dosage',
-                'composition',
-                'shelf_life',
-                'primary_packaging',
-                'accessories'
-            ]
             panel4_table_rows = driver.find_elements_by_xpath("//div[@id='panel4']//tbody//tr")[1:]
 
             # for index, row in enumerate(panel4_table_row[1:], 1):
@@ -142,22 +104,6 @@ while True:
             time.sleep(2)
 
             manufacturings_list = []
-            product_manufacturings_keys = [
-                            'organizational_and_legal_form',
-                            'country_of_registration_of_the_manufacturer',
-                            'registration_address',
-                            'place_of_business',
-                            'mailing_address',
-                            'telephone',
-                            'email',
-                            'fax'
-                        ]
-            production_sites_keys = [
-                    'production_stage',
-                    'production_site_name',
-                    'production_site_address',
-                    'contact_details'
-                ]
 
             product_list = driver.find_elements_by_xpath("//div[@id='manufacturings-list']//ul//li[@class='product-list__item']")
 
@@ -181,11 +127,6 @@ while True:
             time.sleep(2)
 
             regulations = []
-            regulations_keys = [
-                'document_name',
-                'document_validity_period',
-                'country'
-            ]
 
             regulations_table_rows = driver.find_elements_by_xpath("//div[@id='panel5']//tbody//tr")[1:]
             for regulations_table_row in regulations_table_rows:
@@ -203,13 +144,6 @@ while True:
             time.sleep(2)
 
             substances = []
-            substances_keys = [
-                'trade_name',
-                'international_nonproprietary_name',
-                'manufacturers_name',
-                'country',
-                'manufacturers_address'
-            ]
 
             substances_table_rows = driver.find_elements_by_xpath("//div[@id='panel6']//tbody//tr")[1:]
             for substances_table_row in substances_table_rows:
@@ -237,9 +171,11 @@ while True:
                 'regulations': regulations,
                 'substances': substances}
 
-            print(position)
-            print('-')
+            # print(position)
             data.append(position)
+            print('-')
+            print(len(data))
+
             
             driver.close()
             driver.switch_to.window(driver.window_handles[0])
@@ -247,7 +183,7 @@ while True:
     try:
         next_page_button = driver.find_element_by_class_name('arrow-right').click()
         time.sleep(5)
-        new_driver()
+        new_driver(driver)
         
         print(data)
         print(len(data))
