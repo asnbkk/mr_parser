@@ -20,6 +20,9 @@ while True:
     rows = table.find_elements_by_tag_name('tr')
 
     for index, row in enumerate(rows):
+
+        print(f'current page is {get_current_page_number(driver)}')
+        
         cells = row.find_elements_by_tag_name('td')
         header = text_prep(cells[0].text)
         mnn = cells[1].text
@@ -137,6 +140,8 @@ while True:
             position = merge_position(general_info, panel1, reg_data, panel2, panel4, manufacturings_list, regulations, substances)
 
             data.append(position)
+            # send data
+            send_data(position)
             print(len(data))
             print(position['general_info']['header'])
 
