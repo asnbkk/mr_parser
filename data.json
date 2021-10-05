@@ -1,0 +1,557 @@
+[
+    {
+        "general_info": {
+            "header": "\"АнвиМакс®\"",
+            "mnn": "парацетамол 360 мг, аскорбиновая кислота 300 мг, Кальция глюконата моногидрат 100 мг, Римантадина гидрохлорид 50 мг, рутозид 20 мг, лоратадин 3 мг",
+            "release_form_list": [
+                "таблетки шипучие(Ароматизатор клюквенный (ароматизатор пищевой порошкообразный \"Клюква 924\"), Ароматизатор малиновый (ароматизатор пищевой порошкообразный \"Малина 909\")); без сахара; 360 мг + 300 мг + 100 мг + 50 мг + 20 мг + 3 мг / 0 мг По 10 шт в первичной упаковке «73»; по 1 шт во вторичной упаковке «1800250000»."
+            ],
+            "manufacturer": "Общества с ограниченной ответственностью ФармВИЛАР (Россия)",
+            "char_of_med_product": [
+                "Вид: гибридный",
+                "Доп.признаки: Многокомпонентный",
+                "Не присвоен статус орфанного: Россия"
+            ]
+        },
+        "panel1": {
+            "be_name": "ЗАО \"ФармФирма \"Сотекс\"",
+            "be_brief_name": "-",
+            "be_type": "Акционерные общества",
+            "country": "Россия",
+            "reg_address": "Россия, 141345, Московская область, Сергиево-Посадский муниципальный район, сельское поселение Березняковское,, поселок Беликово, д.11",
+            "e_location": "-",
+            "postal_address": "-",
+            "phone": "+7 (495) 956-29-30",
+            "email": "-"
+        },
+        "reg_data": {
+            "reg_num": "ЛП-№(000151)-(РГ-RU)",
+            "reg_status": "зарегистрировано",
+            "reg_date": "03.03.2021"
+        },
+        "panel2": {
+            "drugName": "парацетамол 360 мг, аскорбиновая кислота 300 мг, Кальция глюконата моногидрат 100 мг, Римантадина гидрохлорид 50 мг, рутозид 20 мг, лоратадин 3 мг",
+            "ATCName": "R05X",
+            "drugKind": "Гибридный",
+            "additionalFeature": "Многокомпонентный",
+            "dosageForm": "таблетки шипучие",
+            "dosageDescription": "Без рецепта",
+            "orphanDrug": "Россия, Не присвоен статус орфанного"
+        },
+        "panel4": [
+            {
+                "dosage_form_and_dosage": "таблетки шипучие; дозировка согласно составу/0 мг; по 10 шт в первичной упаковке \"73\"\nЛекарственная форма дозирована - да,\nПрименяется у детей - нет,\nНаличие сахара - нет.",
+                "composition": "Действующее вещество: парацетамол (360 мг), аскорбиновая кислота (300 мг), Кальция глюконата моногидрат (100 мг), Римантадина гидрохлорид (50 мг), рутозид (20 мг), лоратадин (3 мг)\nВспомогательное вещество: Лимонная кислота (06),\nНатрия гидрокарбонат (Натрия бикарбонат) (06),\nСорбит (Сорбитол) (10),\nМакрогол 6000 (07),\nАроматизатор пищевой порошкообразный \"Клюква 924\" или \"Малина 909\" (03),\nАцесульфам калия (04),\nАспартам (04),\nПовидон (11),\nКраситель красный свекольный (Е162) (23),\nИзолейцин (разрыхлитель)",
+                "shelf_life": "2 года",
+                "primary_packaging": "73 - 1 шт. во вторичной упаковке",
+                "accessories": "1800250000"
+            }
+        ],
+        "manufacturings_list": [
+            {
+                "organizational_and_legal_form": "Общества с ограниченной ответственностью",
+                "country_of_registration_of_the_manufacturer": "Россия",
+                "registration_address": "Россия, 249096, Калужская область, Малоярославец, Коммунистическая, 115",
+                "place_of_business": "-",
+                "mailing_address": "-",
+                "telephone": "-",
+                "email": "-",
+                "fax": "-",
+                "production_stage": "Производитель  (готовая лекарственная форма) , Фасовщик (первичная  упаковка) , Упаковщик (вторичная  упаковка), 5",
+                "production_site_name": "ООО НПО \"ФармВИЛАР\"",
+                "production_site_address": "Россия, 249096, Калужская область, Малоярославец, Коммунистическая, 115",
+                "contact_details": "-"
+            }
+        ],
+        "regulations": [
+            {
+                "document_name": "Инструкция по медицинскому применению\n(DrugUsageInstructionDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "Общая характеристика лекарственного препарата\n(DrugGeneralCharacteristicDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "Экспертный отчет об оценке безопасности, эффективности и качества\n(ExpertReportDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "План управления рисками\n(RiskManagementPlanDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            }
+        ],
+        "substances": [
+            {
+                "trade_name": "парацетамол",
+                "international_nonproprietary_name": "парацетамол",
+                "manufacturers_name": "Anqiu Lu'an Pharmaceutical Co., Ltd. (Аньцю Луань Фармасьютикал Ко., Лтд)",
+                "country": "Китай",
+                "manufacturers_address": "Китай, 262100, Shandong Province, Anqiu, Weixu North Road, 35"
+            },
+            {
+                "trade_name": "аскорбиновая кислота",
+                "international_nonproprietary_name": "аскорбиновая кислота",
+                "manufacturers_name": "Northeast Pharmaceutical Group Co., Ltd (Норсист Фармасьютикал Груп Ко., Лтд.)",
+                "country": "Китай",
+                "manufacturers_address": "Китай, Economic Technology Development District, Shenyang, Kunminghu Street, 8"
+            },
+            {
+                "trade_name": "Кальция глюконат моногидрат",
+                "international_nonproprietary_name": "Кальция глюконат моногидрат",
+                "manufacturers_name": "Zhejiang Ruibang Laboratories (Чжэцзян Жуйбан Лабораториз)",
+                "country": "Китай",
+                "manufacturers_address": "Китай, 325025, Zhejiang Province, Economic and Technological Development Zone, Wenzhou, Binhai Tenth Road, 578"
+            },
+            {
+                "trade_name": "Римантадина гидрохлорид",
+                "international_nonproprietary_name": "Римантадина гидрохлорид",
+                "manufacturers_name": "Чжецзян Апелоа Кангю Фармацеутикал Ко., Лтд (Zhejiang Apeloa Kangyu Pharmaceutical Co., Ltd.)",
+                "country": "Китай",
+                "manufacturers_address": "Китай, 322118, Hengdian, Dongyang, Zhejiang, P.R., Jiangnan Road, 333"
+            },
+            {
+                "trade_name": "Рутозида тригидрат (в пересчете на рутозид)",
+                "international_nonproprietary_name": "Рутозида тригидрат (в пересчете на рутозид)",
+                "manufacturers_name": "Sichuan Xieli Pharmaceutical Co. Ltd. (Сичуан Ксиели Фармасьютикал Ко. Лтд)",
+                "country": "Китай",
+                "manufacturers_address": "Китай, 611930, Sichuan, Pharmaceutical Industrial Park, Pengzhou, Chaoyang South Road, 860"
+            },
+            {
+                "trade_name": "лоратадин",
+                "international_nonproprietary_name": "лоратадин",
+                "manufacturers_name": "АО \"Активный компонент\"",
+                "country": "Россия",
+                "manufacturers_address": "Россия, 196641, поселок Металлострой, Санкт-Петербург, дорога на Металлострой, 5а"
+            }
+        ]
+    },
+    {
+        "general_info": {
+            "header": "B12 Анкерманн",
+            "mnn": "цианокобаламин",
+            "release_form_list": [
+                "таблетки, покрытые оболочкой; 1 мг По 25 шт в первичной упаковке «Блистер»; по 50 шт во вторичной упаковке «пачка картонная».",
+                "таблетки, покрытые оболочкой; 1 мг По 25 шт в первичной упаковке «Блистер»; по 100 шт во вторичной упаковке «пачка картонная»."
+            ],
+            "manufacturer": "Общества с ограниченной ответственностью Артезан Фарма ГмбХ и Ко. КГ (Германия)",
+            "char_of_med_product": [
+                "Вид: хорошо изученный"
+            ]
+        },
+        "panel1": {
+            "be_name": "-",
+            "be_brief_name": "-",
+            "be_type": "-",
+            "country": "-",
+            "reg_address": "-",
+            "e_location": "-",
+            "postal_address": "-",
+            "phone": "-",
+            "email": "-"
+        },
+        "reg_data": {
+            "reg_num": "ЛП-№(000075)-(РГ-RU)",
+            "reg_status": "зарегистрировано",
+            "reg_date": "24.08.2020"
+        },
+        "panel2": {
+            "drugName": "цианокобаламин",
+            "ATCName": "Цианокобаламин",
+            "drugKind": "Хорошо изученный",
+            "dosageForm": "таблетки, покрытые оболочкой",
+            "dosageDescription": "Отпускают без рецепта"
+        },
+        "panel4": [
+            {
+                "dosage_form_and_dosage": "таблетки, покрытые оболочкой; 1 мг; по 25 шт в первичной упаковке \"Блистер\"",
+                "composition": "Действующее вещество: цианокобаламин (1 мг)",
+                "shelf_life": "-",
+                "primary_packaging": "Блистер - 50 шт. во вторичной упаковке",
+                "accessories": "пачка картонная"
+            },
+            {
+                "dosage_form_and_dosage": "таблетки, покрытые оболочкой; 1 мг; по 25 шт в первичной упаковке \"Блистер\"",
+                "composition": "Действующее вещество: цианокобаламин (1 мг)",
+                "shelf_life": "-",
+                "primary_packaging": "Блистер - 100 шт. во вторичной упаковке",
+                "accessories": "пачка картонная"
+            }
+        ],
+        "manufacturings_list": [
+            {
+                "organizational_and_legal_form": "Общества с ограниченной ответственностью",
+                "country_of_registration_of_the_manufacturer": "Германия",
+                "registration_address": "-",
+                "place_of_business": "-",
+                "mailing_address": "-",
+                "telephone": "-",
+                "email": "-",
+                "fax": "-",
+                "production_stage": "",
+                "production_site_name": "",
+                "production_site_address": "",
+                "contact_details": ""
+            }
+        ],
+        "regulations": [
+            {
+                "document_name": "Инструкция по медицинскому применению\n(DrugUsageInstructionDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "Общая характеристика лекарственного препарата\n(DrugGeneralCharacteristicDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "Экспертный отчет об оценке безопасности, эффективности и качества\n(ExpertReportDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "План управления рисками\n(RiskManagementPlanDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            }
+        ],
+        "substances": [
+            {
+                "trade_name": "цианокобаламин",
+                "international_nonproprietary_name": "цианокобаламин",
+                "manufacturers_name": "Sanofi Chimie",
+                "country": "-",
+                "manufacturers_address": "-"
+            }
+        ]
+    },
+    {
+        "general_info": {
+            "header": "CУПРАСТИН®/Супрастин®/Супрастин®",
+            "mnn": "хлоропирамин",
+            "release_form_list": [
+                "раствор для внутривенного и внутримышечного введения; без сахара; 20 мг / 20 мг/мл По 1 куб.см в первичной упаковке «ампула с кольцом излома»; по 1 шт во вторичной упаковке «пачка картонная». Промежуточная упаковка: контурная ячейковая упаковка из пленки ПВХ и пленки ПЭТФ/ПЭ, запаянная прозрачной пленкой",
+                "раствор для внутривенного и внутримышечного введения; без сахара; 20 мг / 20 мг/мл По 1 куб.см в первичной упаковке «ампула с кольцом излома»; по 2 шт во вторичной упаковке «пачка картонная». Промежуточная упаковка: контурная ячейковая упаковка из пленки ПВХ и пленки ПЭТФ/ПЭ, запаянная прозрачной пленкой"
+            ],
+            "manufacturer": "Акционерные общества ЗАО «Фармацевтический завод ЭГИС» (Венгрия);\nАкционерные общества Прокос С.п.А. (Италия)",
+            "char_of_med_product": [
+                "Вид: воспроизведенный",
+                "Включен в список контролируемых: Россия"
+            ]
+        },
+        "panel1": {
+            "be_name": "ЗАО «Фармацевтический завод ЭГИС»",
+            "be_brief_name": "ЗАО «Фармацевтический завод ЭГИС»",
+            "be_type": "Акционерные общества",
+            "country": "Венгрия",
+            "reg_address": "Венгрия, 1106, Будапешт, Керестури, 30-38",
+            "e_location": "-",
+            "postal_address": "-",
+            "phone": "+36 1803 5555",
+            "email": "mailbox@egis.hu"
+        },
+        "reg_data": {
+            "reg_num": "ЛП-№ (000076)-(РГ-RU)",
+            "reg_status": "зарегистрировано",
+            "reg_date": "18.09.2020"
+        },
+        "panel2": {
+            "drugName": "хлоропирамин",
+            "ATCName": "Хлоропирамин",
+            "drugKind": "Воспроизведенный",
+            "dosageForm": "раствор для внутривенного и внутримышечного введения",
+            "dosageDescription": "По рецепту",
+            "drugControl": "Россия, не психотропный, не наркотический"
+        },
+        "panel4": [
+            {
+                "dosage_form_and_dosage": "раствор для внутривенного и внутримышечного введения; 20 мг + 1 мл/20 мг/мл; по 1 куб.см в первичной упаковке \"ампула с кольцом излома\"\nЛекарственная форма дозирована - да,\nПрименяется у детей - да,\nНаличие сахара - нет.",
+                "composition": "Действующее вещество: Хлоропирамина гидрохлорид (20 мг)\nВспомогательное вещество: Вода для инъекций (растворитель)",
+                "shelf_life": "5 лет",
+                "primary_packaging": "ампула - 1 шт. во вторичной упаковке",
+                "accessories": "пачка картонная / контурная ячейковая упаковка из пленки ПВХ и пленки ПЭТФ/ПЭ, запаянная прозрачной пленкой"
+            },
+            {
+                "dosage_form_and_dosage": "раствор для внутривенного и внутримышечного введения; 20 мг + 1 мл/20 мг/мл; по 1 куб.см в первичной упаковке \"ампула с кольцом излома\"\nЛекарственная форма дозирована - да,\nПрименяется у детей - да,\nНаличие сахара - нет.",
+                "composition": "Действующее вещество: Хлоропирамина гидрохлорид (20 мг)\nВспомогательное вещество: Вода для инъекций (растворитель)",
+                "shelf_life": "5 лет",
+                "primary_packaging": "ампула - 2 шт. во вторичной упаковке",
+                "accessories": "пачка картонная / контурная ячейковая упаковка из пленки ПВХ и пленки ПЭТФ/ПЭ, запаянная прозрачной пленкой"
+            }
+        ],
+        "manufacturings_list": [
+            {
+                "organizational_and_legal_form": "Акционерные общества",
+                "country_of_registration_of_the_manufacturer": "Венгрия",
+                "registration_address": "Венгрия, 1106, Будапешт, Керестури, 30-38",
+                "place_of_business": "-",
+                "mailing_address": "-",
+                "telephone": "+36 1803 5555",
+                "email": "mailbox@egis.hu",
+                "fax": "+36 1803 5529",
+                "production_stage": "Производитель (все стадии, включая выпускающий контроль качества)",
+                "production_site_name": "ЗАО «Фармацевтический завод ЭГИС»",
+                "production_site_address": "Венгрия, 1165, Будапешт, Бёкеньфёльди, 118-120",
+                "contact_details": "Телефон: +36 1803 5555\nЭлектронная почта: mailbox@egis.hu\nФакс: +36 1803 5529"
+            },
+            {
+                "organizational_and_legal_form": "Акционерные общества",
+                "country_of_registration_of_the_manufacturer": "Италия",
+                "registration_address": "Италия, 28062, Новара, Камери, Виа Маттеотти, 249",
+                "place_of_business": "-",
+                "mailing_address": "-",
+                "telephone": "+39-0321-642211",
+                "email": "procos@procos.it",
+                "fax": "+39-0321-642219",
+                "production_stage": "Производитель фармацевтической субстанции",
+                "production_site_name": "Прокос С.п.А.",
+                "production_site_address": "Италия, 28062, Новара, Камери, Виа Маттеотти, 249",
+                "contact_details": "Телефон: +39-0321-642211\nЭлектронная почта: procos@procos.it\nФакс: +39-0321-642219"
+            }
+        ],
+        "regulations": [
+            {
+                "document_name": "Инструкция по медицинскому применению\n(П_N012426_02[2019]_7.pdf)",
+                "document_validity_period": "с 19.10.2020",
+                "country": "Россия",
+                "document_link": "https://portal.eaeunion.org/sites/commonprocesses/ru-ru/_vti_bin/Portal.EEC.CDBProxy/Data.svc/GetDocumentFile/P.MM.01/drug-registrations/5e67419efb44f119f7c635fc?filePath=c241bf32-78b9-45d9-aef0-23184e60c8bc/d8fdeec8-0a6a-4c83-90c1-fffa2488b8b8/file_4267690220805747.pdf"
+            },
+            {
+                "document_name": "Общая характеристика лекарственного препарата\n(DrugGeneralCharacteristicDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "Экспертный отчет об оценке безопасности, эффективности и качества\n(ExpertReportDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "План управления рисками\n(RiskManagementPlanDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            }
+        ],
+        "substances": [
+            {
+                "trade_name": "Хлоропирамина гидрохлорид",
+                "international_nonproprietary_name": "Хлоропирамина гидрохлорид",
+                "manufacturers_name": "Прокос С.п.А.",
+                "country": "Италия",
+                "manufacturers_address": "Италия, 28062, Новара, Камери, Виа Маттеотти, 249"
+            }
+        ]
+    },
+    {
+        "general_info": {
+            "header": "АЛЕЦЕНЗА®",
+            "mnn": "Алектиниб",
+            "release_form_list": [
+                "капсулы; без сахара; 150 мг / 150 мг По 8 шт в первичной упаковке «упаковка ячейковая контурная»; по 4 шт во вторичной упаковке «пачка картонная». Промежуточная упаковка: Картонная пачка"
+            ],
+            "manufacturer": "Limited F. Hoffmann-La Roche Ltd (Швейцария)",
+            "char_of_med_product": [
+                "Вид: оригинальный",
+                "Доп.признаки: высокотехнологичный"
+            ]
+        },
+        "panel1": {
+            "be_name": "Ф. Хоффманн-Ля Рош Лтд.",
+            "be_brief_name": "-",
+            "be_type": "Limited",
+            "country": "Швейцария",
+            "reg_address": "-",
+            "e_location": "-",
+            "postal_address": "-",
+            "phone": "-",
+            "email": "-"
+        },
+        "reg_data": {
+            "reg_num": "ЛП-№(000150)-(РГ-RU)",
+            "reg_status": "зарегистрировано",
+            "reg_date": "03.03.2021"
+        },
+        "panel2": {
+            "drugName": "Алектиниб",
+            "ATCName": "Алектиниб",
+            "drugKind": "Оригинальный",
+            "additionalFeature": "Биотехнологический",
+            "dosageForm": "капсулы",
+            "dosageDescription": "По рецепту"
+        },
+        "panel4": [
+            {
+                "dosage_form_and_dosage": "капсулы; дозировка согласно составу/150 мг; по 8 шт в первичной упаковке \"упаковка ячейковая контурная\"\nЛекарственная форма дозирована - да,\nПрименяется у детей - нет,\nНаличие сахара - нет.\nНе применимо",
+                "composition": "Действующее вещество: Алектиниб (150 мг)\nВспомогательное вещество: Лактозы моногидрат (наполнитель),\nГидроксипропилцеллюлоза (связывающее вещество),\nНатрия лаурилсульфат (увлажнитель),\nКальция карбоксиметилцеллюлоза (кальция кармеллоза) (разрыхлитель),\nМагния стеарат (скользящее вещество),\nКаррагинан (пластификатор ),\nКалия хлорид (пластификатор ),\nТитана диоксид (краситель),\nВоск Карнаубский (скользящее вещество),\nКрахмал кукурузный (скользящее вещество),\nГипромеллоза (Материал оболочки капсулы),\nЧернила для печати (краситель)",
+                "shelf_life": "3 года",
+                "primary_packaging": "упаковка ячейковая контурная - 4 шт. во вторичной упаковке",
+                "accessories": "пачка картонная / Картонная пачка"
+            }
+        ],
+        "manufacturings_list": [
+            {
+                "organizational_and_legal_form": "Limited",
+                "country_of_registration_of_the_manufacturer": "Швейцария",
+                "registration_address": "Швейцария, 4070, Не применимо, Не применимо, Basel, Grenzacherstrasse, 124",
+                "place_of_business": "-",
+                "mailing_address": "-",
+                "telephone": "-",
+                "email": "-",
+                "fax": "-",
+                "production_stage": "Производитель фармацевтической субстанции",
+                "production_site_name": "Evonik Corporation",
+                "production_site_address": "Соединенные Штаты, IN47909, Не применимо, Не применимо, Lafayette, Lily Road, 1650",
+                "contact_details": "-"
+            }
+        ],
+        "regulations": [
+            {
+                "document_name": "Инструкция по медицинскому применению\n(DrugUsageInstructionDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "Общая характеристика лекарственного препарата\n(DrugGeneralCharacteristicDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "Экспертный отчет об оценке безопасности, эффективности и качества\n(ExpertReportDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "План управления рисками\n(RiskManagementPlanDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            }
+        ],
+        "substances": [
+            {
+                "trade_name": "Алектиниб",
+                "international_nonproprietary_name": "Алектиниб",
+                "manufacturers_name": "Evonik Corporation",
+                "country": "Соединенные Штаты",
+                "manufacturers_address": "Соединенные Штаты, Lafayette, Lily Road, 1650"
+            }
+        ]
+    },
+    {
+        "general_info": {
+            "header": "АЛЕЦЕНЗА®",
+            "mnn": "Алектиниба гидрохлорид",
+            "release_form_list": [
+                "капсулы; без сахара; 150 мг / 150 мг По 8 шт в первичной упаковке «81»; по 4 шт во вторичной упаковке «1800250000». Промежуточная упаковка: Картонная пачка"
+            ],
+            "manufacturer": "Limited F. Hoffmann-La Roche Ltd (Швейцария)",
+            "char_of_med_product": [
+                "Вид: оригинальный",
+                "Доп.признаки: высокотехнологичный"
+            ]
+        },
+        "panel1": {
+            "be_name": "Ф. Хоффманн-Ля Рош Лтд.",
+            "be_brief_name": "-",
+            "be_type": "Limited",
+            "country": "Швейцария",
+            "reg_address": "-",
+            "e_location": "-",
+            "postal_address": "-",
+            "phone": "-",
+            "email": "-"
+        },
+        "reg_data": {
+            "reg_num": "ЛП-№(000150)-(РГ-RU)",
+            "reg_status": "зарегистрировано",
+            "reg_date": "03.03.2021"
+        },
+        "panel2": {
+            "drugName": "Алектиниб",
+            "ATCName": "Алектиниб",
+            "drugKind": "Оригинальный",
+            "additionalFeature": "Биотехнологический",
+            "dosageForm": "капсулы",
+            "dosageDescription": "По рецепту"
+        },
+        "panel4": [
+            {
+                "dosage_form_and_dosage": "капсулы; дозировка согласно составу/150 мг; по 8 шт в первичной упаковке \"упаковка ячейковая контурная\"\nЛекарственная форма дозирована - да,\nПрименяется у детей - нет,\nНаличие сахара - нет.\nНе применимо",
+                "composition": "Действующее вещество: Алектиниб (150 мг)\nВспомогательное вещество: Лактозы моногидрат (наполнитель),\nГидроксипропилцеллюлоза (связывающее вещество),\nНатрия лаурилсульфат (увлажнитель),\nКальция карбоксиметилцеллюлоза (кальция кармеллоза) (разрыхлитель),\nМагния стеарат (скользящее вещество),\nКаррагинан (пластификатор ),\nКалия хлорид (пластификатор ),\nТитана диоксид (краситель),\nВоск Карнаубский (скользящее вещество),\nКрахмал кукурузный (скользящее вещество),\nГипромеллоза (Материал оболочки капсулы),\nЧернила для печати (краситель)",
+                "shelf_life": "3 года",
+                "primary_packaging": "упаковка ячейковая контурная - 4 шт. во вторичной упаковке",
+                "accessories": "пачка картонная / Картонная пачка"
+            }
+        ],
+        "manufacturings_list": [
+            {
+                "organizational_and_legal_form": "Limited",
+                "country_of_registration_of_the_manufacturer": "Швейцария",
+                "registration_address": "Швейцария, 4070, Не применимо, Не применимо, Basel, Grenzacherstrasse, 124",
+                "place_of_business": "-",
+                "mailing_address": "-",
+                "telephone": "-",
+                "email": "-",
+                "fax": "-",
+                "production_stage": "Производитель фармацевтической субстанции",
+                "production_site_name": "Evonik Corporation",
+                "production_site_address": "Соединенные Штаты, IN47909, Не применимо, Не применимо, Lafayette, Lily Road, 1650",
+                "contact_details": "-"
+            }
+        ],
+        "regulations": [
+            {
+                "document_name": "Инструкция по медицинскому применению\n(DrugUsageInstructionDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "Общая характеристика лекарственного препарата\n(DrugGeneralCharacteristicDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "Экспертный отчет об оценке безопасности, эффективности и качества\n(ExpertReportDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            },
+            {
+                "document_name": "План управления рисками\n(RiskManagementPlanDetails)",
+                "document_validity_period": "-",
+                "country": "Россия",
+                "document_link": "javascript:void(0)"
+            }
+        ],
+        "substances": [
+            {
+                "trade_name": "Алектиниб",
+                "international_nonproprietary_name": "Алектиниб",
+                "manufacturers_name": "Evonik Corporation",
+                "country": "Соединенные Штаты",
+                "manufacturers_address": "Соединенные Штаты, Lafayette, Lily Road, 1650"
+            }
+        ]
+    }
+]

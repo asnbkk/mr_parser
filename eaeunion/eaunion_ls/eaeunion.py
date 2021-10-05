@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import json
 
 PATH = './chromedriver/chromedriver'
 driver = webdriver.Chrome(PATH)
@@ -84,11 +85,19 @@ while True:
                 # open new tab
                 product_list[index].find_element_by_class_name('product-list__trigger-icon').click()
                 time.sleep(1)
+
                 product_manufacturings_list = product_list[index].find_elements_by_class_name('zebra-list__item')
                 manufacturings_row = { product_manufacturings_keys[i]: product_manufacturings_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(product_manufacturings_keys)) }
+
                 # production sites
-                production_sites_list = product_list[index].find_elements_by_class_name('table__cell')[4:]
-                production_sites_row = { production_sites_keys[i]: production_sites_list[i].text for i in range(len(production_sites_keys)) }
+                # trying to figure out is there production_sites_list table
+                try:
+                    production_sites_list = product_list[index].find_elements_by_class_name('table__cell')[4:]
+                    production_sites_row = { production_sites_keys[i]: production_sites_list[i].text for i in range(len(production_sites_keys)) }
+                except:
+                    print('no production_sites_list table')
+                    production_sites_row = { production_sites_keys[i]: '' for i in range(len(production_sites_keys)) }
+
                 # merging tow intermediate dicts and appending to list
                 manufacturings_list.append({**manufacturings_row, **production_sites_row})
 
@@ -130,7 +139,11 @@ while True:
 
             data.append(position)
             print(len(data))
-            print(position)
+            print(position['general_info']['header'])
+
+            with open('data.json', 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
+                
             driver.close()
             driver.switch_to.window(driver.window_handles[0])
 
