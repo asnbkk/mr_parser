@@ -2,7 +2,6 @@ from selenium import webdriver
 from shit_functions import *
 from shit_dict import *
 import time
-import json
 
 PATH = './chromedriver/chromedriver'
 driver = webdriver.Chrome(PATH)
