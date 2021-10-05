@@ -21,17 +21,17 @@ while True:
 
     for index, row in enumerate(rows):
         cells = row.find_elements_by_tag_name('td')
-        header = cells[0].text
+        header = text_prep(cells[0].text)
         mnn = cells[1].text
         manufacturer = cells[3].text
 
         release_form_list = []
         for item in cells[2].find_elements_by_tag_name('li'):
-            release_form_list.append(item.text.replace('\n', ' '))
+            release_form_list.append(text_prep(item.text))
 
         char_of_med_product = []
         for item in cells[4].find_elements_by_tag_name('li'):
-            char_of_med_product.append(item.text.replace('\n', ' '))
+            char_of_med_product.append(text_prep(item.text))
 
         general_info = merge_general_info(header, mnn, release_form_list, manufacturer, char_of_med_product)
 
@@ -47,7 +47,7 @@ while True:
 
             # data from panel1 list
             panel1_list = driver.find_elements_by_xpath("//div[@id='panel1']//ul//li")
-            panel1 = { panel1_keys[i]: panel1_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(panel1_keys)) }
+            panel1 = { panel1_keys[i]: text_prep(panel1_list[i].find_element_by_class_name('zebra-list__content').text) for i in range(len(panel1_keys)) }
 
             # registration full data
             reg_data_list = driver.find_elements_by_xpath("//div[@id='registrations-list']//div[@class='zebra-list']//ul//li")
@@ -55,7 +55,7 @@ while True:
             toggle_button = driver.find_element_by_class_name('product-list__trigger-icon').click()
             time.sleep(2)
             
-            reg_data = { reg_data_keys[i]: reg_data_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(reg_data_keys)) }
+            reg_data = { reg_data_keys[i]: text_prep(reg_data_list[i].find_element_by_class_name('zebra-list__content').text) for i in range(len(reg_data_keys)) }
 
             # list of left tabs
             tabs = driver.find_elements_by_xpath("//div[@class='left-menu__list']//ul//li")
@@ -72,7 +72,7 @@ while True:
 
             for panel4_table_row in panel4_table_rows:
                 table_cell = panel4_table_row.find_elements_by_class_name('table__cell')[1:]
-                panel4_row = { panel4_keys[i]: table_cell[i].text for i in range(len(panel4_keys)) }
+                panel4_row = { panel4_keys[i]: text_prep(table_cell[i].text) for i in range(len(panel4_keys)) }
                 panel4.append(panel4_row)
 
             # manufacturings-list toggle button
@@ -87,15 +87,14 @@ while True:
                 time.sleep(1)
 
                 product_manufacturings_list = product_list[index].find_elements_by_class_name('zebra-list__item')
-                manufacturings_row = { product_manufacturings_keys[i]: product_manufacturings_list[i].find_element_by_class_name('zebra-list__content').text for i in range(len(product_manufacturings_keys)) }
+                manufacturings_row = { product_manufacturings_keys[i]: text_prep(product_manufacturings_list[i].find_element_by_class_name('zebra-list__content').text) for i in range(len(product_manufacturings_keys)) }
 
                 # production sites
                 # trying to figure out is there production_sites_list table
                 try:
                     production_sites_list = product_list[index].find_elements_by_class_name('table__cell')[4:]
-                    production_sites_row = { production_sites_keys[i]: production_sites_list[i].text for i in range(len(production_sites_keys)) }
+                    production_sites_row = { production_sites_keys[i]: text_prep(production_sites_list[i].text) for i in range(len(production_sites_keys)) }
                 except:
-                    print('no production_sites_list table')
                     production_sites_row = { production_sites_keys[i]: '' for i in range(len(production_sites_keys)) }
 
                 # merging tow intermediate dicts and appending to list
@@ -110,7 +109,7 @@ while True:
             for regulations_table_row in regulations_table_rows:
                 table_cell = regulations_table_row.find_elements_by_class_name('table__cell')
 
-                regulations_row_text = { regulations_keys[i]: table_cell[i].text for i in range(len(regulations_keys)) }
+                regulations_row_text = { regulations_keys[i]: text_prep(table_cell[i].text) for i in range(len(regulations_keys)) }
                 document_link = { 'document_link': regulations_table_row.find_element_by_class_name('link').get_attribute('href') }
                 # merging tow intermediate dicts and appending to list
                 regulations_row = {**regulations_row_text, **document_link}
@@ -125,7 +124,7 @@ while True:
             for substances_table_row in substances_table_rows:
                 table_cell = substances_table_row.find_elements_by_class_name('table__cell')
 
-                substances_row_text = { substances_keys[i]: table_cell[i].text for i in range(len(substances_keys)) }
+                substances_row_text = { substances_keys[i]: text_prep(table_cell[i].text) for i in range(len(substances_keys)) }
                 # merging tow intermediate dicts and appending to list
                 substances.append(substances_row_text)
 

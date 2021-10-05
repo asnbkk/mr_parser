@@ -47,3 +47,6 @@ def merge_position(general_info, panel1, reg_data, panel2, panel4, manufacturing
         'regulations': regulations,
         'substances': substances
         }
+
+def text_prep(text):
+    return text.replace('"', '').replace('\n', ' ')
