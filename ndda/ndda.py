@@ -16,9 +16,9 @@ table_check(driver, 'ui-row-ltr')
 
 data = []
 
-page_amount = int(driver.find_element_by_id('sp_1_register_pager').text)
-for page in range(page_amount):
-
+# page_amount = int(driver.find_element_by_id('sp_1_register_pager').text)
+# for page in range(page_amount):
+while True:
     parent_rows = driver.find_elements_by_class_name('ui-row-ltr')
     prev_rows = parent_rows
     
@@ -26,7 +26,7 @@ for page in range(page_amount):
         cells = parent_rows[index].find_elements_by_tag_name('td')
 
         del cells[15:21]
-        general_info = { general_info_keys[i]: cells[i].text for i in range(len(general_info_keys)) }
+        general_info = { general_info_keys[i]: text_prep(cells[i].text) for i in range(len(general_info_keys)) }
 
         # new item open
         WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr'))).click()
@@ -38,7 +38,7 @@ for page in range(page_amount):
 
         for index, row in enumerate(rows):
             cells = rows[index].find_elements_by_tag_name('td')
-            order_info_row = { order_keys[i]: cells[i].text for i in range(len(order_keys)) }
+            order_info_row = { order_keys[i]: text_prep(cells[i].text) for i in range(len(order_keys)) }
             order_info.append(order_info_row)
         
         next_tab(driver, 1)
@@ -47,7 +47,7 @@ for page in range(page_amount):
 
         for index, row in enumerate(rows):
             cells = rows[index].find_elements_by_tag_name('td')
-            manufacturer_info_row = { manufacturer_keys[i]: cells[i].text for i in range(len(manufacturer_keys)) }
+            manufacturer_info_row = { manufacturer_keys[i]: text_prep(cells[i].text) for i in range(len(manufacturer_keys)) }
             manufacturer_info.append(manufacturer_info_row)
 
         next_tab(driver, 2)
@@ -56,7 +56,7 @@ for page in range(page_amount):
 
         for index, row in enumerate(rows):
             cells = rows[index].find_elements_by_tag_name('td')
-            package_info_row = { package_keys[i]: cells[i].text for i in range(len(package_keys)) }
+            package_info_row = { package_keys[i]: text_prep(cells[i].text) for i in range(len(package_keys)) }
             package_info.append(package_info_row)
 
         next_tab(driver, 3)
@@ -65,7 +65,7 @@ for page in range(page_amount):
 
         for index, row in enumerate(rows):
             cells = rows[index].find_elements_by_tag_name('td')
-            instructions_info_row = { instructions_keys[i]: cells[i].text if len(get_child(cells[i])) == 0 else get_child(cells[i])[0].get_attribute('href') for i in range(len(instructions_keys)) }
+            instructions_info_row = { instructions_keys[i]: text_prep(cells[i].text) if len(get_child(cells[i])) == 0 else get_child(cells[i])[0].get_attribute('href') for i in range(len(instructions_keys)) }
             instructions_info.append(instructions_info_row)
 
         next_tab(driver, 4)
@@ -74,7 +74,7 @@ for page in range(page_amount):
 
         for index, row in enumerate(rows):
             cells = rows[index].find_elements_by_tag_name('td')
-            certificate_info_row = { certificate_keys[i]: cells[i].text for i in range(len(certificate_keys)) }
+            certificate_info_row = { certificate_keys[i]: text_prep(cells[i].text) for i in range(len(certificate_keys)) }
             certificate_info.append(certificate_info_row)
 
         # merge all subdata
@@ -102,9 +102,14 @@ for page in range(page_amount):
                 json.dump(data, f, ensure_ascii=False, indent=4)
         print(len(data))
     
-    # go to the next page
-    WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.ID, 'next_register_pager'))).click()
-    # shit time speep
+    # go to the next page if possible; else break the loop
+    try:
+        WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.ID, 'next_register_pager'))).click()
+    except:
+        print('seems to be the end')
+        break
+
+    # shit time sleep
     try: 
         WebDriverWait(driver, 30).until(EC.invisibility_of_element((By.ID, 'load_register_grid')))
         parent_rows = driver.find_elements_by_class_name('ui-row-ltr')

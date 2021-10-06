@@ -52,3 +52,6 @@ def wait_table(driver, index, delete_first, is_nested=False):
         return element[1:] if delete_first else element
     except:
         pass
+
+def text_prep(text):
+    return text.replace('"', '').replace('\n', ' ')
