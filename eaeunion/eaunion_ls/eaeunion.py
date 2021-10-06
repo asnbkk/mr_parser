@@ -17,12 +17,11 @@ new_driver(driver)
 
 while True:
     table = driver.find_element_by_tag_name('tbody')
+    current_page = get_current_page_number(driver)
+
     rows = table.find_elements_by_tag_name('tr')
 
     for index, row in enumerate(rows):
-
-        print(f'current page is {get_current_page_number(driver)}')
-        
         cells = row.find_elements_by_tag_name('td')
         header = text_prep(cells[0].text)
         mnn = cells[1].text
@@ -142,8 +141,8 @@ while True:
             data.append(position)
             # send data
             send_data(position)
-            print(len(data))
             print(position['general_info']['header'])
+            print(len(data))
 
             with open('data.json', 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=4)
@@ -154,8 +153,7 @@ while True:
     try:
         next_page_button = driver.find_element_by_class_name('arrow-right').click()
         time.sleep(5)
-        new_driver(driver)
-        
+        new_driver(driver, current_page)
     except: 
         print('this is the end!')
         break

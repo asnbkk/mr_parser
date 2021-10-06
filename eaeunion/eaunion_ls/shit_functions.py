@@ -17,12 +17,19 @@ producer = KafkaProducer(
 def send_data(data):
     producer.send('testTopic', value=data)
 
-def new_driver(driver):
+def wait_for_table(driver):
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, 'row_0.0')))
+
+def new_driver(driver, current_page=None):
     try: 
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.ID, 'row_0.0')))
+        wait_for_table(driver)
     except: 
-        driver.quit()
+        print('ah shit page again')
+        driver.refresh()
+        wait_for_table(driver)
+        set_page_number(driver, current_page)
+        time.sleep(10)
 
 def get_general_information_by_id(driver):
     panel2_list = driver.find_elements_by_xpath("//div[@id='panel2']//ul//li")
@@ -66,3 +73,13 @@ def text_prep(text):
 
 def get_current_page_number(driver):
     return driver.find_element_by_class_name('ecc-page-number-input').get_attribute('placeholder')
+
+def set_page_number(driver, current_page):
+    try: 
+        search_input = WebDriverWait(driver, 30).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'ecc-page-number-input')))
+        search_input.send_keys(str(int(current_page) + 2))
+        # search_input.submit()
+        new_driver(driver)
+    except Exception as e: 
+        print(e)
