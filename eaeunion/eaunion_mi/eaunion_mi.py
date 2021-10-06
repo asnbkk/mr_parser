@@ -12,3 +12,9 @@ url = 'https://portal.eaeunion.org/sites/odata/_layouts/15/Registry/PMM06/TableV
 driver.get(url)
 
 new_driver(driver)
+
+# while True:
+table = driver.find_element_by_tag_name('tbody')
+current_page = get_current_page_number(driver)
+
+rows = table.find_elements_by_tag_name('tr')
