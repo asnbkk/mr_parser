@@ -16,9 +16,16 @@ while True:
     rows = wait_table(driver)
     for row in rows:
         cells = row.find_elements_by_tag_name('td')
-        position = {keys[index]: cell.text for index, cell in enumerate(cells)}
+        position = {keys[index]: text_prep(cell.text) for index, cell in enumerate(cells)}
         data.append(position)
-        # print(position['unique_registry_entry_number'])
+        print(position['reg_number'])
+        print(len(data))
+
+        with open('data.json', 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
+
+        # kafka send
+        # send_data(position)
 
     try:
         WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.ID, 'DataTables_Table_1_next'))).click()
