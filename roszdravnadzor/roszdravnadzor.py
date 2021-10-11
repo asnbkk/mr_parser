@@ -22,10 +22,10 @@ while True:
         print(len(data))
 
         with open('data.json', 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
+            json.dump(data, f, ensure_ascii=False, indent=4)
 
         # kafka send
-        # send_data(position)
+        send_data(position)
 
     try:
         WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.ID, 'DataTables_Table_1_next'))).click()
