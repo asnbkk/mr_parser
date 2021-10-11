@@ -3,6 +3,19 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import time
+import json
+
+from kafka import KafkaProducer
+
+producer = KafkaProducer(
+    bootstrap_servers=['185.146.3.170:9092'],
+    api_version=(0,11,5),
+    value_serializer=lambda x: 
+    json.dumps(x).encode('utf-8')
+    )
+
+def send_data(data):
+    producer.send('testTopic', value=data)
 
 def product_click(row, driver):
     actionChains = ActionChains(driver)
@@ -34,7 +47,7 @@ def new_driver(driver, current_page=None):
         time.sleep(10)
 
 def get_current_page_number(driver):
-    return driver.find_element_by_class_name('ecc-page-number-input').get_attribute('placeholder')
+    return driver.find_element_by_class_name('input--number').get_attribute('placeholder')
 
 def set_page_number(driver, current_page):
     try: 
