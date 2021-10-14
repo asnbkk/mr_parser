@@ -1,6 +1,7 @@
 from selenium import webdriver
 from shit_dict import *
 from shit_methods import *
+from shit_chrome_path import *
 import time
 # import json
 
@@ -8,7 +9,7 @@ opts = webdriver.ChromeOptions()
 opts.add_argument('--no-sandbox')
 opts.add_argument('--disable-dev-shm-usage')
 
-PATH = './chromedriver/chromedriver'
+PATH = chrome_path
 driver = webdriver.Chrome(PATH, options=opts)
 driver.get('http://register.ndda.kz/category/search_prep')
 
