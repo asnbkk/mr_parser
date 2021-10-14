@@ -6,8 +6,14 @@ import time
 # import json
 
 opts = webdriver.ChromeOptions()
-opts.add_argument('--no-sandbox')
-opts.add_argument('--disable-dev-shm-usage')
+opts.add_argument("--headless")
+opts.add_argument("--disable-xss-auditor")
+opts.add_argument("--disable-web-security")
+opts.add_argument("--allow-running-insecure-content")
+opts.add_argument("--no-sandbox")
+opts.add_argument("--disable-setuid-sandbox")
+opts.add_argument("--disable-webgl")
+opts.add_argument("--disable-popup-blocking")
 
 PATH = chrome_path
 driver = webdriver.Chrome(PATH, options=opts)
@@ -32,7 +38,6 @@ while True:
         general_info = cells[1:7]
         shelf_life = cells[14]
 
-        # 15 20
         attributes = cells[15:21]
         attributes_list = []
         
