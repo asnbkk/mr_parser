@@ -24,9 +24,28 @@ while True:
     
     for index, row in enumerate(parent_rows):
         cells = parent_rows[index].find_elements_by_tag_name('td')
+        general_info = cells[1:7]
+        shelf_life = cells[14]
 
-        del cells[15:21]
-        general_info = { general_info_keys[i]: text_prep(cells[i].text) for i in range(len(general_info_keys)) }
+        # 15 20
+        attributes = cells[15:21]
+        attributes_list = []
+        
+        for index, attr in enumerate(attributes):
+            if attr.find_element_by_tag_name('input').get_attribute('checked') == 'true':
+                attributes_list.append(attributes_keys[index])
+        
+        general_info = { general_info_keys[i]: text_prep(general_info[i].text) for i in range(len(general_info_keys)) }
+        
+        main_info = { 
+            **general_info, 
+            'shelfLife': text_prep(shelf_life.text), 
+            'appointment': '', 
+            'fieldOfUse': '', 
+            'securityClass': '',
+            'shortTechDescription': '',
+            'attributes': ','.join(attributes_list),
+            'shelfLifeComment': ''}
 
         # new item open
         WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr'))).click()
@@ -56,8 +75,23 @@ while True:
 
         for index, row in enumerate(rows):
             cells = rows[index].find_elements_by_tag_name('td')
-            package_info_row = { package_keys[i]: text_prep(cells[i].text) for i in range(len(package_keys)) }
-            package_info.append(package_info_row)
+            name = text_prep(cells[0].text)
+
+            if cells[1].find_element_by_tag_name('input').get_attribute('checked') == 'true':
+                is_primary = True
+            else: 
+                is_primary = False
+            
+            cells_rest = cells[2:]
+            package_info_row = { package_keys[i]: text_prep(cells_rest[i].text) for i in range(len(package_keys)) }
+
+            package_info_row_data = {
+                'name': name,
+                'primary': is_primary,
+                **package_info_row
+            }
+
+            package_info.append(package_info_row_data)
 
         next_tab(driver, 3)
         rows = wait_table(driver, 3, False)
@@ -77,17 +111,26 @@ while True:
             certificate_info_row = { certificate_keys[i]: text_prep(cells[i].text) for i in range(len(certificate_keys)) }
             certificate_info.append(certificate_info_row)
 
+        website = {
+            'name': 'ndda.kz',
+            'country': ''
+        }
+
         # merge all subdata
         item = { 
-                'general_info': general_info, 
-                'order_info': order_info, 
-                'manufacturer_info': manufacturer_info, 
-                'package_info': package_info, 
-                'instructions_info': instructions_info, 
-                'certificate_info': certificate_info 
+                'mainInfo': main_info, 
+                'decrees': order_info, 
+                'manufacturers': manufacturer_info, 
+                'completeness': [],
+                'variants': [],
+                'instructions': instructions_info, 
+                'certificates': certificate_info,
+                'packages': package_info, 
+                'nmirks': [],
+                'website': website
             }
 
-        print(item['general_info']['reg_number'])
+        print(item['mainInfo']['productName'])
         print('-')
         
         # sending data by kafka

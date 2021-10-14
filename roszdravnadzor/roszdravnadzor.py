@@ -16,7 +16,7 @@ while True:
     rows = wait_table(driver)
     for row in rows:
         cells = row.find_elements_by_tag_name('td')
-        position = {keys[index]: text_prep(cell.text) for index, cell in enumerate(cells)}
+        position = {keys[index]: text_prep(cell) for index, cell in enumerate(cells)}
         data.append(position)
         print(position['reg_number'])
         print(len(data))
@@ -28,10 +28,11 @@ while True:
         send_data(position)
 
     try:
-        WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.ID, 'DataTables_Table_1_next'))).click()
+        WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.ID, 'DataTables_Table_1_next'))).click()
     except Exception as e:
         print(e)
         print('seems to be finished')
+        driver.quit()
         break
     
     try: 

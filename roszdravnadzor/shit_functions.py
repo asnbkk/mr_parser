@@ -35,4 +35,5 @@ def wait_table(driver):
         pass
 
 def text_prep(text):
-    return text.replace('"', '').replace('\n', ' ')
+    temp_text = text.get_attribute('title') if text.get_attribute('title') else text.text
+    return temp_text.replace('"', '').replace('\n', ' ')

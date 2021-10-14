@@ -1,21 +1,11 @@
 general_info_keys = [
-    'reg_number',
     'type',
-    'trade_name',
-    'kind',
-    'reg_date',
-    'term',
-    'expiration_date',
-    'producer_name',
-    'country',
-    'drug_type_id',
-    'int_name',
-    'act_name',
-    'dosage_form_name',
-    'dosage',
-    'storage_term',
-    'nd_name',
-    'nd_number']
+    'productName',
+    'registrationType',
+    'registrationData',
+    'registrationLife',
+    'registrationExpireData',
+]
 
 tab_list = [
     'yw4_tab_2',
@@ -26,39 +16,46 @@ tab_list = [
 ]
 
 order_keys = [
-    'order_num',
-    'order_date',
-    'order_type',
-    'comments'
+    'number',
+    'date',
+    'type',
+    'comment'
 ]
 
 manufacturer_keys = [
     'form',
-    'rus_name',
-    'eng_name',
+    'name',
+    'nameInEnglish',
     'country',
-    'manufacturer_type'
+    'type'
 ]
 
 package_keys = [
-    'name',
-    'is_primary',
-    'fill_volume',
-    'unit_of_measure',
-    'amount',
+    'volume',
+    'unitType',
+    'amountOfUnits',
     'description'
 ]
 
 instructions_keys = [
     'type',
-    'comments',
-    'link_rus',
-    'link_kaz'
+    'comment',
+    'fileInRussian',
+    'fileInKazakh'
 ]
 
 certificate_keys = [
     'name',
-    'additional_data',
-    'date',
-    'agency'
+    'type',
+    'dates',
+    'organ'
+]
+
+attributes_keys = [
+    'GMP',
+    'Генерик',
+    'Рецепт',
+    'Контроль',
+    'Торг. марка',
+    'Патент'
 ]
