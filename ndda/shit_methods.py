@@ -11,7 +11,7 @@ from kafka import KafkaProducer
 
 producer = KafkaProducer(
     bootstrap_servers=['185.146.3.170:9092'],
-    api_version=(0,11,5),
+    api_version=(0,10,1),
     value_serializer=lambda x: 
     json.dumps(x).encode('utf-8')
     )
