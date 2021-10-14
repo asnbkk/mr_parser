@@ -2,10 +2,14 @@ from selenium import webdriver
 from shit_dict import *
 from shit_methods import *
 import time
-import json
+# import json
+
+opts = webdriver.ChromeOptions()
+opts.add_argument('--no-sandbox')
+opts.add_argument('--disable-dev-shm-usage')
 
 PATH = './chromedriver/chromedriver'
-driver = webdriver.Chrome(PATH)
+driver = webdriver.Chrome(PATH, options=opts)
 driver.get('http://register.ndda.kz/category/search_prep')
 
 frame = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "iframe1")))
@@ -140,10 +144,10 @@ while True:
         driver.find_element_by_class_name('close').click()
 
         # insert product item data into global data list and write to the file
-        data.append(item)
-        with open('data.json', 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
-        print(len(data))
+        # data.append(item)
+        # with open('data.json', 'w', encoding='utf-8') as f:
+        #         json.dump(data, f, ensure_ascii=False, indent=4)
+        # print(len(data))
     
     # go to the next page if possible; else break the loop
     try:

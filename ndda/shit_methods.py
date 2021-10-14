@@ -10,7 +10,7 @@ from shit_dict import tab_list
 from kafka import KafkaProducer
 
 producer = KafkaProducer(
-    bootstrap_servers=['185.146.3.170:9092'],
+    bootstrap_servers=['localhost:9092'],
     api_version=(0,10,1),
     value_serializer=lambda x: 
     json.dumps(x).encode('utf-8')
