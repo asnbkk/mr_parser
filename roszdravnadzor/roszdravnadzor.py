@@ -69,7 +69,8 @@ def process_parser(driver):
             if position['mainInfo']['productName'] is None:
                 # skip shit products wo prod name
                 print('shit here')
-                pass
+                state = 'not available'
+                break
             else:
                 # data.append(position)
                 print(position['mainInfo']['productName'])
@@ -98,18 +99,18 @@ def process_parser(driver):
 
 def bootstrap():
     while True:
-        print('10 sec timeout')
-        time.sleep(10)
+        print('3 sec timeout')
+        time.sleep(3)
 
         opts = webdriver.ChromeOptions()
-        opts.add_argument("--headless")
-        opts.add_argument("--disable-xss-auditor")
-        opts.add_argument("--disable-web-security")
-        opts.add_argument("--allow-running-insecure-content")
-        opts.add_argument("--no-sandbox")
-        opts.add_argument("--disable-setuid-sandbox")
-        opts.add_argument("--disable-webgl")
-        opts.add_argument("--disable-popup-blocking")
+        # opts.add_argument("--headless")
+        # opts.add_argument("--disable-xss-auditor")
+        # opts.add_argument("--disable-web-security")
+        # opts.add_argument("--allow-running-insecure-content")
+        # opts.add_argument("--no-sandbox")
+        # opts.add_argument("--disable-setuid-sandbox")
+        # opts.add_argument("--disable-webgl")
+        # opts.add_argument("--disable-popup-blocking")
 
         PATH = chrome_path
         driver = webdriver.Chrome(PATH, options=opts)
