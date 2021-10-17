@@ -2,14 +2,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
+from shit_chrome_path import *
+from kafka import KafkaProducer
 import time
 import json
 
-from kafka import KafkaProducer
-
 producer = KafkaProducer(
-    bootstrap_servers=['185.146.3.170:9092'],
-    api_version=(0,11,5),
+    bootstrap_servers=[kafka_host],
+    api_version=(0,10,1),
     value_serializer=lambda x: 
     json.dumps(x).encode('utf-8')
     )

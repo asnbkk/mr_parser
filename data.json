@@ -1,12 +1,13 @@
 [
     {
         "mainInfo": {
-            "registrationData": "03.03.2021",
-            "registrationType": "зарегистрировано",
-            "registrationExpireData": "",
+            "type": "",
+            "registrationType": "",
+            "registrationData": "15.07.2020",
+            "registrationExpireData": "Бессрочное",
             "registrationLife": "",
-            "shelfLife": "2 года",
-            "productName": "АнвиМакс®",
+            "shelfLife": "",
+            "productName": "Аппарат магнитотерапевтический «АЛМАГ+» по ГИКС.941519.118 ТУ",
             "appointment": "",
             "fieldOfUse": "",
             "securityClass": "",
@@ -15,305 +16,26 @@
             "shelfLifeComment": ""
         },
         "decrees": [],
-        "manufacturers": [
-            {
-                "form": "Общества с ограниченной ответственностью",
-                "name": "ООО НПО ФармВИЛАР",
-                "nameInEnglish": "",
-                "country": "Россия",
-                "type": ""
-            }
-        ],
-        "completeness": [],
-        "variants": [],
-        "instructions": [
-            {
-                "type": "Инструкция по медицинскому применению (DrugUsageInstructionDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "Общая характеристика лекарственного препарата (DrugGeneralCharacteristicDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "Экспертный отчет об оценке безопасности, эффективности и качества (ExpertReportDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "План управления рисками (RiskManagementPlanDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            }
-        ],
-        "certificates": [],
-        "packages": [
-            {
-                "primary": false,
-                "name": "",
-                "volume": "Действующее вещество: парацетамол (360 мг), аскорбиновая кислота (300 мг), Кальция глюконата моногидрат (100 мг), Римантадина гидрохлорид (50 мг), рутозид (20 мг), лоратадин (3 мг) Вспомогательное вещество: Лимонная кислота (06), Натрия гидрокарбонат (Натрия бикарбонат) (06), Сорбит (Сорбитол) (10), Макрогол 6000 (07), Ароматизатор пищевой порошкообразный Клюква 924 или Малина 909 (03), Ацесульфам калия (04), Аспартам (04), Повидон (11), Краситель красный свекольный (Е162) (23), Изолейцин (разрыхлитель)",
-                "amountOfUnits": "",
-                "unitType": "",
-                "description": "таблетки шипучие; дозировка согласно составу/0 мг; по 10 шт в первичной упаковке 73 Лекарственная форма дозирована - да, Применяется у детей - нет, Наличие сахара - нет."
-            }
-        ],
-        "nmirks": [],
-        "website": {
-            "name": "portal.eaeunion.org_ls",
-            "country": ""
-        }
-    },
-    {
-        "mainInfo": {
-            "registrationData": "24.08.2020",
-            "registrationType": "зарегистрировано",
-            "registrationExpireData": "",
-            "registrationLife": "",
-            "shelfLife": "-",
-            "productName": "B12 Анкерманн",
-            "appointment": "",
-            "fieldOfUse": "",
-            "securityClass": "",
-            "shortTechDescription": "",
-            "attributes": "",
-            "shelfLifeComment": ""
+        "manufacturers": {
+            "form": "Акционерное общество",
+            "name": "Акционерное общество ″Елатомский приборный завод″",
+            "nameInEnglish": "",
+            "country": "Россия",
+            "type": ""
         },
-        "decrees": [],
-        "manufacturers": [
-            {
-                "form": "Общества с ограниченной ответственностью",
-                "name": "",
-                "nameInEnglish": "",
-                "country": "Германия",
-                "type": ""
-            }
-        ],
         "completeness": [],
         "variants": [],
-        "instructions": [
-            {
-                "type": "Инструкция по медицинскому применению (DrugUsageInstructionDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "Общая характеристика лекарственного препарата (DrugGeneralCharacteristicDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "Экспертный отчет об оценке безопасности, эффективности и качества (ExpertReportDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "План управления рисками (RiskManagementPlanDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            }
-        ],
-        "certificates": [],
-        "packages": [
-            {
-                "primary": false,
-                "name": "",
-                "volume": "Действующее вещество: цианокобаламин (1 мг)",
-                "amountOfUnits": "",
-                "unitType": "",
-                "description": "таблетки, покрытые оболочкой; 1 мг; по 25 шт в первичной упаковке Блистер"
-            },
-            {
-                "primary": false,
-                "name": "",
-                "volume": "Действующее вещество: цианокобаламин (1 мг)",
-                "amountOfUnits": "",
-                "unitType": "",
-                "description": "таблетки, покрытые оболочкой; 1 мг; по 25 шт в первичной упаковке Блистер"
-            }
-        ],
-        "nmirks": [],
-        "website": {
-            "name": "portal.eaeunion.org_ls",
-            "country": ""
-        }
-    },
-    {
-        "mainInfo": {
-            "registrationData": "18.09.2020",
-            "registrationType": "зарегистрировано",
-            "registrationExpireData": "",
-            "registrationLife": "",
-            "shelfLife": "5 лет",
-            "productName": "CУПРАСТИН®/Супрастин®/Супрастин®",
-            "appointment": "",
-            "fieldOfUse": "",
-            "securityClass": "",
-            "shortTechDescription": "",
-            "attributes": "",
-            "shelfLifeComment": ""
+        "instructions": {
+            "type": "Инструкция по применению медицинского изделия",
+            "comment": "",
+            "fileInRussian": "https://portal.eaeunion.org/sites/odata/_layouts/15/Registry/Share/Attachments.axd?id=d7147aa1-052f-4c09-85ac-edfe1864e21b",
+            "fileInKazakh": ""
         },
-        "decrees": [],
-        "manufacturers": [
-            {
-                "form": "Акционерные общества",
-                "name": "ЗАО «Фармацевтический завод ЭГИС»",
-                "nameInEnglish": "",
-                "country": "Венгрия",
-                "type": ""
-            },
-            {
-                "form": "Акционерные общества",
-                "name": "Прокос С.п.А.",
-                "nameInEnglish": "",
-                "country": "Италия",
-                "type": ""
-            }
-        ],
-        "completeness": [],
-        "variants": [],
-        "instructions": [
-            {
-                "type": "Инструкция по медицинскому применению (П_N012426_02[2019]_7.pdf)",
-                "comment": "",
-                "fileInRussia": "https://portal.eaeunion.org/sites/commonprocesses/ru-ru/_vti_bin/Portal.EEC.CDBProxy/Data.svc/GetDocumentFile/P.MM.01/drug-registrations/5e67419efb44f119f7c635fc?filePath=c241bf32-78b9-45d9-aef0-23184e60c8bc/d8fdeec8-0a6a-4c83-90c1-fffa2488b8b8/file_4267690220805747.pdf",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "Общая характеристика лекарственного препарата (DrugGeneralCharacteristicDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "Экспертный отчет об оценке безопасности, эффективности и качества (ExpertReportDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "План управления рисками (RiskManagementPlanDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            }
-        ],
         "certificates": [],
-        "packages": [
-            {
-                "primary": false,
-                "name": "",
-                "volume": "Действующее вещество: Хлоропирамина гидрохлорид (20 мг) Вспомогательное вещество: Вода для инъекций (растворитель)",
-                "amountOfUnits": "",
-                "unitType": "",
-                "description": "раствор для внутривенного и внутримышечного введения; 20 мг + 1 мл/20 мг/мл; по 1 куб.см в первичной упаковке ампула с кольцом излома Лекарственная форма дозирована - да, Применяется у детей - да, Наличие сахара - нет."
-            },
-            {
-                "primary": false,
-                "name": "",
-                "volume": "Действующее вещество: Хлоропирамина гидрохлорид (20 мг) Вспомогательное вещество: Вода для инъекций (растворитель)",
-                "amountOfUnits": "",
-                "unitType": "",
-                "description": "раствор для внутривенного и внутримышечного введения; 20 мг + 1 мл/20 мг/мл; по 1 куб.см в первичной упаковке ампула с кольцом излома Лекарственная форма дозирована - да, Применяется у детей - да, Наличие сахара - нет."
-            }
-        ],
+        "packages": [],
         "nmirks": [],
         "website": {
-            "name": "portal.eaeunion.org_ls",
-            "country": ""
-        }
-    },
-    {
-        "mainInfo": {
-            "registrationData": "18.09.2020",
-            "registrationType": "зарегистрировано",
-            "registrationExpireData": "",
-            "registrationLife": "",
-            "shelfLife": "5 лет",
-            "productName": "CУПРАСТИН®/Супрастин®/Супрастин®",
-            "appointment": "",
-            "fieldOfUse": "",
-            "securityClass": "",
-            "shortTechDescription": "",
-            "attributes": "",
-            "shelfLifeComment": ""
-        },
-        "decrees": [],
-        "manufacturers": [
-            {
-                "form": "Акционерные общества",
-                "name": "ЗАО «Фармацевтический завод ЭГИС»",
-                "nameInEnglish": "",
-                "country": "Венгрия",
-                "type": ""
-            },
-            {
-                "form": "Акционерные общества",
-                "name": "Прокос С.п.А.",
-                "nameInEnglish": "",
-                "country": "Италия",
-                "type": ""
-            }
-        ],
-        "completeness": [],
-        "variants": [],
-        "instructions": [
-            {
-                "type": "Инструкция по медицинскому применению (П_N012426_02[2019]_7.pdf)",
-                "comment": "",
-                "fileInRussia": "https://portal.eaeunion.org/sites/commonprocesses/ru-ru/_vti_bin/Portal.EEC.CDBProxy/Data.svc/GetDocumentFile/P.MM.01/drug-registrations/5e67419efb44f119f7c635fc?filePath=c241bf32-78b9-45d9-aef0-23184e60c8bc/d8fdeec8-0a6a-4c83-90c1-fffa2488b8b8/file_4267690220805747.pdf",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "Общая характеристика лекарственного препарата (DrugGeneralCharacteristicDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "Экспертный отчет об оценке безопасности, эффективности и качества (ExpertReportDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            },
-            {
-                "type": "План управления рисками (RiskManagementPlanDetails)",
-                "comment": "",
-                "fileInRussia": "javascript:void(0)",
-                "fileInKazakh": ""
-            }
-        ],
-        "certificates": [],
-        "packages": [
-            {
-                "primary": false,
-                "name": "",
-                "volume": "Действующее вещество: Хлоропирамина гидрохлорид (20 мг) Вспомогательное вещество: Вода для инъекций (растворитель)",
-                "amountOfUnits": "",
-                "unitType": "",
-                "description": "раствор для внутривенного и внутримышечного введения; 20 мг + 1 мл/20 мг/мл; по 1 куб.см в первичной упаковке ампула с кольцом излома Лекарственная форма дозирована - да, Применяется у детей - да, Наличие сахара - нет."
-            },
-            {
-                "primary": false,
-                "name": "",
-                "volume": "Действующее вещество: Хлоропирамина гидрохлорид (20 мг) Вспомогательное вещество: Вода для инъекций (растворитель)",
-                "amountOfUnits": "",
-                "unitType": "",
-                "description": "раствор для внутривенного и внутримышечного введения; 20 мг + 1 мл/20 мг/мл; по 1 куб.см в первичной упаковке ампула с кольцом излома Лекарственная форма дозирована - да, Применяется у детей - да, Наличие сахара - нет."
-            }
-        ],
-        "nmirks": [],
-        "website": {
-            "name": "portal.eaeunion.org_ls",
+            "name": "portal.eaeunion.org_mi",
             "country": ""
         }
     }

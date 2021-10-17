@@ -177,7 +177,7 @@ while True:
                 packages.append(package)
 
             website = {
-                'name': 'portal.eaeunion.org_ls',
+                'name': 'portal.eaeunion.org',
                 'country': ''
             }
     
