@@ -1,14 +1,14 @@
 [
     {
         "mainInfo": {
-            "type": "",
+            "type": "Медицинская техника",
+            "productName": "Анализатор биохимический автоматический: анализатор биохимический автоматический cobas с 311 / cobas с 311 analyzer с принадлежностями",
             "registrationType": "",
-            "registrationData": "15.07.2020",
-            "registrationExpireData": "Бессрочное",
+            "registrationData": "31.05.2018",
             "registrationLife": "",
+            "registrationExpireData": "31.05.2023",
             "shelfLife": "",
-            "productName": "Аппарат магнитотерапевтический «АЛМАГ+» по ГИКС.941519.118 ТУ",
-            "appointment": "",
+            "appointment": "В соответствии с руководством по эксплуатации",
             "fieldOfUse": "",
             "securityClass": "",
             "shortTechDescription": "",
@@ -18,10 +18,10 @@
         "decrees": [],
         "manufacturers": [
             {
-                "form": "Акционерное общество",
-                "name": "Акционерное общество ″Елатомский приборный завод″",
+                "form": "",
+                "name": "ROCHE Diagnostics GmbH (контрактное производство Hitachi High-Technologies Corporation в Японии), ГЕРМАНИЯ",
                 "nameInEnglish": "",
-                "country": "Россия",
+                "country": "Германия",
                 "type": ""
             }
         ],
@@ -29,17 +29,483 @@
         "variants": [],
         "instructions": [
             {
-                "type": "Инструкция по применению медицинского изделия",
+                "type": "Руководство по эксплуатации",
                 "comment": "",
-                "fileInRussian": "https://portal.eaeunion.org/sites/odata/_layouts/15/Registry/Share/Attachments.axd?id=d7147aa1-052f-4c09-85ac-edfe1864e21b",
+                "fileInRussian": null,
                 "fileInKazakh": ""
             }
         ],
-        "certificates": [],
+        "certificates": [
+            {
+                "type": "ИМ-7.106559",
+                "name": "",
+                "dates": "",
+                "organ": ""
+            }
+        ],
         "packages": [],
         "nmirks": [],
         "website": {
-            "name": "portal.eaeunion.org",
+            "name": "rceth.by",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "Медицинская техника",
+            "productName": "Анализатор биохимический автоматический: анализатор биохимический автоматический с принадлежностями и материалами расходными : материалы расходные к анализатору cobas с 311",
+            "registrationType": "",
+            "registrationData": "31.05.2018",
+            "registrationLife": "",
+            "registrationExpireData": "31.05.2023",
+            "shelfLife": "",
+            "appointment": "В соответствии с руководством по эксплуатации",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ROCHE Diagnostics GmbH (контрактное производство Hitachi High-Technologies Corporation в Японии), ГЕРМАНИЯ",
+                "nameInEnglish": "",
+                "country": "Германия",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Руководство по эксплуатации",
+                "comment": "",
+                "fileInRussian": null,
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [
+            {
+                "type": "ИМ-7.106559",
+                "name": "",
+                "dates": "",
+                "organ": ""
+            }
+        ],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "rceth.by",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "Медицинская техника",
+            "productName": "Анализаторы газов и электролитов крови с принадлежностями и материалами расходными: анализатор газов и электролитов крови, модель ABL80 FLEX CO-OX",
+            "registrationType": "",
+            "registrationData": "06.05.2021",
+            "registrationLife": "",
+            "registrationExpireData": "бессрочно",
+            "shelfLife": "",
+            "appointment": "В соответствии с руководством по эксплуатации",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "Radiometer Medical ApS, ДАНИЯ",
+                "nameInEnglish": "",
+                "country": "Дания",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Руководство по эксплуатации",
+                "comment": "",
+                "fileInRussian": "https://www.rceth.by/NDfiles/minstr/24775_m.pdf",
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [
+            {
+                "type": "ИМ-7.103543/2105",
+                "name": "",
+                "dates": "",
+                "organ": ""
+            }
+        ],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "rceth.by",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "Медицинская техника",
+            "productName": "Анализаторы газов и электролитов крови с принадлежностями и материалами расходными: анализатор газов и электролитов крови, модель ABL80 FLEX.",
+            "registrationType": "",
+            "registrationData": "06.05.2021",
+            "registrationLife": "",
+            "registrationExpireData": "бессрочно",
+            "shelfLife": "",
+            "appointment": "В соответствии с руководством по эксплуатации",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "Radiometer Medical ApS, ДАНИЯ",
+                "nameInEnglish": "",
+                "country": "Дания",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Руководство по эксплуатации",
+                "comment": "",
+                "fileInRussian": "https://www.rceth.by/NDfiles/minstr/24775_m.pdf",
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [
+            {
+                "type": "ИМ-7.103543/2105",
+                "name": "",
+                "dates": "",
+                "organ": ""
+            }
+        ],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "rceth.by",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "Медицинская техника",
+            "productName": "Анализаторы газов и электролитов крови с принадлежностями и материалами расходными: материалы расходные к анализаторам газов и электролитов крови:",
+            "registrationType": "",
+            "registrationData": "06.05.2021",
+            "registrationLife": "",
+            "registrationExpireData": "бессрочно",
+            "shelfLife": "",
+            "appointment": "В соответствии с руководством по эксплуатации",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "Radiometer Medical ApS, ДАНИЯ",
+                "nameInEnglish": "",
+                "country": "Дания",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Руководство по эксплуатации",
+                "comment": "",
+                "fileInRussian": "https://www.rceth.by/NDfiles/minstr/24775_m.pdf",
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [
+            {
+                "type": "ИМ-7.103543/2105",
+                "name": "",
+                "dates": "",
+                "organ": ""
+            }
+        ],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "rceth.by",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "Медицинская техника",
+            "productName": "Анализаторы газов и электролитов крови с принадлежностями и материалами расходными: принадлежности к анализаторам газов и электролитов крови:",
+            "registrationType": "",
+            "registrationData": "06.05.2021",
+            "registrationLife": "",
+            "registrationExpireData": "бессрочно",
+            "shelfLife": "",
+            "appointment": "В соответствии с руководством по эксплуатации",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "Radiometer Medical ApS, ДАНИЯ",
+                "nameInEnglish": "",
+                "country": "Дания",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Руководство по эксплуатации",
+                "comment": "",
+                "fileInRussian": "https://www.rceth.by/NDfiles/minstr/24775_m.pdf",
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [
+            {
+                "type": "ИМ-7.103543/2105",
+                "name": "",
+                "dates": "",
+                "organ": ""
+            }
+        ],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "rceth.by",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "Медицинская техника",
+            "productName": "Анализаторы газов и электролитов с материалами расходными: анализатор газов и электролитов ErbaLyte",
+            "registrationType": "",
+            "registrationData": "30.08.2018",
+            "registrationLife": "",
+            "registrationExpireData": "30.08.2023",
+            "shelfLife": "",
+            "appointment": "В соответствии с руководством по эксплуатации",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "Erba Lachema s.r.o., ЧЕШСКАЯ РЕСПУБЛИКА",
+                "nameInEnglish": "",
+                "country": "Чешская республика",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Руководство по эксплуатации",
+                "comment": "",
+                "fileInRussian": null,
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [
+            {
+                "type": "ИМ-7.106864",
+                "name": "",
+                "dates": "",
+                "organ": ""
+            }
+        ],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "rceth.by",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "Медицинская техника",
+            "productName": "Анализаторы газов и электролитов с материалами расходными: материалы расходные к анализатору газов и электролитов ErbaLyte",
+            "registrationType": "",
+            "registrationData": "30.08.2018",
+            "registrationLife": "",
+            "registrationExpireData": "30.08.2023",
+            "shelfLife": "",
+            "appointment": "В соответствии с руководством по эксплуатации",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "Erba Lachema s.r.o., ЧЕШСКАЯ РЕСПУБЛИКА",
+                "nameInEnglish": "",
+                "country": "Чешская республика",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Руководство по эксплуатации",
+                "comment": "",
+                "fileInRussian": null,
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [
+            {
+                "type": "ИМ-7.106864",
+                "name": "",
+                "dates": "",
+                "organ": ""
+            }
+        ],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "rceth.by",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "Медицинская техника",
+            "productName": "Анализаторы гематологические автоматические Erba с принадлежностями и материалами расходными: анализатор гематологический автоматический Erba ELite 3;",
+            "registrationType": "",
+            "registrationData": "22.10.2020",
+            "registrationLife": "",
+            "registrationExpireData": "22.10.2025",
+            "shelfLife": "",
+            "appointment": "В соответствии с руководством по эксплуатации",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "Erba Lachema s.r.o., ЧЕШСКАЯ РЕСПУБЛИКА",
+                "nameInEnglish": "",
+                "country": "Чешская республика",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Руководство по эксплуатации",
+                "comment": "",
+                "fileInRussian": "https://www.rceth.by/NDfiles/minstr/23854_m.pdf",
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [
+            {
+                "type": "ИМ-7.109061",
+                "name": "",
+                "dates": "",
+                "organ": ""
+            }
+        ],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "rceth.by",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "Медицинская техника",
+            "productName": "Анализаторы гематологические автоматические Erba с принадлежностями и материалами расходными: анализатор гематологический автоматический Erba ELite 5",
+            "registrationType": "",
+            "registrationData": "22.10.2020",
+            "registrationLife": "",
+            "registrationExpireData": "22.10.2025",
+            "shelfLife": "",
+            "appointment": "В соответствии с руководством по эксплуатации",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "Erba Lachema s.r.o., ЧЕШСКАЯ РЕСПУБЛИКА",
+                "nameInEnglish": "",
+                "country": "Чешская республика",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Руководство по эксплуатации",
+                "comment": "",
+                "fileInRussian": "https://www.rceth.by/NDfiles/minstr/23854_m.pdf",
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [
+            {
+                "type": "ИМ-7.109061",
+                "name": "",
+                "dates": "",
+                "organ": ""
+            }
+        ],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "rceth.by",
             "country": ""
         }
     }

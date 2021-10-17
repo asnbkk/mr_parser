@@ -34,20 +34,20 @@ def process_parser(url, reestr):
                 'shelfLifeComment': ''
             }
 
-            manufacturers = {
+            manufacturers = [{
                 'form': cells[3].text,
                 'name': cells[6].text,
                 'nameInEnglish': '',
                 'country': cells[7].text,
                 'type': ''
-            }
+            }]
 
-            instructions = {
+            instructions = [{
                 'type': '',
                 'comment': '',
                 'fileInRussian': instruction,
                 'fileInKazakh': ''
-            }
+            }]
 
             website = {
                 'name': 'kyrgyzstan',

@@ -2,6 +2,10 @@ from shit_dict import *
 from bs4 import BeautifulSoup
 import requests
 
+from shit_chrome_path import *
+import json
+from kafka import KafkaProducer
+
 def insert_page_index(index):
     return {'ValueSubmit': index, **request_data}
 
@@ -19,3 +23,13 @@ def merge_all_data(dict1, dict2, manufacturing_country, instruction, type, appoi
         'type': type, 
         'appointment': appointment
         }
+
+producer = KafkaProducer(
+    bootstrap_servers=[kafka_host],
+    api_version=(0,10,1),
+    value_serializer=lambda x: 
+    json.dumps(x).encode('utf-8')
+    )
+
+def send_data(data):
+    producer.send('testTopic', value=data)
