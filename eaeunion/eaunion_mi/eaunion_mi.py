@@ -10,7 +10,7 @@ from shit_dict import *
 
 state = 'parsing'
 
-data = []
+# data = []
 
 def process_parser(driver):
     while True:
@@ -112,8 +112,8 @@ def process_parser(driver):
                 }
 
                 send_data(position)
-                data.append(position)
-                print(len(data))
+                # data.append(position)
+                # print(len(data))
 
                 # with open('data.json', 'w', encoding='utf-8') as f:
                 #     json.dump(data, f, ensure_ascii=False, indent=4)
