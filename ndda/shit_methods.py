@@ -1,15 +1,11 @@
 import time
+import json
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-
 from shit_chrome_path import *
-
-import json
-
 from shit_dict import tab_list
-
 from kafka import KafkaProducer
 
 producer = KafkaProducer(

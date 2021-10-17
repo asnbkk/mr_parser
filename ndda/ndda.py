@@ -61,7 +61,7 @@ while True:
         WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr'))).click()
         table_check(driver, 'modal-open')
 
-        next_tab(driver, 0)
+        next_tab(driver, 0) 
         rows = wait_table(driver, 0, True)
         order_info = []
 

@@ -1,156 +1,319 @@
 [
     {
         "mainInfo": {
-            "type": "ЛС",
-            "productName": "Мята",
-            "registrationType": "Перерегистрация",
-            "registrationData": "14.10.2021",
-            "registrationLife": " ",
-            "registrationExpireData": " ",
-            "shelfLife": "2 Год",
+            "registrationData": "03.03.2021",
+            "registrationType": "зарегистрировано",
+            "registrationExpireData": "",
+            "registrationLife": "",
+            "shelfLife": "2 года",
+            "productName": "АнвиМакс®",
             "appointment": "",
             "fieldOfUse": "",
             "securityClass": "",
             "shortTechDescription": "",
-            "attributes": "Генерик",
+            "attributes": "",
             "shelfLifeComment": ""
         },
-        "decrees": [
-            {
-                "number": "627",
-                "date": "20.08.2012",
-                "type": "Регистрация, Перерегистрация",
-                "comment": "Проект приказа № 95-12 от 03.08.2012 г."
-            },
-            {
-                "number": "N001873",
-                "date": "17.05.2016",
-                "type": "Регистрация, Перерегистрация",
-                "comment": "По СУЛО, электронная версия приказа отсутствует"
-            }
-        ],
+        "decrees": [],
         "manufacturers": [
             {
-                "form": "ТОО",
-                "name": "Зерде-Фито",
-                "nameInEnglish": "Zerde-Fito LTD",
-                "country": "КАЗАХСТАН",
-                "type": "Держатель регистрационного удостоверения"
-            },
-            {
-                "form": "ТОО",
-                "name": "Зерде-Фито",
-                "nameInEnglish": "Zerde-Fito LTD",
-                "country": "КАЗАХСТАН",
-                "type": "Предприятие-упаковщик (первичная)"
-            },
-            {
-                "form": "ТОО",
-                "name": "Зерде-Фито",
-                "nameInEnglish": "Zerde-Fito LTD",
-                "country": "КАЗАХСТАН",
-                "type": "Предприятие-упаковщик (вторичная)"
-            },
-            {
-                "form": "ТОО",
-                "name": "Зерде-Фито",
-                "nameInEnglish": "Zerde-Fito LTD",
-                "country": "КАЗАХСТАН",
-                "type": "Производитель, осуществляющий контроль качества"
-            },
-            {
-                "form": "ТОО",
-                "name": "Зерде-Фито",
-                "nameInEnglish": "Zerde-Fito LTD",
-                "country": "КАЗАХСТАН",
-                "type": "Производитель, ответственный за выпуск серий"
+                "form": "Общества с ограниченной ответственностью",
+                "name": "ООО НПО ФармВИЛАР",
+                "nameInEnglish": "",
+                "country": "Россия",
+                "type": ""
             }
         ],
         "completeness": [],
         "variants": [],
         "instructions": [
             {
-                "type": "Для медицинского применения",
-                "comment": " ",
-                "fileInRussian": "http://register.ndda.kz/register.php/mainpage/getFile/type/instruction/file_id/62563",
-                "fileInKazakh": "http://register.ndda.kz/register.php/mainpage/getFile/type/instruction/file_id/62563/lang/kaz"
+                "type": "Инструкция по медицинскому применению (DrugUsageInstructionDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "Общая характеристика лекарственного препарата (DrugGeneralCharacteristicDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "Экспертный отчет об оценке безопасности, эффективности и качества (ExpertReportDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "План управления рисками (RiskManagementPlanDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
             }
         ],
-        "certificates": [
-            {
-                "name": "Мята, фито-чай, фильтр-пакет 1 г №20, серия 020717, годен до 07.2019г. - 15000 уп",
-                "type": "KZ.5110.02.01.00506205 111542 Оценка безопасности и качества партии продукции Обязательная",
-                "dates": "18.07.2017  01.08.2019",
-                "organ": "ТФ г. Шымкент"
-            },
-            {
-                "name": "Мята, фито-чай, фильтр-пакет 1 г №20, серия 020718, годен до 07.2020г. - 3000 уп",
-                "type": "KZ.5110.02.01.00512093 175456 Оценка безопасности и качества партии продукции Обязательная",
-                "dates": "26.07.2018  01.08.2020",
-                "organ": "ТФ г. Шымкент"
-            },
-            {
-                "name": "Мята, фито-чай, фильтр-пакет 1 г №20, серия 010118, годен до 01.2020г. - 10000 уп",
-                "type": "KZ.5110.02.01.00509153 141500 Оценка безопасности и качества партии продукции Обязательная",
-                "dates": "26.01.2018  01.02.2020",
-                "organ": "ТФ г. Шымкент"
-            },
-            {
-                "name": "Мята, фито-чай, фильтр-пакет 1 г №20, серия 010117, годен до 01.2019г. - 7000 уп",
-                "type": "KZ.5110.02.01.00503213 013243 Оценка безопасности и качества партии продукции Обязательная",
-                "dates": "17.01.2017  01.02.2019",
-                "organ": "ТФ г. Шымкент"
-            },
-            {
-                "name": "Мята, Фито-чай , Фильтр-пакет 1 г №20, серия 020719, годен до 07.2021 г. - 4000 уп",
-                "type": "KZ.7700.02.01.00581242 041965-Э Оценка безопасности и качества каждой серии(партии)",
-                "dates": "29.08.2019  01.08.2021",
-                "organ": "РГП на ПХВ «НЦЭЛС и МИ» ККК и БТУ МЗ РК"
-            },
-            {
-                "name": "Мята, Фито-чай , Фильтр-пакет 1 г №20, серия 010119, годен до 01.2021 г. - 4000 уп",
-                "type": "KZ.7700.02.01.00548225 010510-Э Оценка безопасности и качества каждой серии(партии)",
-                "dates": "01.03.2019  01.02.2021",
-                "organ": "РГП на ПХВ «НЦЭЛС, ИМН и МТ» г. Астана"
-            }
-        ],
+        "certificates": [],
         "packages": [
             {
-                "name": "Пачка картонная",
                 "primary": false,
-                "volume": "",
+                "name": "",
+                "volume": "Действующее вещество: парацетамол (360 мг), аскорбиновая кислота (300 мг), Кальция глюконата моногидрат (100 мг), Римантадина гидрохлорид (50 мг), рутозид (20 мг), лоратадин (3 мг) Вспомогательное вещество: Лимонная кислота (06), Натрия гидрокарбонат (Натрия бикарбонат) (06), Сорбит (Сорбитол) (10), Макрогол 6000 (07), Ароматизатор пищевой порошкообразный Клюква 924 или Малина 909 (03), Ацесульфам калия (04), Аспартам (04), Повидон (11), Краситель красный свекольный (Е162) (23), Изолейцин (разрыхлитель)",
+                "amountOfUnits": "",
                 "unitType": "",
-                "amountOfUnits": "20",
-                "description": "нет"
-            },
-            {
-                "name": "Фильтр-пакет",
-                "primary": true,
-                "volume": "1",
-                "unitType": "Грамм",
-                "amountOfUnits": "0",
-                "description": "№20"
-            },
-            {
-                "name": "Фильтр-пакет",
-                "primary": true,
-                "volume": "1",
-                "unitType": "Грамм",
-                "amountOfUnits": "0",
-                "description": "не маркируется"
-            },
-            {
-                "name": "Пачка из картона",
-                "primary": false,
-                "volume": "",
-                "unitType": " ",
-                "amountOfUnits": "20",
-                "description": "-"
+                "description": "таблетки шипучие; дозировка согласно составу/0 мг; по 10 шт в первичной упаковке 73 Лекарственная форма дозирована - да, Применяется у детей - нет, Наличие сахара - нет."
             }
         ],
         "nmirks": [],
         "website": {
-            "name": "ndda.kz",
+            "name": "portal.eaeunion.org_ls",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "registrationData": "24.08.2020",
+            "registrationType": "зарегистрировано",
+            "registrationExpireData": "",
+            "registrationLife": "",
+            "shelfLife": "-",
+            "productName": "B12 Анкерманн",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "Общества с ограниченной ответственностью",
+                "name": "",
+                "nameInEnglish": "",
+                "country": "Германия",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Инструкция по медицинскому применению (DrugUsageInstructionDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "Общая характеристика лекарственного препарата (DrugGeneralCharacteristicDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "Экспертный отчет об оценке безопасности, эффективности и качества (ExpertReportDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "План управления рисками (RiskManagementPlanDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [],
+        "packages": [
+            {
+                "primary": false,
+                "name": "",
+                "volume": "Действующее вещество: цианокобаламин (1 мг)",
+                "amountOfUnits": "",
+                "unitType": "",
+                "description": "таблетки, покрытые оболочкой; 1 мг; по 25 шт в первичной упаковке Блистер"
+            },
+            {
+                "primary": false,
+                "name": "",
+                "volume": "Действующее вещество: цианокобаламин (1 мг)",
+                "amountOfUnits": "",
+                "unitType": "",
+                "description": "таблетки, покрытые оболочкой; 1 мг; по 25 шт в первичной упаковке Блистер"
+            }
+        ],
+        "nmirks": [],
+        "website": {
+            "name": "portal.eaeunion.org_ls",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "registrationData": "18.09.2020",
+            "registrationType": "зарегистрировано",
+            "registrationExpireData": "",
+            "registrationLife": "",
+            "shelfLife": "5 лет",
+            "productName": "CУПРАСТИН®/Супрастин®/Супрастин®",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "Акционерные общества",
+                "name": "ЗАО «Фармацевтический завод ЭГИС»",
+                "nameInEnglish": "",
+                "country": "Венгрия",
+                "type": ""
+            },
+            {
+                "form": "Акционерные общества",
+                "name": "Прокос С.п.А.",
+                "nameInEnglish": "",
+                "country": "Италия",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Инструкция по медицинскому применению (П_N012426_02[2019]_7.pdf)",
+                "comment": "",
+                "fileInRussia": "https://portal.eaeunion.org/sites/commonprocesses/ru-ru/_vti_bin/Portal.EEC.CDBProxy/Data.svc/GetDocumentFile/P.MM.01/drug-registrations/5e67419efb44f119f7c635fc?filePath=c241bf32-78b9-45d9-aef0-23184e60c8bc/d8fdeec8-0a6a-4c83-90c1-fffa2488b8b8/file_4267690220805747.pdf",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "Общая характеристика лекарственного препарата (DrugGeneralCharacteristicDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "Экспертный отчет об оценке безопасности, эффективности и качества (ExpertReportDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "План управления рисками (RiskManagementPlanDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [],
+        "packages": [
+            {
+                "primary": false,
+                "name": "",
+                "volume": "Действующее вещество: Хлоропирамина гидрохлорид (20 мг) Вспомогательное вещество: Вода для инъекций (растворитель)",
+                "amountOfUnits": "",
+                "unitType": "",
+                "description": "раствор для внутривенного и внутримышечного введения; 20 мг + 1 мл/20 мг/мл; по 1 куб.см в первичной упаковке ампула с кольцом излома Лекарственная форма дозирована - да, Применяется у детей - да, Наличие сахара - нет."
+            },
+            {
+                "primary": false,
+                "name": "",
+                "volume": "Действующее вещество: Хлоропирамина гидрохлорид (20 мг) Вспомогательное вещество: Вода для инъекций (растворитель)",
+                "amountOfUnits": "",
+                "unitType": "",
+                "description": "раствор для внутривенного и внутримышечного введения; 20 мг + 1 мл/20 мг/мл; по 1 куб.см в первичной упаковке ампула с кольцом излома Лекарственная форма дозирована - да, Применяется у детей - да, Наличие сахара - нет."
+            }
+        ],
+        "nmirks": [],
+        "website": {
+            "name": "portal.eaeunion.org_ls",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "registrationData": "18.09.2020",
+            "registrationType": "зарегистрировано",
+            "registrationExpireData": "",
+            "registrationLife": "",
+            "shelfLife": "5 лет",
+            "productName": "CУПРАСТИН®/Супрастин®/Супрастин®",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "Акционерные общества",
+                "name": "ЗАО «Фармацевтический завод ЭГИС»",
+                "nameInEnglish": "",
+                "country": "Венгрия",
+                "type": ""
+            },
+            {
+                "form": "Акционерные общества",
+                "name": "Прокос С.п.А.",
+                "nameInEnglish": "",
+                "country": "Италия",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [
+            {
+                "type": "Инструкция по медицинскому применению (П_N012426_02[2019]_7.pdf)",
+                "comment": "",
+                "fileInRussia": "https://portal.eaeunion.org/sites/commonprocesses/ru-ru/_vti_bin/Portal.EEC.CDBProxy/Data.svc/GetDocumentFile/P.MM.01/drug-registrations/5e67419efb44f119f7c635fc?filePath=c241bf32-78b9-45d9-aef0-23184e60c8bc/d8fdeec8-0a6a-4c83-90c1-fffa2488b8b8/file_4267690220805747.pdf",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "Общая характеристика лекарственного препарата (DrugGeneralCharacteristicDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "Экспертный отчет об оценке безопасности, эффективности и качества (ExpertReportDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            },
+            {
+                "type": "План управления рисками (RiskManagementPlanDetails)",
+                "comment": "",
+                "fileInRussia": "javascript:void(0)",
+                "fileInKazakh": ""
+            }
+        ],
+        "certificates": [],
+        "packages": [
+            {
+                "primary": false,
+                "name": "",
+                "volume": "Действующее вещество: Хлоропирамина гидрохлорид (20 мг) Вспомогательное вещество: Вода для инъекций (растворитель)",
+                "amountOfUnits": "",
+                "unitType": "",
+                "description": "раствор для внутривенного и внутримышечного введения; 20 мг + 1 мл/20 мг/мл; по 1 куб.см в первичной упаковке ампула с кольцом излома Лекарственная форма дозирована - да, Применяется у детей - да, Наличие сахара - нет."
+            },
+            {
+                "primary": false,
+                "name": "",
+                "volume": "Действующее вещество: Хлоропирамина гидрохлорид (20 мг) Вспомогательное вещество: Вода для инъекций (растворитель)",
+                "amountOfUnits": "",
+                "unitType": "",
+                "description": "раствор для внутривенного и внутримышечного введения; 20 мг + 1 мл/20 мг/мл; по 1 куб.см в первичной упаковке ампула с кольцом излома Лекарственная форма дозирована - да, Применяется у детей - да, Наличие сахара - нет."
+            }
+        ],
+        "nmirks": [],
+        "website": {
+            "name": "portal.eaeunion.org_ls",
             "country": ""
         }
     }

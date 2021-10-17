@@ -1,5 +1,6 @@
 from shit_dict import *
 from shit_functions import *
+from shit_chrome_path import *
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -8,8 +9,18 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import json
 
-PATH = './chromedriver/chromedriver'
-driver = webdriver.Chrome(PATH)
+opts = webdriver.ChromeOptions()
+opts.add_argument("--headless")
+opts.add_argument("--disable-xss-auditor")
+opts.add_argument("--disable-web-security")
+opts.add_argument("--allow-running-insecure-content")
+opts.add_argument("--no-sandbox")
+opts.add_argument("--disable-setuid-sandbox")
+opts.add_argument("--disable-webgl")
+opts.add_argument("--disable-popup-blocking")
+
+PATH = chrome_path
+driver = webdriver.Chrome(PATH, options=opts)
 driver.get('https://portal.eaeunion.org/sites/commonprocesses/ru-ru/Pages/DrugRegistrationDetails.aspx')
 
 data = []
@@ -117,39 +128,87 @@ while True:
                 regulations_row = {**regulations_row_text, **document_link}
                 regulations.append(regulations_row)
 
-            # pharmaceutical substances toggle button
-            tab_click(tabs, 4)
+            main_info = {
+                'registrationData': reg_data['reg_date'],
+                'registrationType': reg_data['reg_status'],
+                'registrationExpireData': '',
+                'registrationLife': '',
+                'shelfLife': panel4[0]['shelf_life'],
+                'productName': general_info['header'],
+                'appointment': '',
+                'fieldOfUse': '',
+                'securityClass': '',
+                'shortTechDescription': '',
+                'attributes': '',
+                'shelfLifeComment': ''
+            }
+            
+            manufacturers = []
+            for i in range(len(product_list)):
+                manufacturer = {
+                    'form': manufacturings_list[i]['organizational_and_legal_form'],
+                    'name': manufacturings_list[i]['production_site_name'],
+                    'nameInEnglish': '',
+                    'country': manufacturings_list[i]['country_of_registration_of_the_manufacturer'],
+                    'type': ''
+                }
+                manufacturers.append(manufacturer)
 
-            substances = []
-            substances_table_rows = driver.find_elements_by_xpath("//div[@id='panel6']//tbody//tr")[1:]
+            instructions = []
+            for i in range(len(regulations_table_rows)):
+                instruction = {
+                    'type': regulations[i]['document_name'],
+                    'comment': '',
+                    'fileInRussia': regulations[i]['document_link'],
+                    'fileInKazakh': ''
+                }
+                instructions.append(instruction)
+            
+            packages = []
+            for i in range(len(panel4_table_rows)):
+                package = {
+                    'primary': False,
+                    'name': '',
+                    'volume': panel4[i]['composition'],
+                    'amountOfUnits': '',
+                    'unitType': '',
+                    'description': panel4[i]['dosage_form_and_dosage']
+                }
+                packages.append(package)
 
-            for substances_table_row in substances_table_rows:
-                table_cell = substances_table_row.find_elements_by_class_name('table__cell')
-
-                substances_row_text = { substances_keys[i]: text_prep(table_cell[i].text) for i in range(len(substances_keys)) }
-                # merging tow intermediate dicts and appending to list
-                substances.append(substances_row_text)
-
+            website = {
+                'name': 'portal.eaeunion.org_ls',
+                'country': ''
+            }
+    
         except Exception as e: 
             # handle shit
             print(e)
             print(f'some problems with {header}')
         finally: 
             # merge all data inside one position and append to data list
-            position = merge_position(general_info, panel1, reg_data, panel2, panel4, manufacturings_list, regulations, substances)
-
-            data.append(position)
-            # send data
+            position = { 
+                    'mainInfo': main_info, 
+                    'decrees': [], 
+                    'manufacturers': manufacturers, 
+                    'completeness': [],
+                    'variants': [],
+                    'instructions': instructions, 
+                    'certificates': [],
+                    'packages': packages, 
+                    'nmirks': [],
+                    'website': website
+                }
+                
+            # data.append(position)
             send_data(position)
-            print(position['general_info']['header'])
-            print(len(data))
+            print(main_info['productName'])
 
-            with open('data.json', 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
+            # with open('data.json', 'w', encoding='utf-8') as f:
+            #     json.dump(data, f, ensure_ascii=False, indent=4)
                 
             driver.close()
             driver.switch_to.window(driver.window_handles[0])
-
     try:
         next_page_button = driver.find_element_by_class_name('arrow-right').click()
         time.sleep(5)
