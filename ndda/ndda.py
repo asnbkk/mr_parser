@@ -161,7 +161,6 @@ def process_parser(driver):
 
 def bootstrap():
     while True:
-
         opts = webdriver.ChromeOptions()
         opts.add_argument("--headless")
         opts.add_argument("--disable-xss-auditor")
