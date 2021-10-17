@@ -3,39 +3,924 @@
         "mainInfo": {
             "type": "",
             "registrationType": "",
-            "registrationData": "15.07.2020",
-            "registrationExpireData": "Бессрочное",
-            "registrationLife": "",
+            "registrationData": "26.01.2010",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
             "shelfLife": "",
-            "productName": "Аппарат магнитотерапевтический «АЛМАГ+» по ГИКС.941519.118 ТУ",
+            "productName": "Салфетки атравматические из ионообменного хемосорбционного волокна для лечения ожогов, трофических язв и вялогранулирующих ран, стерильные ВИТАС-АЙТУАР-НП по ТУ 9393-004-59303204-2004",
             "appointment": "",
             "fieldOfUse": "",
-            "securityClass": "",
+            "securityClass": "2а",
             "shortTechDescription": "",
             "attributes": "",
             "shelfLifeComment": ""
         },
         "decrees": [],
-        "manufacturers": {
-            "form": "Акционерное общество",
-            "name": "Акционерное общество ″Елатомский приборный завод″",
-            "nameInEnglish": "",
-            "country": "Россия",
-            "type": ""
-        },
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО Айтуар-НП",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
         "completeness": [],
         "variants": [],
-        "instructions": {
-            "type": "Инструкция по применению медицинского изделия",
-            "comment": "",
-            "fileInRussian": "https://portal.eaeunion.org/sites/odata/_layouts/15/Registry/Share/Attachments.axd?id=d7147aa1-052f-4c09-85ac-edfe1864e21b",
-            "fileInKazakh": ""
-        },
+        "instructions": [],
         "certificates": [],
         "packages": [],
         "nmirks": [],
         "website": {
-            "name": "portal.eaeunion.org_mi",
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Набор реагентов для определения содержания глюкозы в сыворотке (плазме) и цельной крови Диаком Глюкоза",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "1",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ЗАО Диаком-ВНЦМДЛ",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Набор реагентов для определения содержания креатинина в сыворотке, плазме крови и моче человека Диаком Креатинин",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "1",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ЗАО Диаком-ВНЦМДЛ",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Набор реагентов для определения содержания мочевины в сыворотке, плазме крови Диаком М",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "1",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ЗАО Диаком-ВНЦМДЛ",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Набор реагентов для определения содержания билирубина в сыворотке и плазме крови Диаком Бирубин",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "1",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ЗАО Диаком-ВНЦМДЛ",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Передвижной пункт для проведения медицинского освидетельствования водителей на состояние опьянения",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ОАО НПО ЭКРАН",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "22.01.2010",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Бинты марлевые стерильные и нестерильные медицинские по ГОСТ 1172-93",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "1",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО НЬЮФАРМ",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "25.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Эндопротез коленного сустава металлополимерный тотальный цементный с инструментами для установки КС-МПЦ Феникс по ТУ 9438-003-16791794-2009 в составе (см. приложение на 2 листах):",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "3",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО НПП Феникс",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Набор реагентов для иммуноферментного определения свободного трийодтиронина в сыворотке крови (ИммуноФА-СвТ3) по ТУ 9398-013-11361534-2004",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ЗАО НВО ИММУНОТЕХ",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Отменено с 03.12.2019",
+            "shelfLife": "",
+            "productName": "Бинты марлевые медицинские нестерильные по ГОСТ 1172-93",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "1",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО ПКФ БИНС",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Набор реагентов для выявления нуклеотидных последовательностей Хламидия трахоматис (Chlamydia trachomatis) методом полимеразной цепной реакции ХламАм по ТУ 9398-404-29032954-01",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2б",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО НПФ ГЕНТЕХ",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Набор реагентов для определения ДНК Лактобацилл (Lactobacillus spp.) и Гарднереллы (Gardnerella vaginalis) методом полимеразной цепной реакции ЛактАм по ТУ 9398-013-56751480-2004",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО НПФ ГЕНТЕХ",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Набор реагентов для выявления нуклеотидных последовательностей Микоплазма  гоминис (Mycoplasma hominis) методом полимеразной цепной реакции МикгАм по ТУ 9398-403-29032954-01",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО НПФ ГЕНТЕХ",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "31.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Повязки противоожоговые с лекарственными средствами стерильные Активтекс по ТУ 9393-005-40383494-2004 в следующих исполнениях: \r - Активтекс - ДТ с диоксидином и тримекаином;\r - Активтекс - ТЙП с йодопирроном и тримекаином; \r - Активтекс - ХФЛ с хлоргексидином, фурагином и лидокаином.",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2б",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО АЛЬТЕКС",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "31.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Повязки гемостатические с лекарственными средствами стерильные Гемотекс по ТУ 9393-004-40383494-2002 в следующих исполнениях (см. приложение на 1 листе):- Гемотекс - ЛТЖ - с лактатом железа;\r - Гемотекс - ЛТЖ (ЛК) - с лактатом железа, с липким краем;\r - Гемотекс - ЛТЖ-Х - с лактатом железа и хлоргексидином;\r - Гемотекс - ЛТЖ-Х (ЛК) - с лактатом железа и хлоргексидином, с липким краем;\r - Гемотекс - ГКЖ - с глюконатом железа;\r - Гемотекс - ГКЖ (ЛК) - с глюконатом железа, с липким краем;\r - Гемотекс - ГКЖ-Д - с глюконатом железа и диоксидином;\r - Гемотекс - ГКЖ-Д (ЛК) - с глюконатом железа и диоксидином, с липким краем.",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2б",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО АЛЬТЕКС",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Набор реагентов для иммуноферментного определения пролактина в сыворотке крови (ИммуноФА-ПРЛ) по ТУ 9398-012-11361534-2004",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ЗАО НВО ИММУНОТЕХ",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "30.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Аппарат ортопедический на всю ногу АН8-36 по ТУ 9396-014-55220088-2005",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "1",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ФГУП Брянское ПрОП Минздравсоцразвития России",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "25.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Аппарат для гемосорбции ГЕМОС портативный и магистраль кровопроводящая ГЕМОС-МН в составе: фильтры, зажимы, клапаны, крышки, камеры, трубки, соединители, насадка  по ТУ 9444-001-17669405-2009",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2б",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО НПП Биотех-М",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "24.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Линзы контактные мягкие склеральные Ленси-М и окрашенные Ленси-МК по ТУ 9488-005-12901406-2004",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО Предприятие ИНВЕРС",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "24.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Наборы инструментов для микроиглотерапии № 2 НИМТ-КМИЗ   по ТУ 9437-170-05519988-20041. Из нержавеющей стали:\r - пинцет ПА 100х0,6;\r - микроиглы №1 - 6;\r - иглы кнопочные №1 - №2;\r - иглы для акупунктуры №1 - №6;\r - иглы для акупунктуры №10;\r - пластины из серебра, меди, цинка, нержавеющей стали;\r - шарики диаметром 1,0; 1,2; 1,5; 2,0; 2,381; 3,0;\r 2. Из серебра:\r - микроигла из серебра №4 - №6;\r - иглы кнопочные из серебра №1 - №2;\r - иглы для акупунктуры из серебра №4- №9;\r - пластины из серебра, меди, цинка, нержавеющей стали;\r - шарики 1,0; 1,2; 1,5; 2,0; 2,381; 3,0;\r - пинцет ПА 100х0,6.",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ОАО Казанский медико-инструментальный завод",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "24.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Набор инструментов для рефлексотерапии № 2 НИРТ-КМИЗ по ТУ 9437-171-05519988-2004 в составе (см. приложение на 1 листе):- набор инструментов для микроиглотерапии № 2 НИМТ - КМИЗ из нержавеющей стали;\r - набор инструментов для микроиглотерапии № 2 НИМТ - КМИЗ из серебра;\r - зонд для поиска корпоральных и аурикулярных точек;\r - молоток для рефлексотерапии;\r - копье для кровопускания;\r - направители;\r - лейкопластырь, производства ОАО Новосибхимфарм",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ОАО Казанский медико-инструментальный завод",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "28.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Установка полимагнитная терапевтическая компьютеризированная воздействия бегущим магнитным полем Скафандр Епифанова по ТУ 9444-001-14061815-2009",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ООО Клиника Епифанова",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "28.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Корсет корригирующий типа Шено КР4-Ш по ТУ 9396-048-53279025-2008",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "1",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ФГУП Липецкое ПрОП Минздравсоцразвития России",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "14.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Бессрочно",
+            "shelfLife": "",
+            "productName": "Набор инструментов и принадлежностей к эндоскопам-НИИП АКСИ по ТУ 9437-046-27507632-2009 в составе (см. приложение на 9 листах):-щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 2,0 мм длиной 1900 мм 1 шт.;\r -щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 2,0 мм длиной 1750 мм 1 шт.;\r -щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 2,0 мм длиной 1600 мм 1 шт.;\r -щипцы биопсийные c овальными браншами к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 2,0 мм длиной 1900 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 2,0 мм длиной 1750  мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 2,0 мм длиной 1600 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -щипцы биопсийные с  короткими браншами к гибким эндоскопам для канала 2,0 мм длиной 1900 мм 1 шт.;\r -щипцы биопсийные с короткими браншами к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -щипцы биопсийные с короткими браншами к гибким эндоскопам для канала 2,0 мм длиной 1750 мм 1 шт.;\r -щипцы биопсийные с  короткими браншами к гибким эндоскопам для канала 2,0 мм длиной 1600 мм 1шт.;\r -щипцы биопсийные с круглыми браншами к гибким эндоскопам для канала 2,0 мм длиной 1750  мм 1 шт.;\r -щипцы биопсийные с круглыми браншами к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  к гибким эндоскопам для канала 2,0 мм длиной 1900 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  к гибким эндоскопам для канала 2,0 мм длиной  1750 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  к гибким эндоскопам для канала 2,0 мм длиной 1600 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  с иглой к гибким эндоскопам для канала 2,0 мм длиной 1900 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  с иглой к гибким эндоскопам для канала 2,0 мм длиной 1750 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  с иглой к гибким эндоскопам для канала 2,0 мм длиной 1600 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  с иглой к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к жестким эндоскопам для канала 2,8 мм длиной 350 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 2,8 мм длиной 1200 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 2,8 мм длиной 1650 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 2,8 мм длиной 2350 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 2,8 мм длиной 2600 мм 1 шт.;\r -щипцы биопсийные с овальными браншами к жестким эндоскопам для канала 2,8 мм длиной 350 мм 1 шт.;\r -щипцы биопсийные c овальными браншами к жестким эндоскопам для канала 2,8 мм длиной 370 мм 1 шт.;\r -щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 2,8 мм длиной 1200 мм 1 шт.;\r -щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 2,8 мм длиной 1650  мм 1 шт.;\r -щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 2,8 мм длиной 2350 мм 1 шт.;\r -щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 2,8 мм длиной 2400 мм 1 шт.;\r -щипцы биопсийные с круглыми браншами к гибким эндоскопам для канала 2,8 мм длиной 1200 мм 1 шт.;       \r -щипцы биопсийные с круглыми браншами к гибким эндоскопам для канала 2,8 мм длиной 1650 мм 1 шт.;\r -щипцы биопсийные с круглыми браншами к гибким эндоскопам для канала 2,8 мм длиной 1700 мм 1 шт.;\r -щипцы биопсийные с круглыми браншами к гибким эндоскопам для канала 2,8 мм длиной 2000 мм 1 шт.;\r -щипцы биопсийные с круглыми браншами к гибким эндоскопам для канала 2,8 мм длиной 2350 мм 1 шт.;\r -щипцы биопсийные с круглыми браншами с иглой к гибким эндоскопам для канала 2,8 мм длиной 1200 мм 1 шт.;\r -щипцы биопсийные с круглыми браншами с иглой к гибким эндоскопам для канала 2,8 мм длиной 1650 мм 1 шт.;\r -щипцы биопсийные с круглыми браншами с иглой к гибким эндоскопам для канала 2,8 мм длиной 2350 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  с иглой к гибким эндоскопам для канала 2,8 мм длиной 1200 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  с иглой к гибким эндоскопам для канала 2,8 мм длиной 1650 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  с иглой к гибким эндоскопам для канала 2,8 мм длиной 2350 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  к гибким эндоскопам для канала 2,8 мм  длиной 1200 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами к гибким эндоскопам для канала 2,8 мм длиной 1650 мм 1 шт.;\r -щипцы биопсийные с зубчатыми браншами  к гибким эндоскопам для канала 2,8 мм длиной 2350 мм 1 шт.;\r -щипцы биопсийные с овальными браншами для «горячей» биопсии к гибким эндоскопам для канала 2,8 мм длиной 1650 мм 1 шт.;\r -щипцы биопсийные с овальными браншами для «горячей» биопсии к гибким эндоскопам для канала 2,8 мм длиной 2350 мм 1 шт.;\r -щипцы биопсийные с круглыми браншами к жестким эндоскопам для канала 3,2 мм длиной 370 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 3.2 мм длиной 1650 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 3,2 мм длиной 2350 мм 1шт.;\r -щипцы биопсийные с овальными браншами для «горячей» биопсии к гибким эндоскопам для канала 3,7 мм длиной 2350 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 3,7 мм  длиной 2000 мм 1 шт.;\r -щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 3,7 мм длиной 1650 мм 1 шт.;\r -щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 3,7 мм длиной 2000 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 3,7 мм длиной 1650 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 3,7 мм длиной 2000 мм 1 шт.;\r -щипцы биопсийные с овальными браншами с иглой к гибким эндоскопам для канала 3,7 мм длиной 2350 мм 1 шт.;\r -щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 3,7 мм длиной 2350 мм 1 шт.;\r -щипцы биопсийные с овальными браншами к гибким эндоскопам для канала 3,7 мм длиной 2400 мм 1 шт.;\r -щипцы специальные для удаления катетера к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -игла инъекционная убирающаяся к гибким эндоскопам для канала  2,0 мм длиной 1750 мм 1 шт.;\r -игла инъекционная убирающаяся к гибким эндоскопам для канала  2,8 мм длиной 1650 мм 1 шт.;\r -петля для полипэктомии овальная большая к гибким эндоскопам для канала 2,8 мм длиной 2400 мм 1 шт.;\r -петля для полипэктомии овальная средняя к гибким эндоскопам для канала 2,8 мм длиной 2400 мм 1 шт.;\r -петля для полипэктомии овальная малая к гибким эндоскопам для канала 2,8 мм длиной 2400 мм 1 шт.;\r -петля для полипэктомии серповидная большая к гибким эндоскопам для канала 2,8 мм длиной 2400 мм 1 шт.;\r -петля для полипэктомии серповидная средняя к гибким эндоскопам для канала 2,8 мм длиной 2400 мм 1 шт.;\r -петля для полипэктомии серповидная малая к гибким эндоскопам для канала 2,8 мм длиной 2400 мм 1 шт.;\r -петля для полипэктомии комбинированная к гибким эндоскопам для канала 2,8 мм длиной 2400 мм 1 шт.;\r -петля для полипэктомии гексагональная к гибким эндоскопам для канала 2,8 мм длиной 2400 мм 1 шт.;\r -петля для полипэктомии овальная средняя к гибким эндоскопам для канала 2,0 мм длиной 1750 мм 1 шт.;\r -катетер смывной полимерный с прямой струей к гибким эндоскопам для канала 2,0 мм длиной 1750 мм 1 шт.;\r -катетер смывной полимерный с прямой струей к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -катетер смывной полимерный с прямой струей к гибким эндоскопам для канала 2,8 мм длиной 1700 мм 1 шт.;\r -катетер смывной полимерный с прямой струей к гибким эндоскопам для канала 3,7 мм длиной 2000 мм 1 шт.;\r -катетер смывной полимерный с прямой струей к гибким эндоскопам для канала 3,7 мм длиной 2350 мм 1 шт.;\r -зонд-катетер монополярный с ирригацией к гибким эндоскопам для канала 2,0 мм длиной 1750 мм 1 шт.;\r -зонд-катетер монополярный с ирригацией к гибким эндоскопам для канала 2,8 мм длиной 1650 мм 1 шт.;\r -ерш цитологический в футляре к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -ерш цитологический в футляре к гибким эндоскопам для канала 2,0 мм длиной 1750 мм 1 шт.;\r -ерш цитологический в футляре к гибким эндоскопам для канала 2,8 мм длиной 1200 мм 1 шт.;\r -ерш цитологический в футляре к гибким эндоскопам для канала 2,8 мм длиной 1700 мм 1 шт.;\r -ерш цитологический в футляре к гибким эндоскопам для канала 2,8 мм длиной 2350 мм 1 шт.;\r -ерш цитологический в футляре к гибким эндоскопам для канала 3,7 мм длиной 1925 мм 1 шт.;\r -ерш цитологический в футляре к гибким эндоскопам для канала 3,7 мм длиной 2350 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 2,0 мм длиной 1600 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 2,0 мм длиной 1700 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 2,0 мм длиной 1900 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 2,8 мм длиной 1700 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 2,8 мм длиной 1200 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 2,8 мм длиной 2300  мм 1 шт.;\r -щетка для очистки инструментального канала к жестким эндоскопам для канала 3,7 мм длиной 150 мм 1 шт.;\r -щетка для очистки инструментального канала к жестким эндоскопам для канала 3,7 мм длиной 250 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 3,7 мм длиной 1700 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 3,7 мм длиной 1800 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 3,7 мм длиной 2000 мм 1 шт.;\r -щетка для очистки инструментального канала к гибким эндоскопам для канала 3,7 мм длиной 2350 мм 1 шт.;\r -зажим с вилочным захватом к гибким эндоскопам для канала 2,0 длиной 1200 мм 1 шт.;\r -зажим с вилочным захватом к гибким эндоскопам для канала 2,0 длиной 1600 мм 1 шт.;\r -зажим с вилочным захватом к гибким эндоскопам для канала 2,0 длиной 1750 мм 1 шт.;\r -зажим трехзубый с Г-образным захватом к гибким эндоскопам для канала 2,0 длиной 1750 мм 1 шт.;\r -зажим трехзубый с Г-образным захватом к гибким эндоскопам для канала 2,0 длиной 1900 мм 1 шт.;\r -зажим с захватом обратный зуб к гибким эндоскопам для канала 2,0 длиной 1200 мм 1 шт.;\r -зажим с захватом обратный зуб к гибким эндоскопам для канала 2,0 длиной 1600 мм 1 шт.;\r -зажим с захватом обратный зуб к гибким эндоскопам для канала 2,0 длиной 1750 мм 1 шт.;\r -зажим с захватом обратный зуб к гибким эндоскопам для канала 2,0 длиной 1900 мм 1 шт.;\r -зажим с захватом «крысиный зуб» к гибким эндоскопам для канала 2,0 длиной 1750 мм 1 шт.;\r -зажим с захватом «крысиный зуб» к гибким эндоскопам для канала 2,0 длиной 1900 мм 1 шт.;\r -зажим с захватом «крысиный зуб» к гибким эндоскопам для канала 2,0 длиной 1200 мм 1 шт.;\r -зажим с захватом «крысиный зуб» к гибким эндоскопам для канала 2,0 длиной 1600 мм 1 шт.;\r -зажим трехзубый с Г-образным захватом к гибким эндоскопам для канала 2,0 длиной 1200 мм 1 шт.;\r -зажим трехзубый с Г-образным захватом к гибким эндоскопам для канала 2,0 длиной 1600 мм 1 шт.;\r -зажим с трехзубым захватом петлеобразным к гибким эндоскопам для канала 2,0 длиной 1200 мм 1 шт.;\r -зажим с трехзубым захватом петлеобразным к гибким эндоскопам для канала 2,0 длиной 1600 мм 1 шт.;\r -зажим с трехзубым захватом петлеобразным к гибким эндоскопам для канала 2,0 длиной 1750 мм 1 шт.;\r -зажим с трехзубым захватом петлеобразным к гибким эндоскопам для канала 2,0 длиной 1900 мм 1 шт.;\r -зажим с вилочным захватом к гибким эндоскопам для канала 2,0 длиной 1900 мм 1 шт.; \r -зажим с захватом «крысиный зуб» с удлиненными губками к гибким эндоскопам для канала 2,0 длиной 1200 мм 1 шт.;\r -зажим с захватом «крысиный зуб» с удлиненными губками к гибким эндоскопам для канала 2,0 длиной 1600 мм 1 шт.;\r -зажим с захватом «крысиный зуб» с удлиненными губками к гибким эндоскопам для канала 2,0 длиной 1750 мм 1 шт.;\r -зажим с захватом «крысиный зуб» с удлиненными губками к гибким эндоскопам для канала 2,0 длиной 1900 мм 1 шт.;\r -зажим с вилочным захватом к гибким эндоскопам для канала 2,8 длиной 1200 мм 1 шт.;\r -зажим с вилочным захватом к гибким эндоскопам для канала 2,8 длиной 1650 мм 1 шт.;\r -зажим с вилочным захватом к гибким эндоскопам для канала 2,8 длиной 2350 мм 1 шт.;\r -зажим с захватом «крысиный зуб» к жестким эндоскопам для канала 2,8 длиной 370 мм 1 шт.;\r -зажим с захватом «крысиный зуб»  к гибким эндоскопам для канала 2,8 длиной 1200 мм 1 шт.;\r -зажим трехзубый с Г-образным захватом к гибким эндоскопам для канала 2,8 длиной 1200 мм 1 шт.;\r -зажим трехзубый с Г-образным захватом к гибким эндоскопам для канала 2,8 длиной 1650 мм 1 шт.;\r -зажим с трехзубым захватом петлеобразным к гибким эндоскопам для канала 2,8 длиной 1200 мм 1 шт.;\r -зажим с трехзубым захватом петлеобразным к гибким эндоскопам для канала 2,8 длиной 1650 мм 1 шт.;\r -зажим с трехзубым захватом петлеобразным к гибким эндоскопам для канала 2,8 длиной 2350 мм 1 шт.;\r -зажим с захватом обратный зуб  к жестким эндоскопам для канала 2,8 длиной 350 мм 1 шт.;\r -зажим с захватом обратный зуб к гибким эндоскопам для канала 2,8 длиной 1200 мм 1шт.;\r -зажим с захватом обратный зуб к гибким эндоскопам для канала 2,8 длиной 1650 мм 1 шт.;\r -зажим с захватом обратный зуб к гибким эндоскопам для канала 2,8 длиной 2350 мм 1 шт.;\r -зажим с захватом «крысиный зуб» к гибким эндоскопам для канала 2,8 длиной 1650 мм 1 шт.;\r -зажим с захватом «крысиный зуб» к гибким эндоскопам для канала 2,8 длиной 2350 мм 1 шт.;\r -зажим трехзубый с Г-образным захватом к гибким эндоскопам для канала 2,8 длиной 2350 мм 1 шт.;\r -зажим с четырехзубым Г-образным захватом к гибким эндоскопам для канала 2,8 длиной 1200 мм 1 шт.;\r -зажим с четырехзубым захватом Г-образным захватом   к гибким эндоскопам для канала 2,8 длиной 1650 мм 1 шт.;\r -зажим с четырехзубым Г-образным захватом   гибким эндоскопам для канала 2,8 длиной 2350 мм 1 шт.;\r -захват - корзина для удаления инородных тел  к гибким эндоскопам для канала 2,0 длиной 1750 мм 1 шт.;\r -захват - корзина для удаления инородных тел к гибким эндоскопам для канала 2,8 длиной 2400 мм 1 шт.;\r -ножницы  к гибким эндоскопам для канала 2,0 мм длиной 1200 мм 1 шт.;\r -ножницы  к гибким эндоскопам для канала 2,0 мм длиной 1750 мм 1 шт.;\r -ножницы к жестким эндоскопам для канала 2,8 мм длиной 370 мм 1 шт.;\r -ножницы  к гибким эндоскопам для канала 2,8 мм длиной 1200 мм 1 шт.;\r -ножницы  к гибким эндоскопам для канала 2,8 мм длиной 1650 мм 1 шт.;\r -сменная рукоятка из автоклавируемой пластмассы для диатермических петель с тефлоновой оболочкой и контактом для монополярной коагуляции к гибким эндоскопам 1 шт.;\r -сменная рукоятка из автоклавируемой пластмассы для корзины с тефлоновой оболочкой к гибким эндоскопам 1 шт.;\r -нож монополярный к гибким эндоскопам для канала 2,8 мм  длиной 1750 мм 1 шт.",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "ЗАО Аксиома-Сервис",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
+            "country": ""
+        }
+    },
+    {
+        "mainInfo": {
+            "type": "",
+            "registrationType": "",
+            "registrationData": "28.12.2009",
+            "registrationExpireData": "",
+            "registrationLife": "Не действует согласно подпункту «б» пункта 2 постановления Правительства Российской Федерации от 27.12.2012 № 1416",
+            "shelfLife": "",
+            "productName": "Шприцы инъекционные однократного применения двухдетальные в комплекте с иглой, стерильные по ТУ 9398-002-96667022-2009 в следующих исполнениях: двухдетальный 2А Луер в комплекте с иглой инъекционной 0,6x25; двухдетальный 5Б Луер в комплекте с иглой инъекционной 0,7x38; 0,8x38; 0,8x40; двухдетальный 10Б Луер в комплекте с иглой инъекционной 0,7x38; 0,8x38; 0,8x40; двухдетальный 20Б Луер в комплекте с иглой инъекционной 0,7x38; 0,8x38; 0,8x40.",
+            "appointment": "",
+            "fieldOfUse": "",
+            "securityClass": "2а",
+            "shortTechDescription": "",
+            "attributes": "",
+            "shelfLifeComment": ""
+        },
+        "decrees": [],
+        "manufacturers": [
+            {
+                "form": "",
+                "name": "Общество с ограниченной ответственностью МедПромБобени",
+                "nameInEnglish": "",
+                "country": "",
+                "type": ""
+            }
+        ],
+        "completeness": [],
+        "variants": [],
+        "instructions": [],
+        "certificates": [],
+        "packages": [],
+        "nmirks": [],
+        "website": {
+            "name": "roszdravnadzor.gov.ru",
             "country": ""
         }
     }

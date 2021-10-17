@@ -93,20 +93,20 @@ while True:
                 'shelfLifeComment': ''
             }
 
-            manufacturers = {
+            manufacturers = [{
                 'form': manufacturer_data['form'],
                 'name': manufacturer_data['manufacturer_name'],
                 'nameInEnglish': '',
                 'country': manufacturer_list[-1].split(',')[0],
                 'type': ''
-            }
+            }]
 
-            instructions = {
+            instructions = [{
                 'type': 'Инструкция по применению медицинского изделия',
                 'comment': '',
                 'fileInRussian': instruction,
                 'fileInKazakh': ''
-            }
+            }]
 
             website = {
                 'name': 'portal.eaeunion.org',

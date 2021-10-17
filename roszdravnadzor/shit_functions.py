@@ -4,12 +4,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import json
+from shit_chrome_path import *
 
 from kafka import KafkaProducer
 
 producer = KafkaProducer(
-    bootstrap_servers=['185.146.3.170:9092'],
-    api_version=(0,11,5),
+    bootstrap_servers=[kafka_host],
+    api_version=(0,10,1),
     value_serializer=lambda x: 
     json.dumps(x).encode('utf-8')
     )
@@ -27,12 +28,8 @@ def search_handler(driver):
         print(e)   
 
 def wait_table(driver):
-    try:
-        return WebDriverWait(driver, 600).until(
-            EC.visibility_of_all_elements_located((By.CLASS_NAME, 'data-fancybox')))
-    except:
-        print('smth is wrong')
-        pass
+    return WebDriverWait(driver, 300).until(
+        EC.visibility_of_all_elements_located((By.CLASS_NAME, 'data-fancybox')))
 
 def text_prep(text):
     temp_text = text.get_attribute('title') if text.get_attribute('title') else text.text
