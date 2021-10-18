@@ -95,7 +95,7 @@ def get_details(url, prod):
     }
 
     send_data(position)
-    print(position['mainInfo']['productName'])
+    print(position['mainInfo']['type'])
 
 def bootstrap():
     i = 1
