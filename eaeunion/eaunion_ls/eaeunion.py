@@ -120,6 +120,7 @@ def process_parser(driver):
                     regulations.append(regulations_row)
 
                 main_info = {
+                    'type': 'ЛС',
                     'registrationData': reg_data['reg_date'],
                     'registrationType': reg_data['reg_status'],
                     'registrationExpireData': '',

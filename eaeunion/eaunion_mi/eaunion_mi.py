@@ -63,7 +63,7 @@ def process_parser(driver):
             # position = { **reg_header, **manufacturer }
             # print(len(data))
                 main_info = {
-                    'type': '',
+                    'type': 'МИ',
                     'registrationType': '',
                     'registrationData': reg_data['reg_date'],
                     'registrationExpireData': reg_data['reg_end_date'],

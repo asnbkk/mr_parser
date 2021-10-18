@@ -25,7 +25,7 @@ def process_parser(driver):
             position = {keys[index]: text_prep(cell) for index, cell in enumerate(cells)}
 
             main_info = {
-                'type': '',
+                'type': 'МИ',
                 'registrationType': '',
                 'registrationData': position['reg_date'],
                 'registrationExpireData': '',
