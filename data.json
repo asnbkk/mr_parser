@@ -1,265 +1,195 @@
 [
     {
         "mainInfo": {
-            "type": "Радиофармацевтическое лекарственное средство",
-            "registrationType": "",
-            "registrationData": "03.05.2017",
-            "registrationExpireData": "03.05.2022",
-            "registrationLife": "",
-            "shelfLife": "8 часов",
-            "productName": "2-[18F]-Фтордезоксиглюкоза",
+            "reg_number": "РК-ЛС-5№022396",
+            "type": "ЛС",
+            "productName": "Флузамед",
+            "registrationType": "Перерегистрация",
+            "registrationData": "19.10.2021",
+            "registrationLife": " ",
+            "registrationExpireData": " ",
+            "shelfLife": "3 Год",
             "appointment": "",
             "fieldOfUse": "",
             "securityClass": "",
             "shortTechDescription": "",
-            "attributes": "",
-            "shelfLifeComment": ""
+            "attributes": "GMP,Генерик,Рецепт",
+            "shelfLifeComment": "",
+            "atx": "(J02AC01) Флуконазол",
+            "mnn": "Флуконазол"
         },
-        "decrees": [],
+        "decrees": [
+            {
+                "number": "N004108",
+                "date": "26.09.2016",
+                "type": "Регистрация, Перерегистрация",
+                "comment": "По СУЛО, электронная версия приказа отсутствует"
+            },
+            {
+                "number": "N012317",
+                "date": "13.12.2017",
+                "type": "Внесение изменений",
+                "comment": "По СУЛО, электронная версия приказа отсутствует"
+            },
+            {
+                "number": "N027863",
+                "date": "01.04.2020",
+                "type": "Внесение изменений",
+                "comment": "По СУЛО, электронная версия приказа отсутствует"
+            },
+            {
+                "number": "N029362",
+                "date": "29.05.2020",
+                "type": "Внесение изменений",
+                "comment": "По СУЛО, электронная версия приказа отсутствует"
+            },
+            {
+                "number": "N037113",
+                "date": "02.03.2021",
+                "type": "Внесение изменений",
+                "comment": "По СУЛО, электронная версия приказа отсутствует"
+            },
+            {
+                "number": "N037239",
+                "date": "04.03.2021",
+                "type": "Внесение изменений",
+                "comment": "По СУЛО, электронная версия приказа отсутствует"
+            },
+            {
+                "number": "N043814",
+                "date": "19.10.2021",
+                "type": "Регистрация, Перерегистрация",
+                "comment": "По СУЛО, электронная версия приказа отсутствует"
+            }
+        ],
         "manufacturers": [
             {
-                "form": "",
-                "name": "Республиканский научно-практический центр онкологии и медицинской радиологии им. Н.Н.Александрова ГУ, Республика Беларусь",
-                "nameInEnglish": "",
-                "country": "",
-                "type": ""
+                "form": " ",
+                "name": "Е.И.П.И.Ко.",
+                "nameInEnglish": "E.I.P.I.Co.",
+                "country": "ЕГИПЕТ",
+                "type": "Предприятие-упаковщик (первичная)"
+            },
+            {
+                "form": " ",
+                "name": "УОРЛД МЕДИЦИН ЛИМИТЕД",
+                "nameInEnglish": "WORLD MEDICINE LIMITED",
+                "country": "ВЕЛИКОБРИТАНИЯ",
+                "type": "Держатель регистрационного удостоверения"
+            },
+            {
+                "form": " ",
+                "name": "Е.И.П.И.Ко.",
+                "nameInEnglish": "E.I.P.I.Co.",
+                "country": "ЕГИПЕТ",
+                "type": "Предприятие-упаковщик (вторичная)"
+            },
+            {
+                "form": " ",
+                "name": "Е.И.П.И.Ко.",
+                "nameInEnglish": "E.I.P.I.Co.",
+                "country": "ЕГИПЕТ",
+                "type": "Производитель, осуществляющий контроль качества"
+            },
+            {
+                "form": " ",
+                "name": "Е.И.П.И.Ко.",
+                "nameInEnglish": "E.I.P.I.Co.",
+                "country": "ЕГИПЕТ",
+                "type": "Производитель, ответственный за выпуск серий"
             }
         ],
         "completeness": [],
         "variants": [],
         "instructions": [
             {
-                "type": "по применению",
-                "comment": "",
-                "fileInRussian": "https://www.rceth.by/NDfiles/instr/17_05_2687_i.pdf",
-                "fileInKazakh": ""
+                "type": "Для медицинского применения",
+                "comment": " ",
+                "fileInRussian": "http://register.ndda.kz/register.php/mainpage/getFile/type/instruction/file_id/62620",
+                "fileInKazakh": "http://register.ndda.kz/register.php/mainpage/getFile/type/instruction/file_id/62620/lang/kaz"
             }
         ],
-        "certificates": [],
-        "packages": [],
+        "certificates": [
+            {
+                "name": "Флузамед, капсулы 150 мг, упаковка контурная ячейковая №1, серия 1707993, годен до 11.2020г. - 83528 уп, контракт № T10/KZ/2013 от 01.02.2013г.",
+                "type": "KZ.1510.02.01.00510158 131850 Оценка безопасности и качества партии продукции Обязательная",
+                "dates": "19.03.2018  01.12.2020",
+                "organ": "ТФ г. Актобе"
+            },
+            {
+                "name": "Флузамед, капсулы 150 мг, упаковка контурная ячейковая №1, серия 1700762, годен до 02.2020г. - 80058 уп, контракт № T10/KZ/2013 от 01.02.2013г.",
+                "type": "KZ.1510.02.01.00504857 106684 Оценка безопасности и качества партии продукции Обязательная",
+                "dates": "11.07.2017  01.03.2020",
+                "organ": "ТФ г. Актобе"
+            },
+            {
+                "name": "Флузамед, Капсулы, 150 мг. По 1 капсуле в контурной ячейковой упаковке. По 1 контурной ячейковой упаковке в пачке из картона, серия 1902080, годен до 02.2022 г. - 74262 уп",
+                "type": "KZ.7700.02.01.00580308 041284-Э Оценка безопасности и качества каждой серии(партии)",
+                "dates": "27.08.2019  01.03.2022",
+                "organ": "РГП на ПХВ «НЦЭЛС и МИ» ККК и БТУ МЗ РК"
+            },
+            {
+                "name": "Флузамед, капсулы, 150 мг. По 1 капсуле в контурной ячейковой упаковке. По 1 контурной ячейковой упаковке в пачке из картона, серия 1808634, годен до 10.2021 г. - 40453 уп",
+                "type": "KZ.7700.02.01.00558662 020488-Э Оценка безопасности и качества каждой серии(партии)",
+                "dates": "25.04.2019  01.11.2021",
+                "organ": "РГП на ПХВ «НЦЭЛС, ИМН и МТ» г. Астана"
+            },
+            {
+                "name": "Флузамед, капсулы, 150 мг. По 1 капсуле в контурной ячейковой упаковке. По 1 контурной ячейковой упаковке в пачке из картона, серия 1805742, годен до 07.2021 г. - 30025 уп",
+                "type": "KZ.7700.02.01.00554719 017140-Э Оценка безопасности и качества каждой серии(партии)",
+                "dates": "08.04.2019  01.08.2021",
+                "organ": "РГП на ПХВ «НЦЭЛС, ИМН и МТ» г. Астана"
+            },
+            {
+                "name": "Флузамед, Капсулы, 150 мг. По 1 капсуле в контурной ячейковой упаковке. По 1 контурной ячейковой упаковке в пачке из картона, серия 2006338, годен до 07.2023 г. - 99449 уп",
+                "type": "KZ.7700.02.01.00701996 089532-Э Оценка безопасности путем декларирования",
+                "dates": "30.11.2020  01.08.2023",
+                "organ": "РГП на ПХВ «НЦЭЛС и МИ» КМ и ФК МЗ РК»"
+            },
+            {
+                "name": "Флузамед, Капсулы,150 мг, По 1 капсуле в контурной ячейковой упаковке. По 1 контурной ячейковой упаковке в пачке из картона., серия 2104197, годен до 04.2024 г. - 95000 уп",
+                "type": "KZ.7700.02.01.00778160 064856-Э Оценка качества продукции",
+                "dates": "09.09.2021  01.05.2024",
+                "organ": "РГП на ПХВ «НЦЭЛС и МИ» КМ и ФК МЗ РК»"
+            }
+        ],
+        "packages": [
+            {
+                "name": "Упаковка контурная ячейковая",
+                "primary": true,
+                "volume": "",
+                "unitType": " ",
+                "amountOfUnits": "1",
+                "description": "Устаревшая упаковка, срок действия до: 19.04.2022"
+            },
+            {
+                "name": "Пачка картонная",
+                "primary": false,
+                "volume": "",
+                "unitType": " ",
+                "amountOfUnits": "1",
+                "description": "Устаревшая упаковка, срок действия до: 19.04.2022"
+            },
+            {
+                "name": "Упаковка контурная ячейковая",
+                "primary": true,
+                "volume": "",
+                "unitType": " ",
+                "amountOfUnits": "1",
+                "description": "№1"
+            },
+            {
+                "name": "Пачка из картона",
+                "primary": false,
+                "volume": "",
+                "unitType": " ",
+                "amountOfUnits": "1",
+                "description": "-"
+            }
+        ],
         "nmirks": [],
         "website": {
-            "name": "rceth.by",
-            "country": ""
-        }
-    },
-    {
-        "mainInfo": {
-            "type": "Фармацевтическая субстанция",
-            "registrationType": "",
-            "registrationData": "08.09.2021",
-            "registrationExpireData": "бессрочно",
-            "registrationLife": "",
-            "shelfLife": "3 года",
-            "productName": "2-АМИНО-7-БРОМ-4-АЦЕТИЛТИАЗОЛО[5,4-b]ИНДОЛА ГИДРОБРОМИД",
-            "appointment": "",
-            "fieldOfUse": "",
-            "securityClass": "",
-            "shortTechDescription": "",
-            "attributes": "",
-            "shelfLifeComment": ""
-        },
-        "decrees": [],
-        "manufacturers": [
-            {
-                "form": "",
-                "name": "Государственное научное учреждение ИНСТИТУТ ФИЗИКО-ОРГАНИЧЕСКОЙ ХИМИИ НАЦИОНАЛЬНОЙ АКАДЕМИИ НАУК БЕЛАРУСИ, Республика Беларусь",
-                "nameInEnglish": "",
-                "country": "",
-                "type": ""
-            }
-        ],
-        "completeness": [],
-        "variants": [],
-        "instructions": [
-            {
-                "type": "",
-                "comment": "",
-                "fileInRussian": "",
-                "fileInKazakh": ""
-            }
-        ],
-        "certificates": [],
-        "packages": [],
-        "nmirks": [],
-        "website": {
-            "name": "rceth.by",
-            "country": ""
-        }
-    },
-    {
-        "mainInfo": {
-            "type": "Фармацевтическая субстанция",
-            "registrationType": "",
-            "registrationData": "24.01.2019",
-            "registrationExpireData": "бессрочно",
-            "registrationLife": "",
-            "shelfLife": "2 года",
-            "productName": "2-ЭТИЛТИОБЕНЗИМИДАЗОЛА ГИДРОБРОМИД МОНОГИДРАТ",
-            "appointment": "",
-            "fieldOfUse": "",
-            "securityClass": "",
-            "shortTechDescription": "",
-            "attributes": "",
-            "shelfLifeComment": ""
-        },
-        "decrees": [],
-        "manufacturers": [
-            {
-                "form": "",
-                "name": "Государственное научное учреждение Институт физико-органической химии Национальной академии наук Беларуси, Республика Беларусь",
-                "nameInEnglish": "",
-                "country": "",
-                "type": ""
-            }
-        ],
-        "completeness": [],
-        "variants": [],
-        "instructions": [
-            {
-                "type": "",
-                "comment": "",
-                "fileInRussian": "",
-                "fileInKazakh": ""
-            }
-        ],
-        "certificates": [],
-        "packages": [],
-        "nmirks": [],
-        "website": {
-            "name": "rceth.by",
-            "country": ""
-        }
-    },
-    {
-        "mainInfo": {
-            "type": "Радиофармацевтическое лекарственное средство",
-            "registrationType": "",
-            "registrationData": "03.05.2017",
-            "registrationExpireData": "03.05.2022",
-            "registrationLife": "",
-            "shelfLife": "8 часов",
-            "productName": "2-[18F]-Фтордезоксиглюкоза",
-            "appointment": "",
-            "fieldOfUse": "",
-            "securityClass": "",
-            "shortTechDescription": "",
-            "attributes": "",
-            "shelfLifeComment": ""
-        },
-        "decrees": [],
-        "manufacturers": [
-            {
-                "form": "",
-                "name": "Республиканский научно-практический центр онкологии и медицинской радиологии им. Н.Н.Александрова ГУ, Республика Беларусь",
-                "nameInEnglish": "",
-                "country": "",
-                "type": ""
-            }
-        ],
-        "completeness": [],
-        "variants": [],
-        "instructions": [
-            {
-                "type": "по применению",
-                "comment": "",
-                "fileInRussian": "https://www.rceth.by/NDfiles/instr/17_05_2687_i.pdf",
-                "fileInKazakh": ""
-            }
-        ],
-        "certificates": [],
-        "packages": [],
-        "nmirks": [],
-        "website": {
-            "name": "rceth.by",
-            "country": ""
-        }
-    },
-    {
-        "mainInfo": {
-            "type": "Фармацевтическая субстанция",
-            "registrationType": "",
-            "registrationData": "08.09.2021",
-            "registrationExpireData": "бессрочно",
-            "registrationLife": "",
-            "shelfLife": "3 года",
-            "productName": "2-АМИНО-7-БРОМ-4-АЦЕТИЛТИАЗОЛО[5,4-b]ИНДОЛА ГИДРОБРОМИД",
-            "appointment": "",
-            "fieldOfUse": "",
-            "securityClass": "",
-            "shortTechDescription": "",
-            "attributes": "",
-            "shelfLifeComment": ""
-        },
-        "decrees": [],
-        "manufacturers": [
-            {
-                "form": "",
-                "name": "Государственное научное учреждение ИНСТИТУТ ФИЗИКО-ОРГАНИЧЕСКОЙ ХИМИИ НАЦИОНАЛЬНОЙ АКАДЕМИИ НАУК БЕЛАРУСИ, Республика Беларусь",
-                "nameInEnglish": "",
-                "country": "",
-                "type": ""
-            }
-        ],
-        "completeness": [],
-        "variants": [],
-        "instructions": [
-            {
-                "type": "",
-                "comment": "",
-                "fileInRussian": "",
-                "fileInKazakh": ""
-            }
-        ],
-        "certificates": [],
-        "packages": [],
-        "nmirks": [],
-        "website": {
-            "name": "rceth.by",
-            "country": ""
-        }
-    },
-    {
-        "mainInfo": {
-            "type": "Фармацевтическая субстанция",
-            "registrationType": "",
-            "registrationData": "24.01.2019",
-            "registrationExpireData": "бессрочно",
-            "registrationLife": "",
-            "shelfLife": "2 года",
-            "productName": "2-ЭТИЛТИОБЕНЗИМИДАЗОЛА ГИДРОБРОМИД МОНОГИДРАТ",
-            "appointment": "",
-            "fieldOfUse": "",
-            "securityClass": "",
-            "shortTechDescription": "",
-            "attributes": "",
-            "shelfLifeComment": ""
-        },
-        "decrees": [],
-        "manufacturers": [
-            {
-                "form": "",
-                "name": "Государственное научное учреждение Институт физико-органической химии Национальной академии наук Беларуси, Республика Беларусь",
-                "nameInEnglish": "",
-                "country": "",
-                "type": ""
-            }
-        ],
-        "completeness": [],
-        "variants": [],
-        "instructions": [
-            {
-                "type": "",
-                "comment": "",
-                "fileInRussian": "",
-                "fileInKazakh": ""
-            }
-        ],
-        "certificates": [],
-        "packages": [],
-        "nmirks": [],
-        "website": {
-            "name": "rceth.by",
+            "name": "ndda.kz",
             "country": ""
         }
     }

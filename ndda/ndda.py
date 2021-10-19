@@ -23,7 +23,7 @@ def process_parser(driver):
         for index, row in enumerate(parent_rows):
             try:
                 cells = parent_rows[index].find_elements_by_tag_name('td')
-                general_info = cells[1:7]
+                general_info = cells[:7]
                 shelf_life = cells[14]
 
                 attributes = cells[15:21]
@@ -43,8 +43,12 @@ def process_parser(driver):
                     'securityClass': '',
                     'shortTechDescription': '',
                     'attributes': ','.join(attributes_list),
-                    'shelfLifeComment': ''}
+                    'shelfLifeComment': '',
+                    'atx': text_prep(cells[11].text),
+                    'mnn': text_prep(cells[10].text)}
 
+                print(main_info)
+                
                 # new item open
                 WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr'))).click()
                 table_check(driver, 'modal-open')

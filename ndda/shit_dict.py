@@ -1,4 +1,5 @@
 general_info_keys = [
+    'reg_number',
     'type',
     'productName',
     'registrationType',
