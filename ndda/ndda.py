@@ -40,6 +40,7 @@ def process_parser(driver):
                     **general_info, 
                     'shelfLife': text_prep(shelf_life.text), 
                     'dosage': text_prep(dosage.text),
+                    'ls_type': text_prep(cells[9].text),
                     'appointment': '', 
                     'fieldOfUse': '', 
                     'securityClass': '',
