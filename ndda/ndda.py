@@ -25,6 +25,7 @@ def process_parser(driver):
                 cells = parent_rows[index].find_elements_by_tag_name('td')
                 general_info = cells[:7]
                 shelf_life = cells[14]
+                dosage = cells[13]
 
                 attributes = cells[15:21]
                 attributes_list = []
@@ -38,6 +39,7 @@ def process_parser(driver):
                 main_info = { 
                     **general_info, 
                     'shelfLife': text_prep(shelf_life.text), 
+                    'dosage': text_prep(dosage.text),
                     'appointment': '', 
                     'fieldOfUse': '', 
                     'securityClass': '',
@@ -138,16 +140,16 @@ def process_parser(driver):
                 print(item['mainInfo']['productName'])
                 
                 # sending data by kafka
-                # send_data(item)
+                send_data(item)
                 
                 # find close button and close current window
                 driver.find_element_by_class_name('close').click()
 
                 # insert product item data into global data list and write to the file
-                data.append(item)
-                with open('data.json', 'w', encoding='utf-8') as f:
-                        json.dump(data, f, ensure_ascii=False, indent=4)
-                print(len(data))
+                # data.append(item)
+                # with open('data.json', 'w', encoding='utf-8') as f:
+                        # json.dump(data, f, ensure_ascii=False, indent=4)
+                # print(len(data))
         try:
             # go to the next page if possible; else break the loop
             WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.ID, 'next_register_pager'))).click()
