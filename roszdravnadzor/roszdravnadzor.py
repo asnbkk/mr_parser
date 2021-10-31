@@ -28,6 +28,7 @@ def process_parser(driver):
                 'type': 'МИ',
                 'registrationType': '',
                 'dosage': '',
+                'ls_type': '',
                 'registrationData': position['reg_date'],
                 'registrationExpireData': '',
                 'registrationLife': position['validity'],
