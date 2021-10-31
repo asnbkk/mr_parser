@@ -68,7 +68,9 @@ def process_parser(driver):
                 tab_click(tabs, 1)
 
                 # md is medicinal product
-                # panel2 = get_general_information_by_id(driver)
+                panel2 = get_general_information_by_id(driver)
+                print(panel2['drugKind'])
+                print('im here')
 
                 # get data from panel 4
                 panel4 = []
@@ -123,6 +125,8 @@ def process_parser(driver):
                     'type': 'ЛС',
                     'registrationData': reg_data['reg_date'],
                     'registrationType': reg_data['reg_status'],
+                    'dosage': '',
+                    'lsType': panel2['drugKind'],
                     'registrationExpireData': '',
                     'registrationLife': '',
                     'shelfLife': panel4[0]['shelf_life'],
@@ -213,14 +217,14 @@ def process_parser(driver):
 def bootstrap():
     while True:
         opts = webdriver.ChromeOptions()
-        opts.add_argument("--headless")
-        opts.add_argument("--disable-xss-auditor")
-        opts.add_argument("--disable-web-security")
-        opts.add_argument("--allow-running-insecure-content")
-        opts.add_argument("--no-sandbox")
-        opts.add_argument("--disable-setuid-sandbox")
-        opts.add_argument("--disable-webgl")
-        opts.add_argument("--disable-popup-blocking")
+        # opts.add_argument("--headless")
+        # opts.add_argument("--disable-xss-auditor")
+        # opts.add_argument("--disable-web-security")
+        # opts.add_argument("--allow-running-insecure-content")
+        # opts.add_argument("--no-sandbox")
+        # opts.add_argument("--disable-setuid-sandbox")
+        # opts.add_argument("--disable-webgl")
+        # opts.add_argument("--disable-popup-blocking")
 
         PATH = chrome_path
         driver = webdriver.Chrome(PATH, options=opts)
