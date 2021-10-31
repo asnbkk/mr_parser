@@ -21,6 +21,8 @@ def process_parser(url, reestr):
             main_info = {
                 'type': '',
                 'productName': name,
+                'ls_type': '',
+                'dosage': cells[4].text,
                 'registrationType': '',
                 'registrationData': cells[-2].text,
                 'registrationLife': '',
