@@ -38,7 +38,9 @@ def process_parser(driver):
                 secondary_table = {secondary_table_keys[i]: secondary_table_cells[i].text for i in range(18)}
 
                 main_info = {
-                        'type': primary_table['type'],
+                        'lsType': primary_table['type'],
+                        'type': 'ЛС',
+                        'dosage': '',
                         'registrationType': '',
                         'registrationData': primary_table['reg_date'],
                         'registrationExpireData': primary_table['reg_validity'],

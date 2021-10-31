@@ -39,7 +39,8 @@ def get_details(url, prod):
     position = merge_all_data(dict1, dict2, manufacturing_country, instruction, type, appointment)
 
     main_info = {
-        'type': position['type'],
+        # 'type': position['type'],
+        'type': 'МИ',
         'productName': position['name'],
         'registrationType': '',
         'registrationData': position['reg_date'],
