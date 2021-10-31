@@ -27,6 +27,7 @@ def process_parser(driver):
             main_info = {
                 'type': 'МИ',
                 'registrationType': '',
+                'dosage': '',
                 'registrationData': position['reg_date'],
                 'registrationExpireData': '',
                 'registrationLife': position['validity'],
