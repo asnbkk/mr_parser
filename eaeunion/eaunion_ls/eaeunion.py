@@ -174,7 +174,7 @@ def process_parser(driver):
 
                 website = {
                     'name': 'portal.eaeunion.org',
-                    'country': ''
+                    'country': 'Казахстан'
                 }
         
             except Exception as e: 
