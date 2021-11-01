@@ -118,7 +118,7 @@ def process_parser(driver):
 
                 website = {
                     'name': 'ndda.kz',
-                    'country': ''
+                    'country': 'Казахстан'
                 }
 
                 # merge all subdata
