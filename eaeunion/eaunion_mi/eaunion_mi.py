@@ -64,6 +64,8 @@ def process_parser(driver):
             # print(len(data))
                 main_info = {
                     'type': 'МИ',
+                    'dosage': '',
+                    'lsType': '',
                     'registrationType': '',
                     'registrationData': reg_data['reg_date'],
                     'registrationExpireData': reg_data['reg_end_date'],
@@ -112,6 +114,7 @@ def process_parser(driver):
                 }
 
                 send_data(position)
+                print(position['mainInfo']['productName'])
                 # data.append(position)
                 # print(len(data))
 
