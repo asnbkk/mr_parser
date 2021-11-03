@@ -79,7 +79,7 @@ def get_details(url, prod):
 
     website = {
         'name': 'rceth.by',
-        'country': ''
+        'country': 'Беларусь'
     }
 
     position = { 

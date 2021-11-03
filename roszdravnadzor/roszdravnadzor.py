@@ -52,7 +52,7 @@ def process_parser(driver):
 
             website = {
                 'name': 'roszdravnadzor.gov.ru',
-                'country': ''
+                'country': 'Россия'
             }
 
             position = { 

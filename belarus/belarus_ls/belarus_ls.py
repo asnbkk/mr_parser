@@ -72,7 +72,7 @@ def process_parser(driver):
 
                 website = {
                     'name': 'rceth.by',
-                    'country': ''
+                    'country': 'Беларусь'
                 }
 
                 position = { 

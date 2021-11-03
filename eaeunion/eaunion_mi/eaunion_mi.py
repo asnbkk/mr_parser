@@ -97,7 +97,7 @@ def process_parser(driver):
 
                 website = {
                     'name': 'portal.eaeunion.org',
-                    'country': ''
+                    'country': 'ЕАЭС'
                 }
 
                 position = { 
