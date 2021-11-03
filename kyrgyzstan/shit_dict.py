@@ -1,5 +1,5 @@
 request_data = {
-    'name': 'a',
+    'name': '%а%',
     'mnn': '',
     'proizvod': '',
     'ftg': '',
