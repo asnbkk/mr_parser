@@ -83,8 +83,8 @@ def get_data(reestr):
 
 def bootstrap():
     while True:
-        print('timer for 5 secs')
-        time.sleep(5)
+        print('timer for 300 secs')
+        time.sleep(300)
         url = 'http://212.112.103.101'
         reestr = url + '/reestr'
         
@@ -95,5 +95,6 @@ def bootstrap():
             print(e)
             global state
             state = 'not available'
+            pass
         
 bootstrap()
