@@ -53,7 +53,7 @@ def process_parser(url, reestr):
 
             website = {
                 'name': 'kyrgyzstan',
-                'country': 'Киргизстан'
+                'country': 'Кыргызстан'
             }
 
             position = {
