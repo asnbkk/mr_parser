@@ -1,7 +1,7 @@
 request_data = {
-    'name': '',
+    'name': 'a',
     'mnn': '',
-    'proizvod': '%%%',
+    'proizvod': '',
     'ftg': '',
     'ath': '',
     'ean': ''
