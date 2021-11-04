@@ -195,6 +195,7 @@ def process_parser(driver):
 def bootstrap():
     while True:
         opts = webdriver.ChromeOptions()
+        opts.add_argument('--window-size=1920,1080') 
         opts.add_argument("--headless")
         opts.add_argument("--disable-xss-auditor")
         opts.add_argument("--disable-web-security")
