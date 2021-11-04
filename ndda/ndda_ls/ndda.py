@@ -141,7 +141,7 @@ def process_parser(driver):
                 print(item['mainInfo']['productName'])
                 
                 # sending data by kafka
-                send_data(item)
+                # send_data(item)
                 
                 # find close button and close current window
                 driver.find_element_by_class_name('close').click()
@@ -169,14 +169,14 @@ def process_parser(driver):
 def bootstrap():
     while True:
         opts = webdriver.ChromeOptions()
-        opts.add_argument("--headless")
-        opts.add_argument("--disable-xss-auditor")
-        opts.add_argument("--disable-web-security")
-        opts.add_argument("--allow-running-insecure-content")
-        opts.add_argument("--no-sandbox")
-        opts.add_argument("--disable-setuid-sandbox")
-        opts.add_argument("--disable-webgl")
-        opts.add_argument("--disable-popup-blocking")
+        # opts.add_argument("--headless")
+        # opts.add_argument("--disable-xss-auditor")
+        # opts.add_argument("--disable-web-security")
+        # opts.add_argument("--allow-running-insecure-content")
+        # opts.add_argument("--no-sandbox")
+        # opts.add_argument("--disable-setuid-sandbox")
+        # opts.add_argument("--disable-webgl")
+        # opts.add_argument("--disable-popup-blocking")
 
         PATH = chrome_path
         driver = webdriver.Chrome(PATH, options=opts)

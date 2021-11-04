@@ -10,17 +10,24 @@ import time
 import json
 
 state = 'parsing'
-# data = []
+data = []
 
 def process_parser(driver):
     while True:
         try:
+            current_page = get_current_page_number(driver)
+            print(current_page)
             table = driver.find_element_by_tag_name('tbody')
         except:
             global state
             state = 'not available'
 
-        current_page = get_current_page_number(driver)
+            new_driver(driver, int(current_page) + 1)
+            time.sleep(5)
+            print('5 sec timer')
+        finally:
+            table = driver.find_element_by_tag_name('tbody')
+        
         rows = table.find_elements_by_tag_name('tr')
 
         for index, row in enumerate(rows):
@@ -38,7 +45,7 @@ def process_parser(driver):
                 char_of_med_product.append(text_prep(item.text))
 
             general_info = merge_general_info(header, mnn, release_form_list, manufacturer, char_of_med_product)
-
+            print(general_info['header'])
             # double click does not work 
             while len(driver.window_handles) < 2:
                 double_click(row, driver)
@@ -69,8 +76,8 @@ def process_parser(driver):
 
                 # md is medicinal product
                 panel2 = get_general_information_by_id(driver)
-                print(panel2['drugKind'])
-                print('im here')
+                # print(panel2['drugKind'])
+                # print('im here')
 
                 # get data from panel 4
                 panel4 = []
@@ -196,23 +203,26 @@ def process_parser(driver):
                         'website': website
                     }
                     
-                # data.append(position)
-                send_data(position)
+                data.append(position)
+                # send_data(position)
                 print(main_info['productName'])
 
-                # with open('data.json', 'w', encoding='utf-8') as f:
-                #     json.dump(data, f, ensure_ascii=False, indent=4)
+                with open('data.json', 'w', encoding='utf-8') as f:
+                    json.dump(data, f, ensure_ascii=False, indent=4)
                     
                 driver.close()
                 driver.switch_to.window(driver.window_handles[0])
         try:
-            driver.find_element_by_class_name('arrow-right').click()
-            time.sleep(5)
+            next_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CLASS_NAME, 'arrow-right')))
+            ActionChains(driver).move_to_element(next_button).click(next_button).perform()
+
+            time.sleep(2)
             new_driver(driver, current_page)
-        except: 
-            print('this is the end!')
+        except:
             state = 'not available'
-            break
+            print(state)
+            # dont need to use pass
+            pass
 
 def bootstrap():
     while True:

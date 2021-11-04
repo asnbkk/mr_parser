@@ -20,7 +20,7 @@ def send_data(data):
     producer.send('testTopic', value=data)
 
 def wait_for_table(driver):
-    WebDriverWait(driver, 10).until(
+    WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.ID, 'row_0.0')))
 
 def new_driver(driver, current_page=None):
@@ -31,7 +31,7 @@ def new_driver(driver, current_page=None):
         driver.refresh()
         wait_for_table(driver)
         set_page_number(driver, current_page)
-        time.sleep(10)
+        time.sleep(5)
 
 def get_general_information_by_id(driver):
     panel2_list = driver.find_elements_by_xpath("//div[@id='panel2']//ul//li")
