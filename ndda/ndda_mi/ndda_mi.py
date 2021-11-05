@@ -166,15 +166,15 @@ def process_parser(driver):
 
                 print(item['mainInfo']['productName'])
                 # sending data by kafka
-                # send_data(item)
+                send_data(item)
                 
                 # find close button and close current window
                 driver.find_element_by_class_name('close').click()
 
                 # insert product item data into global data list and write to the file
-                data.append(item)
-                with open('data.json', 'w', encoding='utf-8') as f:
-                        json.dump(data, f, ensure_ascii=False, indent=4)
+                # data.append(item)
+                # with open('data.json', 'w', encoding='utf-8') as f:
+                #         json.dump(data, f, ensure_ascii=False, indent=4)
                 print(len(data))
             except Exception as e:
                 print('im here you motherfucker')
@@ -198,15 +198,15 @@ def process_parser(driver):
 def bootstrap():
     while True:
         opts = webdriver.ChromeOptions()
-        # opts.add_argument("--window-size=1920,1080") 
-        # opts.add_argument("--headless")
-        # opts.add_argument("--disable-xss-auditor")
-        # opts.add_argument("--disable-web-security")
-        # opts.add_argument("--allow-running-insecure-content")
-        # opts.add_argument("--no-sandbox")
-        # opts.add_argument("--disable-setuid-sandbox")
-        # opts.add_argument("--disable-webgl")
-        # opts.add_argument("--disable-popup-blocking")
+        opts.add_argument("--window-size=1920,1080") 
+        opts.add_argument("--headless")
+        opts.add_argument("--disable-xss-auditor")
+        opts.add_argument("--disable-web-security")
+        opts.add_argument("--allow-running-insecure-content")
+        opts.add_argument("--no-sandbox")
+        opts.add_argument("--disable-setuid-sandbox")
+        opts.add_argument("--disable-webgl")
+        opts.add_argument("--disable-popup-blocking")
 
         PATH = chrome_path
         driver = webdriver.Chrome(PATH, options=opts)
