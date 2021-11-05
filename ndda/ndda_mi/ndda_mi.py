@@ -140,19 +140,11 @@ def process_parser(driver):
                             'primary': is_primary,
                             **package_info_row
                         }
-                    except:
-                        package_info_row_data = {
-                            'name': '',
-                            'primary': '',
-                            'volume': '',
-                            'unitType': '',
-                            'amountOfUnits': '',
-                            'description': ''
-                        }
-                    finally:
-                        package_info.append(package_info_row_data)
 
-                
+                        package_info.append(package_info_row_data)
+                    except:
+                        package_info = []
+                        
                 website = {
                     'name': 'ndda.kz mi',
                     'country': 'Казахстан'
