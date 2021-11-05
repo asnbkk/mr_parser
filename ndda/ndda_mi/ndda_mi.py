@@ -35,8 +35,10 @@ def process_parser(driver):
                     link = WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
                     ActionChains(driver).move_to_element(link).click(link).perform()
                     table_check(driver, 'modal-open')
+                    main_table = WebDriverWait(driver, 5).until(
+                        EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
 
-                    main_table = driver.find_elements_by_xpath('//form[@id="reestr-form-reestrForm-form"]//tbody//td')[1::2]
+                    # main_table = driver.find_elements_by_xpath('//form[@id="reestr-form-reestrForm-form"]//tbody//td')[1::2]
                     general_info_rows = main_table[:11]
 
                     attributes = cells[15:21]
@@ -105,18 +107,17 @@ def process_parser(driver):
                         cells = rows[index].find_elements_by_tag_name('td')
                         instructions_info_row = { instructions_keys[i]: text_prep(cells[i].text) if len(get_child(cells[i])) == 0 else get_child(cells[i])[0].get_attribute('href') for i in range(len(instructions_keys)) }
                         instructions_info.append(instructions_info_row)
-                    
-                    next_tab(driver, 5)
-                    rows = wait_table(driver, 5, True)
-                    certificate_info = []
-                    for index, row in enumerate(rows):
-                        cells = rows[index].find_elements_by_tag_name('td')
-                        certificate_info_row = { certificate_keys[i]: text_prep(cells[i].text) for i in range(len(certificate_keys)) }
-                        certificate_info.append(certificate_info_row)
-
                 except:
                     print('shit is here')
                     pass
+                
+                next_tab(driver, 5)
+                rows = wait_table(driver, 5, True)
+                certificate_info = []
+                for index, row in enumerate(rows):
+                    cells = rows[index].find_elements_by_tag_name('td')
+                    certificate_info_row = { certificate_keys[i]: text_prep(cells[i].text) for i in range(len(certificate_keys)) }
+                    certificate_info.append(certificate_info_row)
 
                 next_tab(driver, 6)
                 rows = wait_table(driver, 6, False, True)
@@ -173,7 +174,7 @@ def process_parser(driver):
 
                 print(item['mainInfo']['productName'])
                 # sending data by kafka
-                # send_data(item)
+                send_data(item)
                 
                 # find close button and close current window
                 driver.find_element_by_class_name('close').click()
@@ -182,7 +183,7 @@ def process_parser(driver):
                 # data.append(item)
                 # with open('data.json', 'w', encoding='utf-8') as f:
                 #         json.dump(data, f, ensure_ascii=False, indent=4)
-                # print(len(data))
+                print(len(data))
             except Exception as e:
                 print('im here you motherfucker')
                 print(e)
