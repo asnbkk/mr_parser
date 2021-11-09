@@ -51,7 +51,7 @@ def process_parser(driver):
                 general_info = {general_info_keys[i]: text_prep(general_info_rows[i].text) for i in range(len(general_info_keys))}
                 main_info = {
                     **general_info, 
-                    'reg_number': reg_number,
+                    'reg_number': text_prep(reg_number.text),
                     'shelfLifeComment': text_prep(main_table[-2].text), 
                     'attributes': ','.join(attributes_list),
                     'dosage': '',
@@ -177,7 +177,6 @@ def process_parser(driver):
                 # data.append(item)
                 # with open('data.json', 'w', encoding='utf-8') as f:
                 #         json.dump(data, f, ensure_ascii=False, indent=4)
-                print(len(data))
             except Exception as e:
                 print('im here you motherfucker')
                 # print(e)

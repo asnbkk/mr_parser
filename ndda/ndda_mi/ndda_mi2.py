@@ -53,7 +53,7 @@ def process_parser(driver):
                     **general_info, 
                     'shelfLifeComment': text_prep(main_table[-2].text), 
                     'attributes': ','.join(attributes_list),
-                    'reg_number': reg_number,
+                    'reg_number': text_prep(reg_number.text),
                     'dosage': '',
                     'lsType': ''}
 
@@ -177,7 +177,6 @@ def process_parser(driver):
                 # data.append(item)
                 # with open('data.json', 'w', encoding='utf-8') as f:
                 #         json.dump(data, f, ensure_ascii=False, indent=4)
-                print(len(data))
             except Exception as e:
                 print('im here you motherfucker')
                 # print(e)
