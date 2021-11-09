@@ -166,15 +166,15 @@ def process_parser(driver):
 
                 print(item['mainInfo']['productName'])
                 # sending data by kafka
-                # send_data(item)
+                send_data(item)
                 
                 # find close button and close current window
                 driver.find_element_by_class_name('close').click()
 
                 # insert product item data into global data list and write to the file
-                data.append(item)
-                with open('data.json', 'w', encoding='utf-8') as f:
-                        json.dump(data, f, ensure_ascii=False, indent=4)
+                # data.append(item)
+                # with open('data.json', 'w', encoding='utf-8') as f:
+                        # json.dump(data, f, ensure_ascii=False, indent=4)
                 print(len(data))
             except Exception as e:
                 print('im here you motherfucker')
