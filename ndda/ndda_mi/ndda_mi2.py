@@ -221,7 +221,7 @@ def bootstrap():
         toggle = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.ID, 'jqgh_register_grid_reg_date')))
         ActionChains(driver).move_to_element(toggle).click(toggle).perform()
         # -----
-        pagination_handler(driver, 1)
+        pagination_handler(driver, 30)
         table_check(driver, 'ui-row-ltr')
         try:
             process_parser(driver)

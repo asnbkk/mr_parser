@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.keys import Keys
 from shit_chrome_path import *
 from shit_dict import tab_list
 from kafka import KafkaProducer
@@ -16,6 +17,18 @@ producer = KafkaProducer(
     json.dumps(x).encode('utf-8')
     )
 
+def pagination_handler(driver, start_from):
+    time.sleep(5)
+    pag_input = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.XPATH, '//td[@id="input_register_pager"]//input')))
+    pag_input.clear()
+    pag_input.send_keys(str(start_from))
+    pag_input.send_keys(Keys.ENTER)
+
+    driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.HOME)
+
+    time.sleep(5)
+    
 def send_data(data):
     producer.send('testTopic', value=data)
 
@@ -43,15 +56,16 @@ def search_handler(driver):
 
 def table_check(driver, class_name):
     try: 
-        WebDriverWait(driver, 10).until(
+        WebDriverWait(driver, 100).until(
             EC.presence_of_element_located((By.CLASS_NAME, class_name)))
     except Exception as e: 
+        print('suka')
         print(e)
 
 def wait_table(driver, index, delete_first, is_nested=False):
     add_element = '//div[@id="yw2"]' if is_nested else ''
     try:
-        element = WebDriverWait(driver, 5).until(
+        element = WebDriverWait(driver, 30).until(
             EC.visibility_of_all_elements_located((By.XPATH, f'//div[@id="{tab_list[index]}"]{add_element}//tbody//tr')))
         return element[1:] if delete_first else element
     except Exception as e:
