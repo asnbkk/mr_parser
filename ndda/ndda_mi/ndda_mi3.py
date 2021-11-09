@@ -25,6 +25,7 @@ def process_parser(driver):
                 try:
                     cells = parent_rows[index].find_elements_by_tag_name('td')
                     attributes = cells[15:21]
+                    reg_number = cells[0]
                     attributes_list = []
                 except Exception as e:
                     print(e)
@@ -50,6 +51,7 @@ def process_parser(driver):
                 general_info = {general_info_keys[i]: text_prep(general_info_rows[i].text) for i in range(len(general_info_keys))}
                 main_info = {
                     **general_info, 
+                    'reg_number': reg_number,
                     'shelfLifeComment': text_prep(main_table[-2].text), 
                     'attributes': ','.join(attributes_list),
                     'dosage': '',
