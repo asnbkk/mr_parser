@@ -90,6 +90,7 @@ def process_parser(driver):
                     # remove :7
                     cells = rows[index].find_elements_by_tag_name('td')[:7]
                     completenesses_info_row = { completenesses_keys[i]: text_prep(cells[i].text) for i in range(len(completenesses_keys[:7]))}
+                    print(len(completenesses_info))
                     completenesses_info.append(completenesses_info_row)
 
                 next_tab(driver, 3)
@@ -179,6 +180,7 @@ def process_parser(driver):
                 #         json.dump(data, f, ensure_ascii=False, indent=4)
             except Exception as e:
                 print('im here you motherfucker')
+                driver.find_element_by_class_name('close').click()
                 # print(e)
                 pass
         try:

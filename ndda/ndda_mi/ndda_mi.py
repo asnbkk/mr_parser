@@ -25,14 +25,14 @@ def process_parser(driver):
                 try:
                     cells = parent_rows[index].find_elements_by_tag_name('td')
                     attributes = cells[15:21]
-                    attributes_list = []
                     reg_number = cells[0]
+                    attributes_list = []
                 except Exception as e:
                     print(e)
 
                 for index, attr in enumerate(attributes):
-                    if attr.find_element_by_tag_name('input').get_attribute('checked') == 'true':
-                        attributes_list.append(attributes_keys[index])
+                        if attr.find_element_by_tag_name('input').get_attribute('checked') == 'true':
+                            attributes_list.append(attributes_keys[index])
                 # new item open
 
                 link = WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
@@ -51,9 +51,9 @@ def process_parser(driver):
                 general_info = {general_info_keys[i]: text_prep(general_info_rows[i].text) for i in range(len(general_info_keys))}
                 main_info = {
                     **general_info, 
+                    'reg_number': text_prep(reg_number.text),
                     'shelfLifeComment': text_prep(main_table[-2].text), 
                     'attributes': ','.join(attributes_list),
-                    'reg_number': text_prep(reg_number.text),
                     'dosage': '',
                     'lsType': ''}
 
@@ -90,6 +90,7 @@ def process_parser(driver):
                     # remove :7
                     cells = rows[index].find_elements_by_tag_name('td')[:7]
                     completenesses_info_row = { completenesses_keys[i]: text_prep(cells[i].text) for i in range(len(completenesses_keys[:7]))}
+                    print(len(completenesses_info))
                     completenesses_info.append(completenesses_info_row)
 
                 next_tab(driver, 3)
@@ -125,8 +126,8 @@ def process_parser(driver):
                 rows = wait_table(driver, 6, False, True)
                 package_info = []
                 for index, row in enumerate(rows):
-                    cells = rows[index].find_elements_by_tag_name('td')
-                    if len(cells) > 1:
+                    try:
+                        cells = rows[index].find_elements_by_tag_name('td')
                         name = text_prep(cells[0].text)
 
                         if cells[1].find_element_by_tag_name('input').get_attribute('checked') == 'true':
@@ -142,7 +143,10 @@ def process_parser(driver):
                             'primary': is_primary,
                             **package_info_row
                         }
+
                         package_info.append(package_info_row_data)
+                    except:
+                        package_info = []
                         
                 website = {
                     'name': 'ndda.kz mi',
@@ -165,11 +169,7 @@ def process_parser(driver):
 
                 print(item['mainInfo']['productName'])
                 # sending data by kafka
-                try:
-                    send_data(item)
-                except Exception as e:
-                    print(e)
-                    print('smth is wrong')
+                send_data(item)
                 
                 # find close button and close current window
                 driver.find_element_by_class_name('close').click()
@@ -177,10 +177,10 @@ def process_parser(driver):
                 # insert product item data into global data list and write to the file
                 # data.append(item)
                 # with open('data.json', 'w', encoding='utf-8') as f:
-                        # json.dump(data, f, ensure_ascii=False, indent=4)
-                # print(len(data))
+                #         json.dump(data, f, ensure_ascii=False, indent=4)
             except Exception as e:
                 print('im here you motherfucker')
+                driver.find_element_by_class_name('close').click()
                 # print(e)
                 pass
         try:
