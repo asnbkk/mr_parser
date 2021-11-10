@@ -69,6 +69,7 @@ def wait_table(driver, index, delete_first, is_nested=False):
             EC.visibility_of_all_elements_located((By.XPATH, f'//div[@id="{tab_list[index]}"]{add_element}//tbody//tr')))
         return element[1:] if delete_first else element
     except Exception as e:
+        print('shit happens')
         print(e)
 
 def text_prep(text):
