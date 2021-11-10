@@ -15,18 +15,21 @@ def process_parser(driver):
     while True:
         try:
             parent_rows = driver.find_elements_by_class_name('ui-row-ltr')
+            current_page = driver.find_element_by_xpath('//td[@id="input_register_pager"]//input').get_attribute("value")
         except:
             global state
             state = 'not available'
-            break
+            # break
+            print('shit here')
         
-        for index, row in enumerate(parent_rows):
+        for i, row in enumerate(parent_rows):
             try:
                 try:
-                    cells = parent_rows[index].find_elements_by_tag_name('td')
+                    cells = parent_rows[i].find_elements_by_tag_name('td')
                     attributes = cells[15:21]
                     reg_number = cells[0]
                     attributes_list = []
+                    print(f'STARTING:\n{cells[2].text}')
                 except Exception as e:
                     print(e)
 
@@ -34,9 +37,14 @@ def process_parser(driver):
                         if attr.find_element_by_tag_name('input').get_attribute('checked') == 'true':
                             attributes_list.append(attributes_keys[index])
                 # new item open
-
-                link = WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
-                ActionChains(driver).move_to_element(link).click(link).perform()
+                try:
+                    link = WebDriverWait(row, 60).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
+                    ActionChains(driver).move_to_element(link).click(link).perform()
+                except:
+                    print('SOME PROBLEM WITH OPENING NEW TAB, GOING TO SLEEP FOR 19 SECS')
+                    time.sleep(10)
+                    link = WebDriverWait(row, 60).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
+                    ActionChains(driver).move_to_element(link).click(link).perform()
 
                 table_check(driver, 'modal-open')
                 main_table = WebDriverWait(driver, 5).until(
@@ -56,7 +64,6 @@ def process_parser(driver):
                     'attributes': ','.join(attributes_list),
                     'dosage': '',
                     'lsType': ''}
-
                 secondary_table = driver.find_element_by_xpath('//table[@class="table table-bordered table-hover"]')
                 secondary_table_rows = secondary_table.find_elements_by_tag_name('tr')[1:]
                 nmirks = []
@@ -90,7 +97,6 @@ def process_parser(driver):
                     # remove :7
                     cells = rows[index].find_elements_by_tag_name('td')[:7]
                     completenesses_info_row = { completenesses_keys[i]: text_prep(cells[i].text) for i in range(len(completenesses_keys[:7]))}
-                    print(len(completenesses_info))
                     completenesses_info.append(completenesses_info_row)
 
                 next_tab(driver, 3)
@@ -167,24 +173,28 @@ def process_parser(driver):
                         'website': website
                     }
 
-                print(item['mainInfo']['productName'])
+                print('DONE')
                 # sending data by kafka
                 send_data(item)
-                
+                time.sleep(2)
                 # find close button and close current window
                 driver.find_element_by_class_name('close').click()
 
                 # insert product item data into global data list and write to the file
-                # data.append(item)
-                # with open('data.json', 'w', encoding='utf-8') as f:
-                #         json.dump(data, f, ensure_ascii=False, indent=4)
+                data.append(item)
+                with open('data.json', 'w', encoding='utf-8') as f:
+                        json.dump(data, f, ensure_ascii=False, indent=4)
+                print(f'LENGTH OF LIST:\n{len(data)}')
+                print(f'ORDER OF PRODUCT:\n{i + 1}')
+                print(f'CURRENT PAGE:\n{current_page}')
+                print()
             except Exception as e:
-                print('im here you motherfucker')
-                driver.find_element_by_class_name('close').click()
-                # print(e)
+                print(f'SMTH IS WORONG:\n{cells[2].text}')
+                # driver.find_element_by_class_name('close').click()
                 pass
         try:
             # go to the next page if possible; else break the loop
+            print('---attempt to go to the next page---')
             WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.ID, 'next_register_pager'))).click()
         except:
             print('seems to be the end')
