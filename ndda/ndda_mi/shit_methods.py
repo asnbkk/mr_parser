@@ -37,7 +37,7 @@ def get_child(element):
 
 def next_tab(driver, index):
     try:
-        tab = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, f'//a[@href="#{tab_list[index]}"]')))
+        tab = WebDriverWait(driver, 120).until(EC.element_to_be_clickable((By.XPATH, f'//a[@href="#{tab_list[index]}"]')))
         ActionChains(driver).move_to_element(tab).click(tab).perform()
     except:
         print('Currently the site suck. Please cum later')
@@ -49,6 +49,7 @@ def search_handler(driver):
 
         select = Select(driver.find_element_by_id('ReestrTableForNdda_reg_type'))
         select.select_by_visible_text('МИ')
+        # search_input.send_keys('Хирургическая нить WEGO - PGA RAPID синтетическая, рассасывающаяся, стерильная, с атравматическими иглами и без игл, различных')
         search_input.submit()
     except Exception as e: 
         print(e)   
@@ -64,7 +65,7 @@ def table_check(driver, class_name):
 def wait_table(driver, index, delete_first, is_nested=False):
     add_element = '//div[@id="yw2"]' if is_nested else ''
     try:
-        element = WebDriverWait(driver, 30).until(
+        element = WebDriverWait(driver, 60).until(
             EC.visibility_of_all_elements_located((By.XPATH, f'//div[@id="{tab_list[index]}"]{add_element}//tbody//tr')))
         return element[1:] if delete_first else element
     except Exception as e:

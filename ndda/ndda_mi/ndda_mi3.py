@@ -1,10 +1,12 @@
-from os import DirEntry, stat
 from selenium import webdriver
 from shit_dict import *
 from shit_methods import *
 from shit_chrome_path import *
 import time
 # import json
+
+from bs4 import BeautifulSoup
+
 
 state = 'parsing'
 data = []
@@ -25,11 +27,11 @@ def process_parser(driver):
         for i, row in enumerate(parent_rows):
             try:
                 try:
-                    cells = parent_rows[i].find_elements_by_tag_name('td')
-                    attributes = cells[15:21]
-                    reg_number = cells[0]
+                    p_cells = parent_rows[i].find_elements_by_tag_name('td')
+                    attributes = p_cells[15:21]
+                    reg_number = p_cells[0]
                     attributes_list = []
-                    print(f'STARTING:\n{cells[2].text}')
+                    print(f'STARTING:\n{p_cells[2].text}')
                 except Exception as e:
                     print(e)
 
@@ -51,108 +53,139 @@ def process_parser(driver):
                     EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
 
                 # main_table = driver.find_elements_by_xpath('//form[@id="reestr-form-reestrForm-form"]//tbody//td')[1::2]
-                general_info_rows = main_table[:11]
+                try:
+                    general_info_rows = main_table[:11]
 
-                attributes = cells[15:21]
-                attributes_list = []
-                
-                general_info = {general_info_keys[i]: text_prep(general_info_rows[i].text) for i in range(len(general_info_keys))}
-                main_info = {
-                    **general_info, 
-                    'reg_number': text_prep(reg_number.text),
-                    'shelfLifeComment': text_prep(main_table[-2].text), 
-                    'attributes': ','.join(attributes_list),
-                    'dosage': '',
-                    'lsType': ''}
-                secondary_table = driver.find_element_by_xpath('//table[@class="table table-bordered table-hover"]')
-                secondary_table_rows = secondary_table.find_elements_by_tag_name('tr')[1:]
-                nmirks = []
-                for row in secondary_table_rows:
-                    cells = row.find_elements_by_tag_name('td')
-                    nmirk = {nmirk_keys[i]: text_prep(cells[i].text) for i in range(len(nmirk_keys))}
-                    nmirks.append(nmirk)
+                    attributes = p_cells[15:21]
+                    attributes_list = []
+                    
+                    general_info = {general_info_keys[i]: text_prep(general_info_rows[i].text) for i in range(len(general_info_keys))}
+                    main_info = {
+                        **general_info, 
+                        'reg_number': text_prep(reg_number.text),
+                        'shelfLifeComment': text_prep(main_table[-2].text), 
+                        'attributes': ','.join(attributes_list),
+                        'dosage': '',
+                        'lsType': ''}
+                    print('main info: ok')
+                except:
+                    print('main_info: - ')
+                try:
+                    secondary_table = driver.find_element_by_xpath('//table[@class="table table-bordered table-hover"]')
+                    secondary_table_rows = secondary_table.find_elements_by_tag_name('tr')[1:]
+                    nmirks = []
+                    for row in secondary_table_rows:
+                        cells = row.find_elements_by_tag_name('td')
+                        nmirk = {nmirk_keys[i]: text_prep(cells[i].text) for i in range(len(nmirk_keys))}
+                        nmirks.append(nmirk)
+                    print('nmirks: ok')
+                except:
+                    print('nmirks: -')
             
 
-                next_tab(driver, 0) 
-                rows = wait_table(driver, 0, True)
-                order_info = []
+                try:
+                    next_tab(driver, 0) 
+                    rows = wait_table(driver, 0, True)
+                    order_info = []
 
-                for index, row in enumerate(rows):
-                    cells = rows[index].find_elements_by_tag_name('td')
-                    order_info_row = { order_keys[i]: text_prep(cells[i].text) for i in range(len(order_keys)) }
-                    order_info.append(order_info_row)
-                
-                next_tab(driver, 1)
-                rows = wait_table(driver, 1, False)
-                manufacturer_info = []
-                for index, row in enumerate(rows):
-                    cells = row.find_elements_by_tag_name('td')
-                    manufacturer_info_row = { manufacturer_keys[i]: text_prep(cells[i].text) for i in range(len(manufacturer_keys)) }
-                    manufacturer_info.append(manufacturer_info_row)
-
-                next_tab(driver, 2)
-                rows = wait_table(driver, 2, True)
-                completenesses_info = []
-                for index, row in enumerate(rows):
-                    # remove :7
-                    cells = rows[index].find_elements_by_tag_name('td')[:7]
-                    completenesses_info_row = { completenesses_keys[i]: text_prep(cells[i].text) for i in range(len(completenesses_keys[:7]))}
-                    completenesses_info.append(completenesses_info_row)
-
-                next_tab(driver, 3)
-                rows = driver.find_elements_by_xpath('//div[@id="yw4_tab_5"]//tbody//tr')[1:]
-                variants_info = []
-                time.sleep(0.5)
-                for index, row in enumerate(rows):
-                    if row.text:
+                    for index, row in enumerate(rows):
                         cells = rows[index].find_elements_by_tag_name('td')
-                        variants_info_row = { variants_keys[i]: text_prep(cells[i].text) for i in range(len(variants_keys))}
-                        variants_info_row_full = {**variants_info_row, 'activity': 'Есть'}
-                        variants_info.append(variants_info_row_full)
-
-                next_tab(driver, 4)
-                rows = wait_table(driver, 4, False)
-                instructions_info = []
-                for index, row in enumerate(rows):
-                    cells = rows[index].find_elements_by_tag_name('td')
-                    # if cells[0].get_attribute('class') != 'empty':
-                    if len(cells) > 1:
-                        instructions_info_row = { instructions_keys[i]: text_prep(cells[i].text) if len(get_child(cells[i])) == 0 else get_child(cells[i])[0].get_attribute('href') for i in range(len(instructions_keys)) }
-                        instructions_info.append(instructions_info_row)
+                        order_info_row = { order_keys[i]: text_prep(cells[i].text) for i in range(len(order_keys)) }
+                        order_info.append(order_info_row)
+                    print('order: ok')
+                except:
+                    print('order: -')
                 
-                next_tab(driver, 5)
-                rows = wait_table(driver, 5, True)
-                certificate_info = []
-                for index, row in enumerate(rows):
-                    cells = rows[index].find_elements_by_tag_name('td')
-                    certificate_info_row = { certificate_keys[i]: text_prep(cells[i].text) for i in range(len(certificate_keys)) }
-                    certificate_info.append(certificate_info_row)
+                try:
+                    next_tab(driver, 1)
+                    rows = wait_table(driver, 1, False)
+                    manufacturer_info = []
+                    for index, row in enumerate(rows):
+                        cells = row.find_elements_by_tag_name('td')
+                        manufacturer_info_row = { manufacturer_keys[i]: text_prep(cells[i].text) for i in range(len(manufacturer_keys)) }
+                        manufacturer_info.append(manufacturer_info_row)
+                    print('manufacturer: ok')
+                except:
+                    print('manufacturer: -')
 
-                next_tab(driver, 6)
-                rows = wait_table(driver, 6, False, True)
-                package_info = []
-                for index, row in enumerate(rows):
-                    try:
+                try:
+                    next_tab(driver, 2)
+                    rows = wait_table(driver, 2, True)
+                    page_source = driver.page_source
+                    soup = BeautifulSoup(page_source, 'lxml')
+                    completenesses_info = []
+                    rows = soup.find('div', {'id': 'yw4_tab_4'}).find('tbody').find_all('tr')[1:]
+                    for row in rows:
+                        cells = row.find_all('td')[:7]
+                        completenesses_info_row = { completenesses_keys[i]: text_prep(cells[i].text) for i in range(len(completenesses_keys[:7]))}
+                        completenesses_info.append(completenesses_info_row)
+                    print('completenesses: ok')
+                except:
+                    print('completenesses: -')
+
+                try: 
+                    next_tab(driver, 3)
+                    rows = driver.find_elements_by_xpath('//div[@id="yw4_tab_5"]//tbody//tr')[1:]
+                    variants_info = []
+                    time.sleep(0.5)
+                    for index, row in enumerate(rows):
+                        if row.text:
+                            cells = rows[index].find_elements_by_tag_name('td')
+                            variants_info_row = { variants_keys[i]: text_prep(cells[i].text) for i in range(len(variants_keys))}
+                            variants_info_row_full = {**variants_info_row, 'activity': 'Есть'}
+                            variants_info.append(variants_info_row_full)
+                    print('variants: ok')
+                except:
+                    print('variants: -')
+
+                try:
+                    next_tab(driver, 4)
+                    rows = wait_table(driver, 4, False)
+                    instructions_info = []
+                    for index, row in enumerate(rows):
                         cells = rows[index].find_elements_by_tag_name('td')
-                        name = text_prep(cells[0].text)
+                        if len(cells) > 1:
+                            instructions_info_row = { instructions_keys[i]: text_prep(cells[i].text) if len(get_child(cells[i])) == 0 else get_child(cells[i])[0].get_attribute('href') for i in range(len(instructions_keys)) }
+                            instructions_info.append(instructions_info_row)
+                    print('instructions: ok')
+                except:
+                    print('instructions: -')
+                
+                try:
+                    next_tab(driver, 5)
+                    rows = wait_table(driver, 5, True)
+                    certificate_info = []
+                    for index, row in enumerate(rows):
+                        cells = rows[index].find_elements_by_tag_name('td')
+                        certificate_info_row = { certificate_keys[i]: text_prep(cells[i].text) for i in range(len(certificate_keys)) }
+                        certificate_info.append(certificate_info_row)
+                    print('certificate: ok')
+                except:
+                    print('certificate: -')
 
-                        if cells[1].find_element_by_tag_name('input').get_attribute('checked') == 'true':
-                            is_primary = True
-                        else: 
-                            is_primary = False
-                        
-                        cells_rest = cells[2:]
-                        package_info_row = { package_keys[i]: text_prep(cells_rest[i].text) for i in range(len(package_keys)) }
-
-                        package_info_row_data = {
-                            'name': name,
-                            'primary': is_primary,
-                            **package_info_row
-                        }
-
-                        package_info.append(package_info_row_data)
-                    except:
-                        package_info = []
+                try:
+                    next_tab(driver, 6)
+                    rows = wait_table(driver, 6, False, True)
+                    package_info = []
+                    for index, row in enumerate(rows):
+                        try:
+                            cells = rows[index].find_elements_by_tag_name('td')
+                            name = text_prep(cells[0].text)
+                            is_primary = True if cells[1].find_element_by_tag_name('input').get_attribute('checked') == 'true' else False
+                            
+                            cells_rest = cells[2:]
+                            package_info_row = { package_keys[i]: text_prep(cells_rest[i].text) for i in range(len(package_keys)) }
+                            package_info_row_data = {
+                                'name': name,
+                                'primary': is_primary,
+                                **package_info_row
+                            }
+                            package_info.append(package_info_row_data)
+                        except:
+                            package_info = []
+                    print('package: ok')
+                except:
+                    print('package: -')
                         
                 website = {
                     'name': 'ndda.kz mi',
@@ -184,13 +217,14 @@ def process_parser(driver):
                 data.append(item)
                 with open('data.json', 'w', encoding='utf-8') as f:
                         json.dump(data, f, ensure_ascii=False, indent=4)
-                print(f'LENGTH OF LIST:\n{len(data)}')
-                print(f'ORDER OF PRODUCT:\n{i + 1}')
-                print(f'CURRENT PAGE:\n{current_page}')
+                print(f'LENGTH OF LIST: {len(data)}')
+                print(f'ORDER OF PRODUCT: {i + 1}')
+                print(f'CURRENT PAGE: {current_page}')
                 print()
             except Exception as e:
-                print(f'SMTH IS WORONG:\n{cells[2].text}')
-                # driver.find_element_by_class_name('close').click()
+                print(f'SMTH IS WORONG:\n{p_cells[2].text}')
+                driver.find_element_by_class_name('close').click()
+                time.sleep(5)
                 pass
         try:
             # go to the next page if possible; else break the loop
@@ -211,15 +245,15 @@ def process_parser(driver):
 def bootstrap():
     while True:
         opts = webdriver.ChromeOptions()
-        opts.add_argument("--window-size=1920,1080") 
-        opts.add_argument("--headless")
-        opts.add_argument("--disable-xss-auditor")
-        opts.add_argument("--disable-web-security")
-        opts.add_argument("--allow-running-insecure-content")
-        opts.add_argument("--no-sandbox")
-        opts.add_argument("--disable-setuid-sandbox")
-        opts.add_argument("--disable-webgl")
-        opts.add_argument("--disable-popup-blocking")
+        # opts.add_argument("--window-size=1920,1080") 
+        # opts.add_argument("--headless")
+        # opts.add_argument("--disable-xss-auditor")
+        # opts.add_argument("--disable-web-security")
+        # opts.add_argument("--allow-running-insecure-content")
+        # opts.add_argument("--no-sandbox")
+        # opts.add_argument("--disable-setuid-sandbox")
+        # opts.add_argument("--disable-webgl")
+        # opts.add_argument("--disable-popup-blocking")
 
         PATH = chrome_path
         driver = webdriver.Chrome(PATH, options=opts)
