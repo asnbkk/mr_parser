@@ -20,7 +20,7 @@ def send_data(data):
 
 def search_handler(driver):
     try: 
-        search_input = WebDriverWait(driver, 5).until(
+        search_input = WebDriverWait(driver, 300).until(
             EC.presence_of_element_located((By.ID, 'id_q_mi_label_application')))
         search_input.send_keys('а')
         search_input.submit()

@@ -29,6 +29,7 @@ def process_parser(driver):
                 'registrationType': '',
                 'dosage': '',
                 'lsType': '',
+                'reg_number': position['reg_number'],
                 'registrationData': position['reg_date'],
                 'registrationExpireData': '',
                 'registrationLife': position['validity'],
