@@ -19,10 +19,11 @@ def process_parser(url, reestr):
             instruction = url + row.select_one('td:nth-child(2) > a:nth-child(1)')['href']
 
             main_info = {
-                'type': '',
+                'type': 'МИ',
                 'productName': name,
                 'lsType': '',
                 'dosage': cells[4].text,
+                'reg_number': cells[-3].text,
                 'registrationType': '',
                 'registrationData': cells[-2].text,
                 'registrationLife': '',

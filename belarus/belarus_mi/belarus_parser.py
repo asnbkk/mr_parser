@@ -42,6 +42,7 @@ def get_details(url, prod):
         # 'type': position['type'],
         'type': 'МИ',
         'productName': position['name'],
+        'reg_number': '',
         'registrationType': '',
         'registrationData': position['reg_date'],
         'registrationLife': '',
@@ -96,7 +97,7 @@ def get_details(url, prod):
     }
 
     send_data(position)
-    print(position['mainInfo']['type'])
+    print(position['mainInfo']['productName'])
 
 def bootstrap():
     i = 1
@@ -105,6 +106,10 @@ def bootstrap():
         time.sleep(5)
 
         soup = get_data(reestr, i)
+        print('===========page is:', i, '===========')
+        # max_page = int(soup.find('div', {'class': 'page-view'}).find('ul').find('li').find('span').text.split(' ')[-1])
+
+        # for pag in range(2, max_page):
         try: 
             global state
             table = soup \

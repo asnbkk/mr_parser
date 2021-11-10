@@ -216,7 +216,7 @@ def process_parser(driver):
                 # insert product item data into global data list and write to the file
                 data.append(item)
                 with open('data.json', 'w', encoding='utf-8') as f:
-                        json.dump(data, f, ensure_ascii=False, indent=4)
+                    json.dump(data, f, ensure_ascii=False, indent=4)
                 print(f'LENGTH OF LIST: {len(data)}')
                 print(f'ORDER OF PRODUCT: {i + 1}')
                 print(f'CURRENT PAGE: {current_page}')
@@ -254,6 +254,7 @@ def bootstrap():
         opts.add_argument("--disable-setuid-sandbox")
         opts.add_argument("--disable-webgl")
         opts.add_argument("--disable-popup-blocking")
+        opts.add_argument('--disable-dev-shm-usage') 
 
         PATH = chrome_path
         driver = webdriver.Chrome(PATH, options=opts)
