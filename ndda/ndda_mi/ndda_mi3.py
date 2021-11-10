@@ -16,7 +16,7 @@ data = []
 def process_parser(driver):
     while True:
         try:
-            parent_rows = driver.find_elements_by_class_name('ui-row-ltr')[5:]
+            parent_rows = driver.find_elements_by_class_name('ui-row-ltr')
             current_page = driver.find_element_by_xpath('//td[@id="input_register_pager"]//input').get_attribute("value")
         except:
             global state
@@ -25,7 +25,7 @@ def process_parser(driver):
             print('shit here')
         
         for i, row in enumerate(parent_rows):
-            # try:
+            try:
                 try:
                     p_cells = parent_rows[i].find_elements_by_tag_name('td')
                     attributes = p_cells[15:21]
@@ -108,20 +108,20 @@ def process_parser(driver):
                 except:
                     print('manufacturer: -')
 
-                # try:
-                next_tab(driver, 2)
-                rows = wait_table(driver, 2, True)
-                page_source = driver.page_source
-                soup = BeautifulSoup(page_source, 'lxml')
-                completenesses_info = []
-                rows = soup.find('div', {'id': 'yw4_tab_4'}).find('tbody').find_all('tr')[1:]
-                for row in rows:
-                    cells = row.find_all('td')[:7]
-                    completenesses_info_row = { completenesses_keys[i]: text_prep(cells[i].text) for i in range(len(completenesses_keys[:7]))}
-                    completenesses_info.append(completenesses_info_row)
-                    # print('completenesses: ok')
-                # except:
-                    # print('completenesses: -')
+                try:
+                    next_tab(driver, 2)
+                    rows = wait_table(driver, 2, True)
+                    page_source = driver.page_source
+                    soup = BeautifulSoup(page_source, 'lxml')
+                    completenesses_info = []
+                    rows = soup.find('div', {'id': 'yw4_tab_4'}).find('tbody').find_all('tr')[1:]
+                    for row in rows:
+                        cells = row.find_all('td')[:7]
+                        completenesses_info_row = { completenesses_keys[i]: text_prep(cells[i].text) for i in range(len(completenesses_keys[:7]))}
+                        completenesses_info.append(completenesses_info_row)
+                    print('completenesses: ok')
+                except:
+                    print('completenesses: -')
 
                 try: 
                     next_tab(driver, 3)
@@ -221,11 +221,11 @@ def process_parser(driver):
                 print(f'ORDER OF PRODUCT: {i + 1}')
                 print(f'CURRENT PAGE: {current_page}')
                 print()
-            # except Exception as e:
-            #     print(f'SMTH IS WORONG:\n{p_cells[2].text}')
-            #     driver.find_element_by_class_name('close').click()
-            #     time.sleep(5)
-            #     pass
+            except Exception as e:
+                print(f'SMTH IS WORONG:\n{p_cells[2].text}')
+                driver.find_element_by_class_name('close').click()
+                time.sleep(5)
+                pass
         try:
             # go to the next page if possible; else break the loop
             print('---attempt to go to the next page---')
@@ -254,6 +254,7 @@ def bootstrap():
         opts.add_argument("--disable-setuid-sandbox")
         opts.add_argument("--disable-webgl")
         opts.add_argument("--disable-popup-blocking")
+        opts.add_argument('--disable-dev-shm-usage') 
 
         PATH = chrome_path
         driver = webdriver.Chrome(PATH, options=opts)
@@ -270,11 +271,11 @@ def bootstrap():
         # -----
         pagination_handler(driver, 60)
         table_check(driver, 'ui-row-ltr')
-        # try:
-        process_parser(driver)
-        # except:
-            # global state
-            # state = 'not available'
-            # pass
+        try:
+            process_parser(driver)
+        except:
+            global state
+            state = 'not available'
+            pass
 
 bootstrap()
