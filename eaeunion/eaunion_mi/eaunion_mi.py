@@ -10,7 +10,7 @@ from shit_dict import *
 
 state = 'parsing'
 
-# data = []
+data = []
 
 def process_parser(driver):
     while True:
@@ -33,7 +33,7 @@ def process_parser(driver):
                 name = driver.find_element_by_xpath('//div[@class="v-card__description"]/h2').text
                 # print(name)
 
-                table = driver.find_elements_by_xpath('//div[@id="zebra0"]/ul/li[@class="zebra-list__item"]')[1:4]
+                table = driver.find_elements_by_xpath('//div[@id="zebra0"]/ul/li[@class="zebra-list__item"]')[:4]
                 instruction = table[-1].find_element_by_xpath('//div/ul/li/a[@class="link"]').get_attribute('href')
                 # print(instruction)
 
@@ -46,6 +46,10 @@ def process_parser(driver):
                 time.sleep(5)
 
                 left_tree = driver.find_element_by_id('tab2tree')
+
+                sec_class_link = left_tree.find_element_by_xpath('//a[@title="Медицинское изделие"]').get_attribute('href').split('#')[-1]
+                sec_class = driver.find_elements_by_xpath(f'//div[@id="{sec_class_link}"]/div/ul/li')[-2].text
+
                 manufac_link = left_tree.find_element_by_xpath('//a[@title="Производитель"]').get_attribute('href').split('#')[-1]
                 manufac = driver.find_elements_by_xpath(f'//div[@id="{manufac_link}"]/div/ul/li')
 
@@ -67,6 +71,7 @@ def process_parser(driver):
                     'dosage': '',
                     'lsType': '',
                     'registrationType': '',
+                    'reg_number': reg_data['reg_number'],
                     'registrationData': reg_data['reg_date'],
                     'registrationExpireData': reg_data['reg_end_date'],
                     'registrationLife': '',
@@ -74,7 +79,7 @@ def process_parser(driver):
                     'productName': name,
                     'appointment': '',
                     'fieldOfUse': '',
-                    'securityClass': '',
+                    'securityClass': text_prep(sec_class),
                     'shortTechDescription': '',
                     'attributes': '',
                     'shelfLifeComment': ''
@@ -119,7 +124,7 @@ def process_parser(driver):
                 # print(len(data))
 
                 # with open('data.json', 'w', encoding='utf-8') as f:
-                #     json.dump(data, f, ensure_ascii=False, indent=4)
+                    # json.dump(data, f, ensure_ascii=False, indent=4)
                 driver.close()
                 driver.switch_to.window(driver.window_handles[0])
 
@@ -147,13 +152,14 @@ def bootstrap():
         opts.add_argument("--disable-popup-blocking")
 
         PATH = chrome_path
+        # PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
         driver = webdriver.Chrome(PATH, options=opts)
         url = 'https://portal.eaeunion.org/sites/odata/_layouts/15/Registry/PMM06/TableView.aspx'
         driver.get(url)
         try:
-            WebDriverWait(driver, 5000).until(
+            WebDriverWait(driver, 300).until(
                 EC.visibility_of_element_located((By.XPATH, '//span[@data-bind="text: $data"]')))
-            process_parser()
+            process_parser(driver)
         except:
             global state
             state = 'not available'

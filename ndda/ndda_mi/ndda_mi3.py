@@ -263,7 +263,8 @@ def bootstrap():
         opts.add_argument("--disable-popup-blocking")
         opts.add_argument('--disable-dev-shm-usage') 
 
-        PATH = chrome_path
+        # PATH = chrome_path
+        PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
         driver = webdriver.Chrome(PATH, options=opts)
         driver.get('http://register.ndda.kz/category/search_prep')
 
@@ -276,7 +277,7 @@ def bootstrap():
         toggle = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.ID, 'jqgh_register_grid_reg_date')))
         ActionChains(driver).move_to_element(toggle).click(toggle).perform()
         # -----
-        pagination_handler(driver, 69)
+        pagination_handler(driver, 81)
         table_check(driver, 'ui-row-ltr')
         try:
             process_parser(driver)

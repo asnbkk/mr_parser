@@ -263,7 +263,8 @@ def bootstrap():
         opts.add_argument("--disable-popup-blocking")
         opts.add_argument('--disable-dev-shm-usage') 
 
-        PATH = chrome_path
+        # PATH = chrome_path
+        PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
         driver = webdriver.Chrome(PATH, options=opts)
         driver.get('http://register.ndda.kz/category/search_prep')
 
