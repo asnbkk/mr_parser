@@ -42,7 +42,7 @@ def get_details(url, prod):
         # 'type': position['type'],
         'type': 'МИ',
         'productName': position['name'],
-        'reg_number': '',
+        'reg_number': position['reg_item_number'],
         'registrationType': '',
         'registrationData': position['reg_date'],
         'registrationLife': '',
@@ -98,12 +98,13 @@ def get_details(url, prod):
 
     send_data(position)
     print(position['mainInfo']['productName'])
+    time.sleep(1)
 
 def bootstrap():
-    i = 1
+    i = 61
     while True:
-        print('timer for 5 secs')
-        time.sleep(5)
+        print('timer for 30 secs')
+        time.sleep(10)
 
         soup = get_data(reestr, i)
         print('===========page is:', i, '===========')
@@ -125,8 +126,9 @@ def bootstrap():
             for row in table.find_all('tr'):
                 link = row.select_one('td:nth-child(2) > a')['href']
                 get_details(url, link)
-            i += 1
         except:
             state = 'not available'
             pass
+
+        i += 1
 bootstrap()

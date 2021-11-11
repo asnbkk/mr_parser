@@ -48,9 +48,16 @@ def process_parser(driver):
                     link = WebDriverWait(row, 60).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
                     ActionChains(driver).move_to_element(link).click(link).perform()
 
-                table_check(driver, 'modal-open')
-                main_table = WebDriverWait(driver, 5).until(
-                    EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
+                try:
+                    table_check(driver, 'modal-open')
+                    main_table = WebDriverWait(driver, 300).until(
+                        EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
+                except:
+                    print('CANNOT FIND THE WINDOW')
+                    time.sleep(10)
+                    table_check(driver, 'modal-open')
+                    main_table = WebDriverWait(driver, 300).until(
+                        EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
 
                 # main_table = driver.find_elements_by_xpath('//form[@id="reestr-form-reestrForm-form"]//tbody//td')[1::2]
                 try:
@@ -269,7 +276,7 @@ def bootstrap():
         toggle = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.ID, 'jqgh_register_grid_reg_date')))
         ActionChains(driver).move_to_element(toggle).click(toggle).perform()
         # -----
-        pagination_handler(driver, 60)
+        pagination_handler(driver, 69)
         table_check(driver, 'ui-row-ltr')
         try:
             process_parser(driver)
