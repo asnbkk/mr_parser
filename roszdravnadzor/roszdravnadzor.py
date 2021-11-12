@@ -106,14 +106,14 @@ def bootstrap():
         time.sleep(3)
 
         opts = webdriver.ChromeOptions()
-        # opts.add_argument("--headless")
-        # opts.add_argument("--disable-xss-auditor")
-        # opts.add_argument("--disable-web-security")
-        # opts.add_argument("--allow-running-insecure-content")
-        # opts.add_argument("--no-sandbox")
-        # opts.add_argument("--disable-setuid-sandbox")
-        # opts.add_argument("--disable-webgl")
-        # opts.add_argument("--disable-popup-blocking")
+        opts.add_argument("--headless")
+        opts.add_argument("--disable-xss-auditor")
+        opts.add_argument("--disable-web-security")
+        opts.add_argument("--allow-running-insecure-content")
+        opts.add_argument("--no-sandbox")
+        opts.add_argument("--disable-setuid-sandbox")
+        opts.add_argument("--disable-webgl")
+        opts.add_argument("--disable-popup-blocking")
 
         # PATH = chrome_path
         PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
@@ -122,7 +122,7 @@ def bootstrap():
         url = 'https://roszdravnadzor.gov.ru/services/misearch'
         # temp shit
         driver.get(url)
-        for year in range(1990, 2022):
+        for year in range(2000, 2022):
             # print(year)
             try:
                 search_handler(driver, year)
