@@ -3,6 +3,7 @@ from shit_dict import *
 from shit_methods import *
 from shit_chrome_path import *
 import time
+import random
 # import json
 
 from bs4 import BeautifulSoup
@@ -40,24 +41,26 @@ def process_parser(driver):
                             attributes_list.append(attributes_keys[index])
                 # new item open
                 try:
-                    link = WebDriverWait(row, 60).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
+                    link = WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
                     ActionChains(driver).move_to_element(link).click(link).perform()
                 except:
-                    print('SOME PROBLEM WITH OPENING NEW TAB, GOING TO SLEEP FOR 19 SECS')
-                    time.sleep(10)
-                    link = WebDriverWait(row, 60).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
+                    print('SOME PROBLEM WITH OPENING NEW TAB, GOING TO SLEEP FOR 30 SECS')
+                    time.sleep(30)
+                    link = WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
                     ActionChains(driver).move_to_element(link).click(link).perform()
+                    continue
 
                 try:
                     table_check(driver, 'modal-open')
-                    main_table = WebDriverWait(driver, 300).until(
+                    main_table = WebDriverWait(driver, 30).until(
                         EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
                 except:
                     print('CANNOT FIND THE WINDOW')
-                    time.sleep(10)
-                    table_check(driver, 'modal-open')
-                    main_table = WebDriverWait(driver, 300).until(
-                        EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
+                    # time.sleep(10)
+                    # table_check(driver, 'modal-open')
+                    # main_table = WebDriverWait(driver, 300).until(
+                    #     EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
+                    continue
 
                 # main_table = driver.find_elements_by_xpath('//form[@id="reestr-form-reestrForm-form"]//tbody//td')[1::2]
                 try:
@@ -219,10 +222,8 @@ def process_parser(driver):
                 time.sleep(1)
                 # find close button and close current window
                 # driver.find_element_by_class_name('close').click()
-                print('gonna close')
                 close_button = WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.CLASS_NAME, 'close')))
                 ActionChains(driver).move_to_element(close_button).click(close_button).perform()
-                print('closed')
                 # insert product item data into global data list and write to the file
                 data.append(item)
                 # with open('data.json', 'w', encoding='utf-8') as f:
@@ -233,8 +234,8 @@ def process_parser(driver):
                 print()
             except Exception as e:
                 print(f'SMTH IS WORONG:\n{p_cells[2].text}')
-                driver.find_element_by_class_name('close').click()
-                time.sleep(5)
+                # driver.find_element_by_class_name('close').click()
+                time.sleep(1)
                 pass
         try:
             # go to the next page if possible; else break the loop
@@ -243,7 +244,6 @@ def process_parser(driver):
         except:
             print('seems to be the end')
             state = 'reparsing'
-            break
         try: 
             # shit time sleep
             WebDriverWait(driver, 30).until(EC.invisibility_of_element((By.ID, 'load_register_grid')))
@@ -268,7 +268,7 @@ def bootstrap():
 
         # PATH = chrome_path
         PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
-        driver = webdriver.Chrome(PATH, options=opts)
+        driver = webdriver.Chrome(executable_path=PATH, options=opts)
         driver.get('http://register.ndda.kz/category/search_prep')
 
         frame = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "iframe1")))
@@ -280,7 +280,7 @@ def bootstrap():
         toggle = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.ID, 'jqgh_register_grid_reg_date')))
         ActionChains(driver).move_to_element(toggle).click(toggle).perform()
         # -----
-        pagination_handler(driver, 6)
+        pagination_handler(driver, 1)
         table_check(driver, 'ui-row-ltr')
         try:
             process_parser(driver)

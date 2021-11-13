@@ -55,12 +55,8 @@ def search_handler(driver):
         print(e)   
 
 def table_check(driver, class_name):
-    try: 
-        WebDriverWait(driver, 100).until(
-            EC.presence_of_element_located((By.CLASS_NAME, class_name)))
-    except Exception as e: 
-        print('suka')
-        print(e)
+    WebDriverWait(driver, 100).until(
+        EC.presence_of_element_located((By.CLASS_NAME, class_name)))
 
 def wait_table(driver, index, delete_first, is_nested=False):
     add_element = '//div[@id="yw2"]' if is_nested else ''
