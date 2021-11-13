@@ -24,7 +24,7 @@ def search_handler(driver, year):
         toggle = WebDriverWait(driver, 100).until(
             EC.presence_of_element_located((By.CLASS_NAME, 'js-open-extended-form')))
         toggle.click()
-        
+        # time.sleep(5)
         start_date = WebDriverWait(driver, 300).until(
             EC.presence_of_element_located((By.ID, 'id_dt_ru-start')))
         start_date.click()
@@ -44,6 +44,7 @@ def search_handler(driver, year):
         # search_input.send_keys('фор')
         # search_input.submit()
     except Exception as e: 
+        print('hello')
         print(e)   
 
 def wait_table(driver):

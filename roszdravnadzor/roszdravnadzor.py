@@ -18,7 +18,7 @@ def process_parser(driver):
             state = 'not available'
             driver.close()
             print('smth is wrng')
-            # break
+            break
 
         for row in rows:
             cells = row.find_elements_by_tag_name('td')
@@ -102,8 +102,8 @@ def process_parser(driver):
 
 def bootstrap():
     while True:
-        print('3 sec timeout')
-        time.sleep(3)
+        print('1 sec timeout')
+        time.sleep(1)
 
         opts = webdriver.ChromeOptions()
         opts.add_argument("--headless")
@@ -114,6 +114,7 @@ def bootstrap():
         opts.add_argument("--disable-setuid-sandbox")
         opts.add_argument("--disable-webgl")
         opts.add_argument("--disable-popup-blocking")
+        opts.add_argument("--window-size=1920,1080")
 
         # PATH = chrome_path
         PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
@@ -122,7 +123,7 @@ def bootstrap():
         url = 'https://roszdravnadzor.gov.ru/services/misearch'
         # temp shit
         driver.get(url)
-        for year in range(2000, 2022):
+        for year in range(1999, 2022):
             # print(year)
             try:
                 search_handler(driver, year)
