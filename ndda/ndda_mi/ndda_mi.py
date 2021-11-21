@@ -255,16 +255,16 @@ def process_parser(driver):
 def bootstrap():
     while True:
         opts = webdriver.ChromeOptions()
-        # opts.add_argument("--window-size=1920,1080") 
-        # opts.add_argument("--headless")
-        # opts.add_argument("--disable-xss-auditor")
-        # opts.add_argument("--disable-web-security")
-        # opts.add_argument("--allow-running-insecure-content")
-        # opts.add_argument("--no-sandbox")
-        # opts.add_argument("--disable-setuid-sandbox")
-        # opts.add_argument("--disable-webgl")
-        # opts.add_argument("--disable-popup-blocking")
-        # opts.add_argument('--disable-dev-shm-usage') 
+        opts.add_argument("--window-size=1920,1080") 
+        opts.add_argument("--headless")
+        opts.add_argument("--disable-xss-auditor")
+        opts.add_argument("--disable-web-security")
+        opts.add_argument("--allow-running-insecure-content")
+        opts.add_argument("--no-sandbox")
+        opts.add_argument("--disable-setuid-sandbox")
+        opts.add_argument("--disable-webgl")
+        opts.add_argument("--disable-popup-blocking")
+        opts.add_argument('--disable-dev-shm-usage') 
 
         # PATH = chrome_path
         PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
