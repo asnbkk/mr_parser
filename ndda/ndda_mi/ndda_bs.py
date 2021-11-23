@@ -30,11 +30,13 @@ def process_parser(driver):
             global state
             state = 'not available'
             print('shit here')
+            
         global data_counter
         for i, row in enumerate(soup.find_all('tr', {'class': 'ui-row-ltr'})):
             try:
                 p_cells = row.find_all('td')
                 attributes = p_cells[15:21]
+                
                 reg_number = p_cells[0]
                 attributes_list = []
                 print(f'STARTING:\n{p_cells[2].text}')
@@ -45,9 +47,15 @@ def process_parser(driver):
 
                 main_table = soup.find('div', {'id': 'yw4_tab_1'}).find('form').find('table').find_all('td')[1::2]
 
+                # kill this shit
                 for index, attr in enumerate(attributes):
                     if attr.find('input').has_attr('checked'):
                         attributes_list.append(attributes_keys[index])
+
+                # attributes = soup.find_all('label', {'class': 'checkbox'})
+                # for index, attr in enumerate(attributes):
+                #     if attr.select('label > input')[1].has_attr('checked'):
+                #         attributes_list.append(attributes_keys[index])
 
                 try:
                     general_info_rows = main_table[:11]
