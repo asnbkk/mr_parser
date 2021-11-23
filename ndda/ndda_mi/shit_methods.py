@@ -12,13 +12,16 @@ from kafka import KafkaProducer
 
 producer = KafkaProducer(
     bootstrap_servers=[kafka_host],
+    max_request_size = 5000000,
     api_version=(0,10,1),
     value_serializer=lambda x: 
     json.dumps(x).encode('utf-8')
     )
+# //////////////////////////////////
 
+# //////////////////////////////////
 def pagination_handler(driver, start_from):
-    time.sleep(5)
+    time.sleep(3)
     pag_input = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located((By.XPATH, '//td[@id="input_register_pager"]//input')))
     pag_input.clear()
@@ -69,4 +72,4 @@ def wait_table(driver, index, delete_first, is_nested=False):
         print(e)
 
 def text_prep(text):
-    return text.replace('"', '').replace('\n', ' ')
+    return text.replace('"', '').replace('\n', '').replace(u'\xa0', u'').replace("\r", "").replace('            ', '').strip()

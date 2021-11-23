@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 
 state = 'parsing'
 data = []
+data_counter = 0
 
 # page_amount = int(driver.find_element_by_id('sp_1_register_pager').text)
 # for page in range(page_amount):
@@ -222,16 +223,17 @@ def process_parser(driver):
                 print('DONE')
                 # sending data by kafka
                 send_data(item)
-                time.sleep(1)
+                time.sleep(0.5)
                 # find close button and close current window
                 # driver.find_element_by_class_name('close').click()
                 close_button = WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.CLASS_NAME, 'close')))
                 ActionChains(driver).move_to_element(close_button).click(close_button).perform()
                 # insert product item data into global data list and write to the file
-                data.append(item)
-                with open('data.json', 'w', encoding='utf-8') as f:
-                    json.dump(data, f, ensure_ascii=False, indent=4)
-                print(f'LENGTH OF LIST: {len(data)}')
+                # data.append(item)
+                data_counter =+ 1
+                # with open('data.json', 'w', encoding='utf-8') as f:
+                    # json.dump(data, f, ensure_ascii=False, indent=4)
+                print(f'LENGTH OF LIST: {data_counter}')
                 print(f'ORDER OF PRODUCT: {i + 1}')
                 print(f'CURRENT PAGE: {current_page}')
                 print()

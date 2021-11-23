@@ -1,3 +1,15 @@
+headers = {
+    'Accept': 'application/json, text/javascript, */*; q=0.01',
+    'Accept-Encoding': 'gzip, deflate',
+    'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
+    'Connection': 'keep-alive',
+    'Cookie': '_ga=GA1.2.1787853804.1631553712; PHPSESSID=03c060shssbrcjec4u3ksmbqo2; _gid=GA1.2.797183319.1637678990',
+    'Host': 'register.ndda.kz',
+    'Referer': 'http://register.ndda.kz/register.php/mainpage/reestr/lang/ru',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36',
+    'X-Requested-With': 'XMLHttpRequest',
+}
+
 general_info_keys = [
     'type',
     'registrationType',
