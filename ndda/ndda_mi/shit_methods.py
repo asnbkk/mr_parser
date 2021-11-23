@@ -52,7 +52,7 @@ def search_handler(driver):
 
         select = Select(driver.find_element_by_id('ReestrTableForNdda_reg_type'))
         select.select_by_visible_text('МИ')
-        search_input.send_keys('Квикс® алоэ, спрей назальный во флаконе 30мл')
+        # search_input.send_keys('Квикс® алоэ, спрей назальный во флаконе 30мл')
         search_input.submit()
     except Exception as e: 
         print(e)   

@@ -30,7 +30,7 @@ def process_parser(driver):
             global state
             state = 'not available'
             print('shit here')
-            
+
         global data_counter
         for i, row in enumerate(soup.find_all('tr', {'class': 'ui-row-ltr'})):
             try:
@@ -250,8 +250,8 @@ def bootstrap():
         opts.add_argument("--disable-popup-blocking")
         opts.add_argument('--disable-dev-shm-usage') 
 
-        PATH = chrome_path
-        # PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
+        # PATH = chrome_path
+        PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
         driver = webdriver.Chrome(executable_path=PATH, options=opts)
         driver.get('http://register.ndda.kz/category/search_prep')
 
