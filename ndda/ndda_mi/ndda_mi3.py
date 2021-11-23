@@ -164,9 +164,12 @@ def process_parser(driver):
                 try:
                     next_tab(driver, 5)
                     rows = wait_table(driver, 5, True)
+                    page_source = driver.page_source
+                    soup = BeautifulSoup(page_source, 'lxml')
                     certificate_info = []
+                    rows = soup.find('div', {'id': 'yw4_tab_7'}).find('tbody').find_all('tr')[1:]
                     for index, row in enumerate(rows):
-                        cells = rows[index].find_elements_by_tag_name('td')
+                        cells = row.find_all('td')
                         certificate_info_row = { certificate_keys[i]: text_prep(cells[i].text) for i in range(len(certificate_keys)) }
                         certificate_info.append(certificate_info_row)
                     print('certificate: ok')
@@ -226,8 +229,8 @@ def process_parser(driver):
                 ActionChains(driver).move_to_element(close_button).click(close_button).perform()
                 # insert product item data into global data list and write to the file
                 data.append(item)
-                # with open('data.json', 'w', encoding='utf-8') as f:
-                    # json.dump(data, f, ensure_ascii=False, indent=4)
+                with open('data.json', 'w', encoding='utf-8') as f:
+                    json.dump(data, f, ensure_ascii=False, indent=4)
                 print(f'LENGTH OF LIST: {len(data)}')
                 print(f'ORDER OF PRODUCT: {i + 1}')
                 print(f'CURRENT PAGE: {current_page}')
@@ -255,19 +258,19 @@ def process_parser(driver):
 def bootstrap():
     while True:
         opts = webdriver.ChromeOptions()
-        opts.add_argument("--window-size=1920,1080") 
-        opts.add_argument("--headless")
-        opts.add_argument("--disable-xss-auditor")
-        opts.add_argument("--disable-web-security")
-        opts.add_argument("--allow-running-insecure-content")
-        opts.add_argument("--no-sandbox")
-        opts.add_argument("--disable-setuid-sandbox")
-        opts.add_argument("--disable-webgl")
-        opts.add_argument("--disable-popup-blocking")
-        opts.add_argument('--disable-dev-shm-usage') 
+        # opts.add_argument("--window-size=1920,1080") 
+        # opts.add_argument("--headless")
+        # opts.add_argument("--disable-xss-auditor")
+        # opts.add_argument("--disable-web-security")
+        # opts.add_argument("--allow-running-insecure-content")
+        # opts.add_argument("--no-sandbox")
+        # opts.add_argument("--disable-setuid-sandbox")
+        # opts.add_argument("--disable-webgl")
+        # opts.add_argument("--disable-popup-blocking")
+        # opts.add_argument('--disable-dev-shm-usage') 
 
-        PATH = chrome_path
-        # PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
+        # PATH = chrome_path
+        PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
         driver = webdriver.Chrome(executable_path=PATH, options=opts)
         driver.get('http://register.ndda.kz/category/search_prep')
 
@@ -280,7 +283,7 @@ def bootstrap():
         toggle = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.ID, 'jqgh_register_grid_reg_date')))
         ActionChains(driver).move_to_element(toggle).click(toggle).perform()
         # -----
-        pagination_handler(driver, 60)
+        pagination_handler(driver, 81)
         table_check(driver, 'ui-row-ltr')
         try:
             process_parser(driver)

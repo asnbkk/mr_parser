@@ -3,6 +3,7 @@ from shit_dict import *
 from shit_methods import *
 from shit_chrome_path import *
 import time
+import random
 # import json
 
 from bs4 import BeautifulSoup
@@ -40,24 +41,26 @@ def process_parser(driver):
                             attributes_list.append(attributes_keys[index])
                 # new item open
                 try:
-                    link = WebDriverWait(row, 60).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
+                    link = WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
                     ActionChains(driver).move_to_element(link).click(link).perform()
                 except:
-                    print('SOME PROBLEM WITH OPENING NEW TAB, GOING TO SLEEP FOR 19 SECS')
-                    time.sleep(10)
-                    link = WebDriverWait(row, 60).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
+                    print('SOME PROBLEM WITH OPENING NEW TAB, GOING TO SLEEP FOR 30 SECS')
+                    time.sleep(30)
+                    link = WebDriverWait(row, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'openReestr')))
                     ActionChains(driver).move_to_element(link).click(link).perform()
+                    continue
 
                 try:
                     table_check(driver, 'modal-open')
-                    main_table = WebDriverWait(driver, 300).until(
+                    main_table = WebDriverWait(driver, 30).until(
                         EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
                 except:
                     print('CANNOT FIND THE WINDOW')
-                    time.sleep(10)
-                    table_check(driver, 'modal-open')
-                    main_table = WebDriverWait(driver, 300).until(
-                        EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
+                    # time.sleep(10)
+                    # table_check(driver, 'modal-open')
+                    # main_table = WebDriverWait(driver, 300).until(
+                    #     EC.visibility_of_all_elements_located((By.XPATH, '//form[@id="reestr-form-reestrForm-form"]//tbody//td')))[1::2]
+                    continue
 
                 # main_table = driver.find_elements_by_xpath('//form[@id="reestr-form-reestrForm-form"]//tbody//td')[1::2]
                 try:
@@ -161,9 +164,12 @@ def process_parser(driver):
                 try:
                     next_tab(driver, 5)
                     rows = wait_table(driver, 5, True)
+                    page_source = driver.page_source
+                    soup = BeautifulSoup(page_source, 'lxml')
                     certificate_info = []
+                    rows = soup.find('div', {'id': 'yw4_tab_7'}).find('tbody').find_all('tr')[1:]
                     for index, row in enumerate(rows):
-                        cells = rows[index].find_elements_by_tag_name('td')
+                        cells = row.find_all('td')
                         certificate_info_row = { certificate_keys[i]: text_prep(cells[i].text) for i in range(len(certificate_keys)) }
                         certificate_info.append(certificate_info_row)
                     print('certificate: ok')
@@ -216,10 +222,11 @@ def process_parser(driver):
                 print('DONE')
                 # sending data by kafka
                 send_data(item)
-                time.sleep(2)
+                time.sleep(1)
                 # find close button and close current window
-                driver.find_element_by_class_name('close').click()
-
+                # driver.find_element_by_class_name('close').click()
+                close_button = WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.CLASS_NAME, 'close')))
+                ActionChains(driver).move_to_element(close_button).click(close_button).perform()
                 # insert product item data into global data list and write to the file
                 data.append(item)
                 with open('data.json', 'w', encoding='utf-8') as f:
@@ -230,8 +237,8 @@ def process_parser(driver):
                 print()
             except Exception as e:
                 print(f'SMTH IS WORONG:\n{p_cells[2].text}')
-                driver.find_element_by_class_name('close').click()
-                time.sleep(5)
+                # driver.find_element_by_class_name('close').click()
+                time.sleep(1)
                 pass
         try:
             # go to the next page if possible; else break the loop
@@ -240,7 +247,6 @@ def process_parser(driver):
         except:
             print('seems to be the end')
             state = 'reparsing'
-            break
         try: 
             # shit time sleep
             WebDriverWait(driver, 30).until(EC.invisibility_of_element((By.ID, 'load_register_grid')))
@@ -252,19 +258,20 @@ def process_parser(driver):
 def bootstrap():
     while True:
         opts = webdriver.ChromeOptions()
-        opts.add_argument("--window-size=1920,1080") 
-        opts.add_argument("--headless")
-        opts.add_argument("--disable-xss-auditor")
-        opts.add_argument("--disable-web-security")
-        opts.add_argument("--allow-running-insecure-content")
-        opts.add_argument("--no-sandbox")
-        opts.add_argument("--disable-setuid-sandbox")
-        opts.add_argument("--disable-webgl")
-        opts.add_argument("--disable-popup-blocking")
-        opts.add_argument('--disable-dev-shm-usage') 
+        # opts.add_argument("--window-size=1920,1080") 
+        # opts.add_argument("--headless")
+        # opts.add_argument("--disable-xss-auditor")
+        # opts.add_argument("--disable-web-security")
+        # opts.add_argument("--allow-running-insecure-content")
+        # opts.add_argument("--no-sandbox")
+        # opts.add_argument("--disable-setuid-sandbox")
+        # opts.add_argument("--disable-webgl")
+        # opts.add_argument("--disable-popup-blocking")
+        # opts.add_argument('--disable-dev-shm-usage') 
 
-        PATH = chrome_path
-        driver = webdriver.Chrome(PATH, options=opts)
+        # PATH = chrome_path
+        PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
+        driver = webdriver.Chrome(executable_path=PATH, options=opts)
         driver.get('http://register.ndda.kz/category/search_prep')
 
         frame = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "iframe1")))
@@ -276,7 +283,7 @@ def bootstrap():
         toggle = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.ID, 'jqgh_register_grid_reg_date')))
         ActionChains(driver).move_to_element(toggle).click(toggle).perform()
         # -----
-        pagination_handler(driver, 30)
+        pagination_handler(driver, 81)
         table_check(driver, 'ui-row-ltr')
         try:
             process_parser(driver)

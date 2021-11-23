@@ -49,7 +49,7 @@ def search_handler(driver):
 
         select = Select(driver.find_element_by_id('ReestrTableForNdda_reg_type'))
         select.select_by_visible_text('МИ')
-        # search_input.send_keys('Хирургическая нить WEGO - PGA RAPID синтетическая, рассасывающаяся, стерильная, с атравматическими иглами и без игл, различных')
+        # search_input.send_keys('Инсулиновая помпа и система постоянного мониторинга глюкозы Medtronic MiniMed Paradigm, модель MMT-754/554WW (B,L,P,S,H)')
         search_input.submit()
     except Exception as e: 
         print(e)   
