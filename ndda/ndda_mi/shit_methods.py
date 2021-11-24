@@ -17,9 +17,6 @@ producer = KafkaProducer(
     value_serializer=lambda x: 
     json.dumps(x).encode('utf-8')
     )
-# //////////////////////////////////
-
-# //////////////////////////////////
 def pagination_handler(driver, start_from):
     time.sleep(3)
     pag_input = WebDriverWait(driver, 5).until(

@@ -116,7 +116,7 @@ def bootstrap():
         # opts.add_argument("--disable-popup-blocking")
 
         # PATH = chrome_path
-        PATH = '/Users/assanbekkaliyev/Desktop/chromedriver'
+        PATH = '/Users/assanbekkaliyev/Desktop/chromedriver_2'
         driver = webdriver.Chrome(PATH, options=opts)
 
         url = 'https://roszdravnadzor.gov.ru/services/misearch'
